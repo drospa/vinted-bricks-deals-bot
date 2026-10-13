@@ -329,6 +329,22 @@ def save_state(state):
 
 
 # ---------------- main ----------------
+SLOTS = {"am": (9, 30), "pm": (14, 0)}  # Madrid local times of the two daily runs
+
+
+def schedule_slot(state):
+    """Scheduled runs only. GitHub cron is UTC-only, so several UTC crons fire and this guard keeps
+    exactly one run per Madrid-time slot (09:30 / 14:00), whatever the daylight-saving offset.
+    Returns the slot id to run, or None to skip."""
+    from zoneinfo import ZoneInfo
+    now = datetime.now(ZoneInfo("Europe/Madrid"))
+    name = "am" if now.hour < 12 else "pm"
+    slot = f"{now:%Y-%m-%d}-{name}"
+    if (now.hour, now.minute) < SLOTS[name] or state.get("last_slot") == slot:
+        print(f"Skipping: Madrid time {now:%H:%M}, slot {slot} not due or already done")
+        return None
+    return slot
+
 def today_str():
     try:
         from zoneinfo import ZoneInfo
@@ -338,11 +354,17 @@ def today_str():
 
 
 def main():
-    sys.stdout.reconfigure(line_buffering=True)  # show progress live in the Actions log
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(line_buffering=True)  # show progress live in the Actions log
     dry = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
     out = (lambda t: print("\n--- MESSAGE ---\n" + t)) if dry else send_telegram
     catalogue = load_catalogue()
     state = load_state()
+    slot = None
+    if os.environ.get("GITHUB_EVENT_NAME") == "schedule":
+        slot = schedule_slot(state)
+        if slot is None:
+            return
     last_id = int(state.get("last_id", 0))
     alerted = set(state.get("alerted", []))
 
@@ -408,6 +430,8 @@ def main():
     if not dry:
         if not error and by_id:
             state["last_id"] = max(by_id)
+        if slot and not error:
+            state["last_slot"] = slot
         state["alerted"] = (list(alerted) + [d["id"] for d in deals + suspicious + lotr + sw_figs])[-1000:]
         save_state(state)
 
