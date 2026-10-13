@@ -161,7 +161,9 @@ def fetch_page(page, query=QUERY):
             _session["s"] = None
             continue
         if r.status_code == 200:
-            return parse_items(r.text)
+            found = parse_items(r.text)
+            print(f"  fetched '{query}' page {page}: {len(found)} listings", flush=True)
+            return found
         last = f"HTTP {r.status_code}"
         _session["s"] = None
         time.sleep(random.uniform(*PAUSE))
@@ -336,6 +338,7 @@ def today_str():
 
 
 def main():
+    sys.stdout.reconfigure(line_buffering=True)  # show progress live in the Actions log
     dry = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
     out = (lambda t: print("\n--- MESSAGE ---\n" + t)) if dry else send_telegram
     catalogue = load_catalogue()
