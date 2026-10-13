@@ -1,2 +1,2 @@
-# VintedWallapop-Lego-scrapper
-VintedWallapop Lego scrapper
+# Vinted-Lego-scrapper
+Vinted Lego scrapper
