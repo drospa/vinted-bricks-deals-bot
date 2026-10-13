@@ -13,7 +13,8 @@ import requests
 
 API = "https://brickset.com/api/v3.asmx"
 KEY = os.environ.get("BRICKSET_API_KEY", "")
-TERMS = ["star wars", "lord of the rings", "city", "icons", "ninjago"]
+TERMS = ["star wars", "lord of the rings", "city", "icons", "ninjago",
+         "super mario", "ideas", "bricklink"]
 PRICE_REGIONS = ["ES", "DE"]  # first region with a price wins (DE as proxy for Spain)
 PAGE_SIZE = 500
 OUT = "sets.csv"
@@ -39,7 +40,7 @@ def pick_themes(all_themes):
         name = t["theme"]
         low = name.lower()
         for term in TERMS:
-            if low == term or (term == "lord of the rings" and term in low):
+            if low == term or (term in ("lord of the rings", "bricklink") and term in low):
                 chosen.append(name)
             elif term in low or (term == "icons" and "creator" in low):
                 candidates.setdefault(term, []).append(name)
