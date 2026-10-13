@@ -23,6 +23,8 @@ MIN_DISCOUNT_NEW = 0.40   # new listings (with / without tags)
 MIN_DISCOUNT_USED = 0.40  # used listings (Muy bueno, Bueno, Satisfactorio)
 TOO_GOOD = 0.75           # at or above this: listed separately as suspicious
 MAX_SUSPICIOUS = 3        # suspicious listings shown at the bottom
+LOTR_QUERIES = ["lego señor de los anillos", "lego lord of the rings", "lego lotr"]
+LOTR_PAGES = 3           # pages fetched per extra LOTR search
 MAX_ITEMS = 10           # max deals listed in the message
 MAX_PAGES = 15           # safety cap on pages fetched per run
 PAUSE = (2.0, 5.0)       # random pause between pages (seconds)
@@ -47,6 +49,12 @@ NUM_RE = re.compile(
     r"(?!\s*(?:€|eur|pcs|pzs|pz|piezas|pieces|pièces|teile))",
     re.I,
 )
+
+# Lord of the Rings: no discount filter, every finding is listed
+LOTR_THEME = re.compile(r"lord of the rings", re.I)
+LOTR_NAME = re.compile(
+    r"\b(lord of the rings|se[ñn]or de los anillos|seigneur des anneaux"
+    r"|herr der ringe|signore degli anelli|lotr)\b", re.I)
 
 # ---------------- Vinted ----------------
 CHUNK = re.compile(r'self\.__next_f\.push\(\[1,"(.*?)"\]\)', re.S)
@@ -116,7 +124,7 @@ def new_session(target):
     _session["s"] = cr.Session(impersonate=target)
 
 
-def fetch_page(page):
+def fetch_page(page, query=QUERY):
     """Return listings for a page ([] = no listings). Raise FetchError on failure."""
     last = "no response"
     for target in IMPERSONATE:
@@ -125,7 +133,7 @@ def fetch_page(page):
         try:
             r = _session["s"].get(
                 BASE + "/catalog",
-                params={"search_text": QUERY, "order": "newest_first", "page": page},
+                params={"search_text": query, "order": "newest_first", "page": page},
                 timeout=25, headers={"Accept-Language": "es-ES,es;q=0.9,en;q=0.8"},
             )
         except Exception as e:
@@ -168,17 +176,25 @@ def find_set(title, catalogue):
 
 
 def evaluate(items, catalogue):
-    deals = []
+    deals, lotr = [], []
     stats = {"scanned": len(items), "excluded": 0, "matched": 0, "no_price": 0}
     for it in items:
         if EXCLUDE.search(it["title"]):
             stats["excluded"] += 1
             continue
         num = find_set(it["title"], catalogue)
-        if not num:
+        c = catalogue.get(num) if num else None
+        if (c and LOTR_THEME.search(c["theme"] or "")) or (not c and LOTR_NAME.search(it["title"])):
+            rrp = c["rrp"] if c else None
+            disc = (1 - it["price"] / rrp) if rrp and it["price"] else None
+            lotr.append({**it, "set_no": num or "?", "set_name": c["name"] if c else "set not identified",
+                         "rrp": rrp, "retired": bool(c and c["retired"]), "discount": disc})
+            if c:
+                stats["matched"] += 1
+            continue
+        if not c:
             continue
         stats["matched"] += 1
-        c = catalogue[num]
         if not c["rrp"] or not it["price"] or it["price"] <= 0:
             stats["no_price"] += 1
             continue
@@ -188,15 +204,17 @@ def evaluate(items, catalogue):
             deals.append({**it, "set_no": num, "set_name": c["name"], "theme": c["theme"],
                           "rrp": c["rrp"], "retired": c["retired"], "discount": discount})
     deals.sort(key=lambda d: d["discount"], reverse=True)
+    lotr.sort(key=lambda d: (d["discount"] is None, -(d["discount"] or 0)))
     suspicious = [d for d in deals if d["discount"] >= TOO_GOOD]
     deals = [d for d in deals if d["discount"] < TOO_GOOD]
-    return deals, suspicious, stats
+    return deals, suspicious, lotr, stats
 
 
 # ---------------- message / telegram ----------------
-def build_messages(deals, suspicious, stats, warnings, today):
+def build_messages(deals, suspicious, lotr, stats, warnings, today):
     esc = html.escape
-    head = f"🧱 <b>Lego deals {today}</b>: {len(deals)} found"
+    head = f"🧱 <b>Lego deals {today}</b>: {len(deals)} found" + (
+        f" · {len(lotr)} Lord of the Rings" if lotr else "")
     blocks = []
     for i, d in enumerate(deals[:MAX_ITEMS], 1):
         flags = " 🏷️ retired" if d["retired"] else ""
@@ -208,6 +226,15 @@ def build_messages(deals, suspicious, stats, warnings, today):
         )
     if len(deals) > MAX_ITEMS:
         blocks.append(f"\n… and {len(deals) - MAX_ITEMS} more")
+    if lotr:
+        blocks.append("\n🧙 <b>Lord of the Rings</b> (all listings, no discount filter):")
+        for d in lotr:
+            price = f"{d['price']:.0f}€" if d["price"] else "?"
+            ref = (f" vs {d['rrp']:.0f}€ ({-d['discount'] * 100:+.0f}%)" if d["discount"] is not None
+                   else " (no official price)")
+            blocks.append(
+                f"\n• <b>{esc(d['set_no'])} {esc(d['set_name'])}</b>: {price}{ref} · {esc(d['condition'])}"
+                f"{' 🏷️ retired' if d['retired'] else ''} · <a href=\"{esc(d['url'], quote=True)}\">link</a>")
     if suspicious:
         blocks.append("\n⚠️ <b>Too good to be true</b> (likely parts, minifigs or mis-titled):")
         for d in suspicious[:MAX_SUSPICIOUS]:
@@ -306,15 +333,35 @@ def main():
     if not last_id:
         warnings.append("First run: no previous watermark, scanned the latest pages only")
 
+    # Targeted LOTR searches: these sets are rare, so the generic "lego" scan would miss most of them
+    extra = {}
+    for q in LOTR_QUERIES:
+        for page in range(1, LOTR_PAGES + 1):
+            try:
+                items = fetch_page(page, q)
+            except FetchError as e:
+                warnings.append(f"LOTR search '{q}' page {page}: {e}")
+                break
+            if not items:
+                break
+            for it in items:
+                extra[it["id"]] = it
+            time.sleep(random.uniform(*PAUSE))
+    print(f"LOTR search listings: {len(extra)}")
+
     new_items = [it for it in by_id.values() if it["id"] > last_id and it["id"] not in alerted]
-    deals, suspicious, stats = evaluate(new_items, catalogue)
-    for m in build_messages(deals, suspicious, stats, warnings, today_str()):
+    deals, suspicious, lotr, stats = evaluate(new_items, catalogue)
+    seen = {d["id"] for d in lotr}
+    fresh = [it for it in extra.values() if it["id"] not in alerted and it["id"] not in seen]
+    lotr += evaluate(fresh, catalogue)[2]
+    lotr.sort(key=lambda d: (d["discount"] is None, -(d["discount"] or 0)))
+    for m in build_messages(deals, suspicious, lotr, stats, warnings, today_str()):
         out(m)
 
     if not dry:
         if not error and by_id:
             state["last_id"] = max(by_id)
-        state["alerted"] = (list(alerted) + [d["id"] for d in deals + suspicious])[-1000:]
+        state["alerted"] = (list(alerted) + [d["id"] for d in deals + suspicious + lotr])[-1000:]
         save_state(state)
 
 
