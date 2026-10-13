@@ -1,7 +1,12 @@
 name: daily-deals
 on:
   schedule:
-    - cron: "0 5 * * *"   # 05:00 UTC = 07:00 Madrid (summer) / 06:00 (winter); may be delayed
+    # GitHub cron is UTC-only. These four cover 09:30 and 14:00 Madrid in both summer (UTC+2)
+    # and winter (UTC+1) time; daily_deals.py keeps exactly one run per Madrid slot.
+    - cron: "35 7 * * *"    # 09:35 Madrid in summer
+    - cron: "35 8 * * *"    # 09:35 Madrid in winter
+    - cron: "7 12 * * *"    # 14:07 Madrid in summer
+    - cron: "7 13 * * *"    # 14:07 Madrid in winter
   workflow_dispatch:
     inputs:
       dry_run:
