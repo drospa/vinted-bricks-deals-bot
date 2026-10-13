@@ -19,8 +19,10 @@ from curl_cffi import requests as cr
 # ---------------- configuration ----------------
 BASE = "https://www.vinted.es"
 QUERY = "lego"
-MIN_DISCOUNT = 0.40      # alert when price <= (1 - this) * official price
-SUSPICIOUS = 0.80        # flag discounts above this (scam / wrong set)
+MIN_DISCOUNT_NEW = 0.40   # new listings (with / without tags)
+MIN_DISCOUNT_USED = 0.40  # used listings (Muy bueno, Bueno, Satisfactorio)
+TOO_GOOD = 0.75           # at or above this: listed separately as suspicious
+MAX_SUSPICIOUS = 3        # suspicious listings shown at the bottom
 MAX_ITEMS = 10           # max deals listed in the message
 MAX_PAGES = 15           # safety cap on pages fetched per run
 PAUSE = (2.0, 5.0)       # random pause between pages (seconds)
@@ -30,6 +32,7 @@ IMPERSONATE = ["chrome", "chrome120", "chrome124"]
 
 EXCLUDE = re.compile(
     r"\b(compatible|compatibles|kompatibel|compatibile|moc|custom|clone|clon"
+    r"|mini[ -]?fig\w*|figurines?|figurita\w*|personnages?"
     r"|incompleto|incompleta|incomplete|incomplet|unvollst\w+"
     r"|lote|lot de|bundle"
     r"|caja vac\w+|empty box|bo[iî]te vide|leere? (box|schachtel|verpackung)"
@@ -180,20 +183,23 @@ def evaluate(items, catalogue):
             stats["no_price"] += 1
             continue
         discount = 1 - it["price"] / c["rrp"]
-        if discount >= MIN_DISCOUNT:
+        is_new = it["condition"].lower().startswith("nuevo")
+        if discount >= (MIN_DISCOUNT_NEW if is_new else MIN_DISCOUNT_USED):
             deals.append({**it, "set_no": num, "set_name": c["name"], "theme": c["theme"],
                           "rrp": c["rrp"], "retired": c["retired"], "discount": discount})
     deals.sort(key=lambda d: d["discount"], reverse=True)
-    return deals, stats
+    suspicious = [d for d in deals if d["discount"] >= TOO_GOOD]
+    deals = [d for d in deals if d["discount"] < TOO_GOOD]
+    return deals, suspicious, stats
 
 
 # ---------------- message / telegram ----------------
-def build_messages(deals, stats, warnings, today):
+def build_messages(deals, suspicious, stats, warnings, today):
     esc = html.escape
     head = f"🧱 <b>Lego deals {today}</b>: {len(deals)} found"
     blocks = []
     for i, d in enumerate(deals[:MAX_ITEMS], 1):
-        flags = (" 🏷️ retired" if d["retired"] else "") + (" ⚠️ check" if d["discount"] >= SUSPICIOUS else "")
+        flags = " 🏷️ retired" if d["retired"] else ""
         blocks.append(
             f"\n{i}. <b>{esc(d['set_no'])} {esc(d['set_name'])}</b>\n"
             f"{d['price']:.0f}€ vs {d['rrp']:.0f}€ (−{d['discount'] * 100:.0f}%) · "
@@ -202,6 +208,14 @@ def build_messages(deals, stats, warnings, today):
         )
     if len(deals) > MAX_ITEMS:
         blocks.append(f"\n… and {len(deals) - MAX_ITEMS} more")
+    if suspicious:
+        blocks.append("\n⚠️ <b>Too good to be true</b> (likely parts, minifigs or mis-titled):")
+        for d in suspicious[:MAX_SUSPICIOUS]:
+            blocks.append(
+                f"\n• {esc(d['set_no'])} {esc(d['set_name'])}: {d['price']:.0f}€ vs {d['rrp']:.0f}€ "
+                f"(−{d['discount'] * 100:.0f}%) · <a href=\"{esc(d['url'], quote=True)}\">link</a>")
+        if len(suspicious) > MAX_SUSPICIOUS:
+            blocks.append(f"\n… and {len(suspicious) - MAX_SUSPICIOUS} more")
     foot = (f"\n<i>Scanned {stats['scanned']} new listings · {stats['matched']} matched to a set "
             f"· {stats['excluded']} excluded. Prices exclude shipping and buyer fee.</i>")
     for w in warnings:
@@ -258,7 +272,7 @@ def main():
     last_id = int(state.get("last_id", 0))
     alerted = set(state.get("alerted", []))
 
-    by_id, error, complete = {}, None, False
+    by_id, error, complete, reached = {}, None, False, False
     for page in range(1, MAX_PAGES + 1):
         try:
             items = fetch_page(page)
@@ -274,7 +288,7 @@ def main():
         for it in items:
             by_id[it["id"]] = it
         if last_id and min(it["id"] for it in items) <= last_id:
-            complete = True
+            complete = reached = True
             break
         time.sleep(random.uniform(*PAUSE))
     print(f"pages fetched: {page} | listings: {len(by_id)} | complete={complete} | error={error}")
@@ -286,20 +300,21 @@ def main():
     warnings = []
     if error:
         warnings.append(f"Partial scan: {error}")
-    elif not complete and last_id:
-        warnings.append(f"Coverage incomplete: more than {MAX_PAGES} pages of new listings; raise MAX_PAGES")
+    elif last_id and not reached:
+        warnings.append(f"Coverage incomplete: {len(by_id)} listings fetched without reaching the previous run; "
+                        "older new listings may be missed (run more often)")
     if not last_id:
         warnings.append("First run: no previous watermark, scanned the latest pages only")
 
     new_items = [it for it in by_id.values() if it["id"] > last_id and it["id"] not in alerted]
-    deals, stats = evaluate(new_items, catalogue)
-    for m in build_messages(deals, stats, warnings, today_str()):
+    deals, suspicious, stats = evaluate(new_items, catalogue)
+    for m in build_messages(deals, suspicious, stats, warnings, today_str()):
         out(m)
 
     if not dry:
         if not error and by_id:
             state["last_id"] = max(by_id)
-        state["alerted"] = (list(alerted) + [d["id"] for d in deals])[-1000:]
+        state["alerted"] = (list(alerted) + [d["id"] for d in deals + suspicious])[-1000:]
         save_state(state)
 
 
