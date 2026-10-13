@@ -162,26 +162,12 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 11381,Jaguar E-Type,Icons,Vehicles,2026,1673,139.99,DE,2026-07-12,,no
 11382,Hubble Space Telescope,Icons,Space,2026,1252,129.99,DE,2026-07-10,,no
 11383,Mayor Manor,Icons,Midnight Valley Collection,2026,1420,109.99,DE,2026-07-12,,no
-11384,Golden Retriever Puppy,Icons,Miscellaneous,2026,2102,139.99,DE,2026-01-20,,no
+11384,Golden Retriever Puppy,Icons,Pets,2026,2102,139.99,DE,2026-01-20,,no
 11385,Star Trek: U.S.S. Enterprise NCC-1701 Bridge,Icons,Star Trek,2026,1701,179.99,DE,2026-07-24,,no
 11386,SpongeBob SquarePants: Bikini Bottom,Icons,SpongeBob SquarePants,2026,1794,209.99,DE,2026-07-15,,no
 11387,Holiday House,Icons,Winter Village Collection,2026,1354,109.99,DE,2026-09-16,,no
-11388,{?},Icons,,2026,,,,,,no
 11389,Project Hail Mary,Icons,Project Hail Mary,2026,830,109.99,DE,2026-02-06,,no
 11390,Dragon Ball: Shenron & Goku,Icons,Dragon Ball,2026,1764,139.99,DE,2026-09-30,,no
-11391,{?},Icons,,2027,,,,,,no
-11392,{?},Icons,,2027,,,,,,no
-11393,{?},Icons,,2027,,,,,,no
-11394,{?},Icons,,2027,,,,,,no
-11395,{?},Icons,,2027,,,,,,no
-11396,{?},Icons,,2027,,,,,,no
-11399,{?},Icons,,2027,,,,,,no
-11402,{?},Icons,,2027,,,,,,no
-11410,{?},Icons,,2027,,,,,,no
-11414,{?},Icons,,2027,,,,,,no
-11415,{?},Icons,,2027,,,,,,no
-11416,{?},Icons,,2027,,,,,,no
-11417,{?},Icons,,2027,,,,,,no
 11900,Brickmaster City parts,City,Book Parts,2013,138,,,,,no
 11901,Brickmaster Ninjago parts,Ninjago,Book Parts,2013,154,,,,,no
 11903,Brickmaster Ninjago: Fight the Power of the Snakes parts,Ninjago,Book Parts,2013,156,,,,,no
@@ -208,12 +194,93 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 20020,Mini Turbo Shredder,Ninjago,Pilot Season,2011,83,,,,,no
 20021,Bounty Hunter Assault Gunship,Star Wars,The Clone Wars,2011,81,,,,,no
 2064,Rescue Plane,City,Medical,2007,116,,,,,no
+21100,Shinkai 6500 Submarine,Ideas,Licensed,2011,413,,,,,no
+21101,Hayabusa,Ideas,Licensed,2012,369,,,,,no
+21102,Minecraft Micro World - The Forest,Ideas,Licensed,2012,480,,,,,no
+21103,The DeLorean Time Machine,Ideas,Licensed,2013,401,,,,,no
+21104,NASA Mars Science Laboratory Curiosity Rover,Ideas,NASA,2014,295,,,,,no
+21108,Ghostbusters Ecto-1,Ideas,Licensed,2014,508,49.99,DE,2015-01-14,2017-02-09,yes
+21109,Exo Suit,Ideas,,2014,321,34.99,DE,2015-01-14,2015-06-25,yes
 2111,Kai,Ninjago,Spinners,2011,19,,,,,no
+21110,Research Institute,Ideas,,2014,165,19.99,DE,2015-01-21,2015-02-02,yes
 2112,Cole,Ninjago,Spinners,2011,19,,,,,no
 2113,Zane,Ninjago,Spinners,2011,19,,,,,no
 2114,Chopov,Ninjago,Spinners,2011,20,,,,,no
 2115,Bonezai,Ninjago,Spinners,2011,21,,,,,no
 2116,Krazi,Ninjago,Spinners,2011,22,,,,,no
+21301,Birds,Ideas,,2015,580,44.99,DE,2015-01-14,2015-11-21,yes
+21302,The Big Bang Theory,Ideas,Licensed,2015,484,59.99,DE,2015-08-03,2017-01-06,yes
+21303,WALL-E,Ideas,Licensed,2015,677,49.99,DE,2015-09-02,2017-01-02,yes
+21304,Doctor Who,Ideas,Licensed,2015,623,59.99,DE,2015-12-02,2017-01-23,yes
+21305,Maze,Ideas,,2016,769,69.99,DE,2016-04-02,2016-11-28,yes
+21306,The Beatles Yellow Submarine,Ideas,Licensed,2016,553,59.99,DE,2016-11-01,2017-12-28,yes
+21307,Caterham Seven 620R,Ideas,Licensed,2016,771,,,,,no
+21308,Adventure Time,Ideas,Licensed,2017,495,49.99,DE,2017-01-02,2019-03-29,yes
+21309,NASA Apollo Saturn V,Ideas,NASA,2017,1969,119.99,DE,2017-06-02,2020-02-01,yes
+21310,Old Fishing Store,Ideas,,2017,2049,149.99,DE,2017-10-01,2018-12-06,yes
+21311,Voltron,Ideas,Licensed,2018,2321,179.99,DE,2018-08-01,2019-12-31,yes
+21312,Women of NASA,Ideas,NASA,2017,231,24.99,DE,2017-11-02,2018-12-22,yes
+21313,Ship in a Bottle,Ideas,,2018,962,69.99,DE,2018-02-02,2019-05-25,yes
+21314,TRON: Legacy,Ideas,Licensed,2018,230,34.99,DE,2018-04-01,2019-11-24,yes
+21315,Pop-Up Book,Ideas,,2018,859,68.23,DE,2018-11-02,2020-08-19,yes
+21316,The Flintstones,Ideas,Licensed,2019,748,58.48,DE,2019-03-05,2020-11-27,yes
+21317,Steamboat Willie,Ideas,Licensed,2019,751,87.72,DE,2019-04-02,2020-10-09,yes
+21318,Tree House,Ideas,,2019,3036,249.99,DE,2019-08-02,2024-11-29,yes
+21319,Central Perk,Ideas,Licensed,2019,1070,79.99,DE,2019-09-02,2023-01-05,yes
+21320,Dinosaur Fossils,Ideas,,2019,910,59.99,DE,2019-11-02,2021-11-15,yes
+21321,International Space Station,Ideas,NASA,2020,864,69.99,DE,2020-02-02,2022-12-03,yes
+21322,Pirates of Barracuda Bay,Ideas,,2020,2545,199.99,DE,2020-04-02,2021-08-04,yes
+21323,Grand Piano,Ideas,,2020,3662,399.99,DE,2020-08-02,2026-06-29,yes
+21324,123 Sesame Street,Ideas,Licensed,2020,1367,119.99,DE,2020-11-02,2022-10-04,yes
+21325,Medieval Blacksmith,Ideas,,2021,2164,179.99,DE,2021-02-02,2024-01-03,yes
+21326,Winnie the Pooh,Ideas,Licensed,2021,1265,99.99,DE,2021-03-19,2024-02-05,yes
+21327,Typewriter,Ideas,,2021,2079,249.99,DE,2021-06-17,2024-11-23,yes
+21328,Seinfeld,Ideas,Licensed,2021,1326,79.99,DE,2021-07-22,2023-01-31,yes
+21329,Fender Stratocaster,Ideas,Licensed,2021,1074,119.99,DE,2021-10-02,2024-11-28,yes
+21330,Home Alone,Ideas,Licensed,2021,3955,299.99,DE,2021-11-16,,no
+21331,Sonic the Hedgehog - Green Hill Zone,Ideas,Licensed,2022,1125,79.99,DE,2022-01-04,2024-12-17,yes
+21332,The Globe,Ideas,,2022,2585,229.99,DE,2022-02-02,2024-11-28,yes
+21333,Vincent van Gogh - The Starry Night,Ideas,Licensed,2022,2316,169.99,DE,2022-05-30,,no
+21334,Jazz Quartet,Ideas,,2022,1606,99.99,DE,2022-08-04,2024-11-07,yes
+21335,Motorised Lighthouse,Ideas,,2022,2065,299.99,DE,2022-08-20,2025-12-03,yes
+21336,The Office,Ideas,Licensed,2022,1164,119.99,DE,2022-08-04,2024-11-23,yes
+21337,Table Football,Ideas,,2022,2339,249.99,DE,2022-10-08,2024-01-03,yes
+21338,A-Frame Cabin,Ideas,,2023,2082,179.99,DE,2023-01-15,2024-11-23,yes
+21339,BTS Dynamite,Ideas,Licensed,2023,749,99.99,DE,2023-02-17,2025-03-18,yes
+21340,Tales of the Space Age,Ideas,,2023,688,49.99,DE,2023-04-15,2024-12-08,yes
+21341,Disney Hocus Pocus: The Sanderson Sisters' Cottage,Ideas,Licensed,2023,2316,229.99,DE,2023-06-26,2026-07-07,yes
+21342,The Insect Collection,Ideas,,2023,1111,79.99,DE,2023-08-22,2025-11-28,yes
+21343,Viking Village,Ideas,,2023,2103,139.99,DE,2023-09-01,2025-11-28,yes
+21344,The Orient Express Train,Ideas,Licensed,2023,2540,299.99,DE,2023-11-17,2025-12-10,yes
+21345,Polaroid OneStep SX-70 Camera,Ideas,Licensed,2024,516,79.99,DE,2023-12-16,,no
+21346,Family Tree,Ideas,,2024,1040,89.99,DE,2024-01-05,2025-12-11,yes
+21347,Red London Telephone Box,Ideas,Licensed,2024,1460,114.99,DE,2024-01-17,2026-01-17,yes
+21348,Dungeons & Dragons: Red Dragon's Tale,Ideas,Licensed,2024,3745,359.99,DE,2024-03-20,2026-09-03,yes
+21349,Tuxedo Cat,Ideas,,2024,1710,99.99,DE,2024-05-07,,no
+21350,Jaws,Ideas,Licensed,2024,1497,149.99,DE,2024-07-05,2026-07-08,yes
+21351,Disney Tim Burton's The Nightmare Before Christmas,Ideas,Licensed,2024,2193,199.99,DE,2024-08-14,,no
+21352,Magic of Disney,Ideas,Licensed,2024,1103,99.99,DE,2024-09-14,,no
+21353,The Botanical Garden,Ideas,,2024,3792,329.99,DE,2024-10-23,,no
+21354,Twilight The Cullen House,Ideas,Licensed,2025,2001,219.99,DE,2025-01-17,,no
+21355,The Evolution of STEM,Ideas,,2025,879,79.99,DE,2025-02-02,,no
+21356,River Steamboat,Ideas,,2025,4090,329.99,DE,2025-03-02,,no
+21357,Disney Pixar Luxo Jr.,Ideas,Licensed,2025,613,69.99,DE,2025-05-09,,no
+21358,Minifigure Vending Machine,Ideas,,2025,1343,169.99,DE,2025-05-22,,no
+21359,Italian Riviera,Ideas,,2025,3251,279.99,DE,2025-07-18,,no
+21360,Willy Wonka & the Chocolate Factory,Ideas,Licensed,2025,2025,219.99,DE,2025-08-22,,no
+21361,Gremlins: Gizmo,Ideas,Licensed,2025,1125,99.99,DE,2025-08-30,,no
+21362,Mineral Collection,Ideas,,2025,880,59.99,DE,2025-09-04,,no
+21363,The Goonies,Ideas,Licensed,2025,2912,299.99,DE,2025-10-25,,no
+21365,Love Birds,Ideas,,2026,750,49.99,DE,2025-12-10,,no
+21366,Floating Sea Otters,Ideas,,2026,1234,109.99,DE,2026-02-10,,no
+21367,Tintin Moon Rocket,Ideas,Licensed,2026,1283,159.99,DE,2026-03-13,,no
+21368,Peanuts: Snoopy's Doghouse,Ideas,Licensed,2026,964,79.99,DE,2026-02-15,,no
+21369,The X-Files,Ideas,Licensed,2026,1478,199.99,DE,2026-07-22,,no
+21370,E.T. the Extra-Terrestrial,Ideas,Licensed,2026,1226,129.99,DE,2026-07-04,,no
+21371,Wallace & Gromit,Ideas,Licensed,2026,1038,99.99,DE,2026-09-01,,no
+21372,La Catrina,Ideas,,2026,1212,119.99,DE,2026-07-14,,no
+21373,Downton Abbey,Ideas,Licensed,2026,4711,299.99,DE,2026-09-12,,no
+21376,Orange Cat,Ideas,,2026,1755,99.99,DE,2026-02-03,,no
 2170,Cole DX,Ninjago,Spinners,2011,21,,,,,no
 2171,Zane DX,Ninjago,Spinners,2011,22,,,,,no
 2172,Nya,Ninjago,Spinners,2011,21,,,,,no
@@ -349,8 +416,10 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 30381,Imperial TIE Fighter,Star Wars,Solo,2018,42,,,,,no
 30383,Naboo Starfighter,Star Wars,Episode I,2019,48,,,,,no
 30384,Snowspeeder,Star Wars,Episode V,2019,49,,,,,no
+30385,Super Mushroom Surprise,Super Mario,Promotional,2020,18,,,,,no
 30386,Poe Dameron's X-wing Fighter,Star Wars,Episode IX,2020,72,3.99,DE,2021-05-16,2022-01-22,yes
 30388,Imperial Shuttle,Star Wars,Episode VI,2021,85,,,,,no
+30389,Fuzzy & Mushroom Platform,Super Mario,Promotional,2021,39,,,,,no
 30421,Skybound Plane,Ninjago,Skybound,2016,30,,,,,no
 30422,Kai's Mini Dragon,Ninjago,Skybound,2016,39,,,,,no
 30423,Anchor-Jet,Ninjago,Skybound,2016,38,,,,,no
@@ -362,6 +431,7 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 30496,U-wing Fighter,Star Wars,Rogue One,2017,55,,,,,no
 30497,First Order Heavy Assault Walker,Star Wars,Episode VIII,2017,54,,,,,no
 30498,Imperial AT-Hauler,Star Wars,Solo,2018,49,,,,,no
+30509,Yellow Yoshi's Fruit Tree,Super Mario,Promotional,2022,46,,,,,no
 30530,WU-CRU Target Training,Ninjago,General,2018,46,,,,,no
 30531,Sons of Garmadon,Ninjago,Sons of Garmadon,2018,33,,,,,no
 30532,Turbo,Ninjago,Sons of Garmadon,2018,61,3.49,DE,2018-08-12,2019-01-29,yes
@@ -407,15 +477,12 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 30694,Space Science Mech,City,Space,2025,49,,,,,no
 30699,Mini Ninja Combo Mech,Ninjago,Dragons Rising Season 3,2025,80,,,,,no
 30700,Arin vs. Dragonian Battle,Ninjago,Dragons Rising Season 3,2025,48,,,,,no
+30702,Toad (Pit Crew),Super Mario,Promotional,2025,39,,,,,no
 30708,Millennium Falcon,Star Wars,Episode IV,2025,74,,,,,no
 30719,Go-Kart Racer,City,Racing,2026,48,,,,,no
 30723,Cole's Car,Ninjago,Rise of the Snakes,2026,39,,,,,no
 30727,TIE Advanced,Star Wars,Episode IV,2026,68,,,,,no
 30728,The Razor Crest,Star Wars,The Mandalorian and Grogu,2026,74,,,,,no
-30744,{?},City,,2027,,,,,,no
-30748,{?},Ninjago,,2027,,,,,,no
-30749,{?},Star Wars,,2027,,,,,,no
-30750,{?},Star Wars,,2027,,,,,,no
 3177,Small Car,City,Traffic,2010,43,,,,,no
 3178,Seaplane,City,General,2010,102,,,,,no
 3179,Repair Truck,City,Traffic,2010,118,,,,,no
@@ -453,22 +520,28 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 40303,Vehicle Set,City,Miscellaneous,2018,79,,,,,no
 40315,NINJAGO Board Game,Ninjago,Promotional,2018,49,,,,,no
 40333,Battle of Hoth - 20th Anniversary Edition,Star Wars,Promotional,2019,195,,,,,no
+40335,Space Rocket Ride,Ideas,Promotional,2019,154,,,,,no
 40342,NINJAGO Minifigure Set,Ninjago,Secrets of the Forbidden Spinjitzu,2019,59,12.99,DE,2019-06-02,2021-05-06,yes
 40345,Mars Exploration Minifigure Pack,City,Mars Exploration,2019,44,12.66,DE,2019-06-02,2020-10-23,yes
 40362,Battle of Endor,Star Wars,Promotional,2019,197,,,,,no
 40372,Police MF Accessory Set,City,Police,2020,42,12.99,DE,2020-01-03,2021-01-29,yes
 40374,Golden Zane Accessory Set ,Ninjago,Rebooted,2020,73,12.99,DE,2020-03-02,2021-06-02,yes
 40407,Death Star II Battle,Star Wars,Promotional,2020,235,,,,,no
+40414,Monty Mole & Super Mushroom,Super Mario,Promotional,2020,163,,,,,no
+40448,Vintage Car,Ideas,Promotional,2021,189,,,,,no
 40451,Tatooine Homestead,Star Wars,Promotional,2021,217,,,,,no
 40483,Luke Skywalker's Lightsaber,Star Wars,Promotional,2021,173,,,,,no
 40485,FC Barcelona Celebration,Icons,Promotional,2021,178,,,,,no
 40486,Mini Adidas Originals Superstar,Icons,Adidas,2021,92,,,,,no
+40487,Sailboat Adventure,Ideas,Promotional,2021,330,,,,,no
 40516,Everyone Is Awesome,Icons,Miscellaneous,2021,346,34.99,DE,2021-06-02,,no
 40526,Electric Scooters & Charging Dock,City,Miscellaneous,2022,50,12.99,DE,2022-08-04,2023-01-21,yes
 40531,Lars Family Homestead Kitchen,Star Wars,Promotional,2022,195,,,,,no
 40532,Vintage Taxi,Icons,Promotional,2022,163,,,,,no
+40533,Cosmic Cardboard Adventures,Ideas,Promotional,2022,203,,,,,no
 40557,Defense of Hoth,Star Wars,Episode V,2022,64,14.99,DE,2022-01-04,2023-05-24,yes
 40558,Clone Trooper Command Station,Star Wars,Episode II,2022,66,14.99,DE,2022-01-04,2023-05-24,yes
+40566,Ray the Castaway,Ideas,Promotional,2022,239,,,,,no
 40567,Forest Hideout,Icons,Castle System,2022,258,,,,,no
 40578,Sandwich Shop,City,Town,2022,110,,,,,no
 40579,Eiffel's Apartment,Icons,Promotional,2022,228,,,,,no
@@ -477,12 +550,14 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 40582,4x4 Off-Road Ambulance Rescue,City,Medical,2023,162,,,,,no
 40586,Moving Truck,Icons,Promotional,2023,301,,,,,no
 40591,Death Star II,Star Wars,Promotional,2023,289,,,,,no
+40595,Tribute to Galileo Galilei,Ideas,Promotional,2023,307,,,,,no
 40601,Majisto's Magical Workshop,Icons,Castle System,2023,365,,,,,no
 40646,Daffodils,Icons,Botanical Collection,2023,216,14.99,DE,2022-12-12,2024-01-12,yes
 40658,Millennium Falcon Holiday Diorama,Star Wars,Seasonal,2023,282,29.99,DE,2023-09-02,2023-12-25,yes
 40681,Retro Food Truck ,Icons,Promotional,2024,310,,,,,no
 40686,Trade Federation Troop Carrier,Star Wars,Promotional,2024,262,,,,,no
 40693,The Lord of the Rings: Fell Beast,Icons,The Lord of the Rings,2024,269,,,,,no
+40698,Books Are My Passion,Ideas,Promotional,2024,285,,,,,no
 40703,Micro NINJAGO City,Ninjago,Micro Ninjago City,2024,339,,,,,no
 40704,Micro NINJAGO Docks,Ninjago,Micro Ninjago City,2024,275,,,,,no
 40705,Micro NINJAGO City Gardens ,Ninjago,Micro Ninjago City,2024,376,,,,,no
@@ -496,11 +571,17 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 40765,Kamino Training Facility,Star Wars,Promotional,2025,190,,,,,no
 40768,Star Trek: Type-15 Shuttlepod,Icons,Star Trek,2025,261,,,,,no
 40771,TIE Fighter with Imperial Hangar Rack,Star Wars,Promotional,2025,236,,,,,no
+40773,The Goonies: The Walshes' Attic,Ideas,Promotional,2025,179,,,,,no
+40786,Micro Command Centre,Ideas,Promotional,2025,214,,,,,no
+40787,Mario Kart - Spiny Shell,Super Mario,Promotional,2025,234,,,,,no
+40788,Friendly Snails,Ideas,Promotional,2025,264,,,,,no
+40789,Flying Moon Car,Ideas,Promotional,2025,211,,,,,no
 40806,Gingerbread AT-AT Walker,Star Wars,Seasonal,2025,697,59.99,DE,2025-09-02,,no
 40891,Stranger Things: WSQK Radio Station,Icons,Stranger Things,2026,234,,,,,no
 40893,The Lord of the Rings: Grond,Icons,The Lord of the Rings,2026,307,,,,,no
+40896,The X-Files: Scully's Lab,Ideas,Promotional,2026,221,,,,,no
 40897,Darth Vader's Lightsaber,Star Wars,Promotional,2026,174,,,,,no
-40898,{?},Icons,Promotional,2026,,,,,,no
+40912,Sea Serpent,Ideas,Promotional,2026,241,,,,,no
 40913,Vintage Parade Car,Icons,Promotional,2026,243,,,,,no
 40917,The Darksaber,Star Wars,Promotional,2026,278,,,,,no
 4200,Mining 4x4,City,Mining,2012,102,,,,,no
@@ -616,8 +697,13 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 5005704,LEGO Star Wars Mystery Box,Star Wars,Product Collection,2018,,,,,,no
 5005747,Black Card Display Stand,Star Wars,Promotional,2018,42,,,,,no
 5006290,Yoda's Lightsaber,Star Wars,Promotional,2020,140,,,,,no
+5007060,The Team-Up Bundle,Super Mario,Product Collection,2021,511,119.98,DE,2021-09-17,2023-10-20,yes
+5007061,The Creative Bundle,Super Mario,Product Collection,2021,1081,129.97,DE,2021-09-17,2022-08-05,yes
+5007062,The Ultimate Bundle,Super Mario,Product Collection,2021,3009,299.95,DE,2021-09-17,2023-03-30,yes
 5007872,Lucas Yoda Fountain,Star Wars,Employee gift,2023,152,,,,,no
 5009086,Gasgano's Podracer,Star Wars,Promotional,2024,150,,,,,no
+5009260,Bricklink 25th Anniversary Giveaway,BrickLink,Promotional,2025,94,,,,,no
+5009551,1x8 Brick #BrickLink25,BrickLink,Promotional,2025,1,,,,,no
 5010204,Grogu in Pram,Star Wars,Promotional,2026,85,,,,,no
 5010305,The Mandalorian & Grogu,Star Wars,Promotional,2026,147,,,,,no
 5010391,Bo Katan,Star Wars,Promotional,2026,133,,,,,no
@@ -1123,25 +1209,6 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 60510,LEGO City Advent Calendar 2026,City,Seasonal,2026,252,26.99,DE,2026-05-02,,no
 60511,Vintage Steam Train,City,Trains,2026,575,89.99,DE,2026-05-03,,no
 60512,Mountain Bike Adventure Van,City,Great Outdoors,2026,260,19.99,DE,2026-05-03,,no
-60513,{?},City,,2027,,,,,,no
-60514,{?},City,,2027,,,,,,no
-60515,{?},City,,2027,,,,,,no
-60516,{?},City,,2027,,,,,,no
-60517,{?},City,,2027,,,,,,no
-60518,{?},City,,2027,,,,,,no
-60519,{?},City,,2027,,,,,,no
-60521,{?},City,,2027,,,,,,no
-60526,{?},City,,2027,,,,,,no
-60527,{?},City,,2027,,,,,,no
-60528,{?},City,,2027,,,,,,no
-60530,{?},City,,2027,,,,,,no
-60532,{?},City,,2027,,,,,,no
-60533,{?},City,,2027,,,,,,no
-60534,{?},City,,2027,,,,,,no
-60535,{?},City,,2027,,,,,,no
-60536,{?},City,,2027,,,,,,no
-60539,{?},City,,2027,,,,,,no
-60541,{?},City,,2027,,,,,,no
 60691,Jungle Explorer Base Camp,City,Jungle Exploration,2024,1019,,,,,no
 60692,The Lost Crocodile Temple,City,Jungle Exploration,2024,294,,,,,no
 60693,Survivor Island Seaplane,City,Jungle Exploration,2024,287,,,,,no
@@ -1173,6 +1240,7 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 6523825,Naboo Fighter,Star Wars,Promotional,2024,45,,,,,no
 6523826,Millennium Falcon,Star Wars,Promotional,2024,20,,,,,no
 6525757,"Darth Vader, Princess Leia, Yoda",Star Wars,Promotional,2024,69,,,,,no
+6527192,Yoshi,Super Mario,Promotional,2024,31,,,,,no
 6528899,Darth Vader,Star Wars,Promotional,2024,30,,,,,no
 6528900,Princess Leia,Star Wars,Promotional,2024,19,,,,,no
 6557633,Soap Box Racer,City,Promotional,2025,39,,,,,no
@@ -1337,12 +1405,14 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 66645,Space Bundle 2 in 1,City,Product Collection,2020,286,,,,,no
 66662,Super Pack 2-in-1,City,Product Collection,2021,137,,,,,no
 66674,Skywalker Adventures Pack,Star Wars,Product Collection,2021,644,,,,,no
+66677,Super Pack,Super Mario,Product Collection,2021,244,,,,,no
 66682,3-in-1 Bundle Pack,City,Product Collection,2021,344,,,,,no
 66684,Vehicles Gift Set,City,Product Collection,2021,279,,,,,no
 66707,LEGO City Stuntz Gift Set,City,Product Collection,2022,40,,,,,no
 66708,Galactic Adventures Pack,Star Wars,Product Collection,2022,901,,,,,no
 66715,NINJAGO Gift Set,Ninjago,Product Collection,2022,429,,,,,no
 66744,CITY 2 in 1 Bundle Pack,City,Product Collection,2023,356,,,,,no
+66749,Character Packs - Series 6 Bundle,Super Mario,Character Pack - Series 6,2023,,,,,,no
 66768,2 in 1 Bundle Pack,City,Product Collection,2023,252,,,,,no
 66772,Big Wheel Gift Set,City,Product Collection,2023,330,,,,,no
 66775,Hoth Combo Pack,Star Wars,Product Collection,2023,691,,,,,no
@@ -1497,12 +1567,91 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 7131,Anakin's Podracer,Star Wars,Episode I,1999,136,,,,,no
 7133,Bounty Hunter Pursuit,Star Wars,Episode II,2002,259,,,,,no
 7134,A-wing Fighter,Star Wars,Episode VI,2000,125,,,,,no
+71360,Adventures with Mario,Super Mario,Starter Course,2020,231,59.99,DE,2020-04-18,2024-06-11,yes
+71361,Paragoomba,Super Mario,Character Pack - Series 1,2020,24,,,,,no
+71362,Guarded Fortress,Super Mario,Expansion Set,2020,468,49.99,DE,2020-08-02,2021-12-14,yes
+71363,Desert Pokey,Super Mario,Expansion Set,2020,180,19.99,DE,2020-08-02,2021-12-14,yes
+71364,Whomp's Lava Trouble,Super Mario,Expansion Set,2020,133,19.99,DE,2020-08-02,2021-11-22,yes
+71365,Piranha Plant Power Slide,Super Mario,Expansion Set,2020,217,29.99,DE,2020-08-02,2021-12-01,yes
+71366,Boomer Bill Barrage,Super Mario,Expansion Set,2020,132,29.99,DE,2020-08-02,2021-12-11,yes
+71367,Mario's House & Yoshi,Super Mario,Expansion Set,2020,205,29.99,DE,2020-08-02,2023-01-03,yes
+71368,Toad's Treasure Hunt,Super Mario,Expansion Set,2020,464,79.99,DE,2020-08-02,2022-08-05,yes
+71369,Bowser's Castle Boss Battle,Super Mario,Expansion Set,2020,1010,99.99,DE,2020-08-02,2021-10-07,yes
+71370,Fire Mario Power-Up Pack ,Super Mario,Power-Up Pack,2020,11,9.99,DE,2020-08-02,2021-09-30,yes
+71371,Propeller Mario Power-Up Pack,Super Mario,Power-Up Pack,2020,13,9.99,DE,2020-08-02,2021-11-15,yes
+71372,Cat Mario Power-Up Pack,Super Mario,Power-Up Pack,2020,11,9.99,DE,2020-08-02,2021-11-16,yes
+71373,Builder Mario Power-Up Pack,Super Mario,Power-Up Pack,2020,10,9.99,DE,2020-08-02,2021-12-24,yes
+71374,Nintendo Entertainment System,Super Mario,Miscellaneous,2020,2646,269.99,DE,2020-08-02,2025-05-24,yes
+71376,Thwomp Drop,Super Mario,Expansion Set,2020,393,39.99,DE,2020-08-02,2023-02-16,yes
+71377,King Boo and the Haunted Yard,Super Mario,Expansion Set,2020,431,49.99,DE,2020-08-02,2021-11-20,yes
+71380,Master Your Adventure,Super Mario,Maker Set,2021,366,59.99,DE,2020-12-27,2022-01-30,yes
+71381,Chain Chomp Jungle Encounter,Super Mario,Expansion Set,2021,160,19.99,DE,2020-12-27,2021-12-14,yes
+71382,Piranha Plant Puzzling Challenge,Super Mario,Expansion Set,2021,267,29.99,DE,2020-12-27,2021-12-11,yes
+71383,Wiggler's Poison Swamp,Super Mario,Expansion Set,2021,374,39.99,DE,2020-12-27,2021-12-25,yes
+71384,Penguin Mario Power-Up Pack,Super Mario,Power-Up Pack,2021,18,9.99,DE,2020-12-27,2022-08-09,yes
+71385,Tanooki Mario Power-Up Pack,Super Mario,Power-Up Pack,2021,13,9.99,DE,2020-12-27,2022-08-11,yes
+71386,Huckit Crab,Super Mario,Character Pack - Series 2,2021,24,,,,,no
+71387,Adventures with Luigi,Super Mario,Starter Course,2021,280,59.99,DE,2021-04-22,2024-07-06,yes
+71388,Boss Sumo Bro Topple,Super Mario,Expansion Set,2021,231,29.99,DE,2021-08-02,2023-10-20,yes
+71389,Lakitu Sky World,Super Mario,Expansion Set,2021,484,39.99,DE,2021-08-02,2022-08-17,yes
 7139,Ewok Attack,Star Wars,Episode VI,2002,121,,,,,no
+71390,Reznor Knockdown,Super Mario,Expansion Set,2021,862,69.99,DE,2021-08-02,2023-04-25,yes
+71391,Bowser's Airship,Super Mario,Expansion Set,2021,1152,99.99,DE,2021-06-24,2022-11-29,yes
+71392,Frog Mario Power-Up Pack,Super Mario,Power-Up Pack,2021,11,9.99,DE,2021-08-02,2023-04-21,yes
+71393,Bee Mario Power-Up Pack,Super Mario,Power-Up Pack,2021,13,9.99,DE,2021-08-02,2023-04-16,yes
+71394,1-Up Mushroom,Super Mario,Character Pack - Series 3,2021,19,,,,,no
+71395,Super Mario 64 Question Mark Block,Super Mario,Miscellaneous,2021,2064,199.99,DE,2021-10-02,2024-06-01,yes
+71396,Bowser Jr.'s Clown Car ,Super Mario,Expansion Set,2022,84,9.99,DE,2022-01-04,2022-12-08,yes
+71397,Luigi's Mansion Lab and Poltergust,Super Mario,Luigi's Mansion,2022,179,24.99,DE,2022-01-04,2022-11-24,yes
+71398,Dorrie's Beachfront ,Super Mario,Expansion Set,2022,229,29.99,DE,2022-01-04,2023-01-05,yes
+71399,Luigi's Mansion Entryway,Super Mario,Luigi's Mansion,2022,504,39.99,DE,2022-01-04,2023-01-03,yes
 7140,X-wing Fighter,Star Wars,Episode IV,1999,266,,,,,no
+71400,Big Urchin Beach Ride,Super Mario,Expansion Set,2022,536,59.99,DE,2022-01-04,2022-12-05,yes
+71401,Luigi's Mansion Haunt-and-Seek,Super Mario,Luigi's Mansion,2022,877,79.99,DE,2022-01-04,2023-03-23,yes
+71402,Freezie,Super Mario,Character Pack - Series 4,2022,27,,,,,no
+71403,Adventures with Peach,Super Mario,Starter Course,2022,354,59.99,DE,2022-08-04,2024-11-13,yes
+71404,Goomba's Shoe,Super Mario,Expansion Set,2022,76,9.99,DE,2022-08-04,2024-07-12,yes
+71405,Fuzzy Flippers,Super Mario,Expansion Set,2022,154,24.99,DE,2022-08-04,2023-10-20,yes
+71406,Yoshi's Gift House,Super Mario,Expansion Set,2022,246,34.99,DE,2022-08-04,2024-01-03,yes
+71407,Cat Peach Suit and Frozen Tower,Super Mario,Expansion Set,2022,494,69.99,DE,2022-08-04,2024-07-12,yes
+71408,Peach's Castle,Super Mario,Expansion Set,2022,1216,129.99,DE,2022-08-04,2025-10-21,yes
+71409,Big Spike's Cloudtop Challenge,Super Mario,Expansion Set,2022,540,69.99,DE,2022-08-04,2024-07-12,yes
 7141,Naboo Fighter,Star Wars,Episode I,1999,179,,,,,no
+71410,Red Yoshi,Super Mario,Character Pack - Series 5,2022,63,,,,,no
+71411,The Mighty Bowser,Super Mario,Miscellaneous,2022,2807,269.99,DE,2022-08-04,2025-12-13,yes
+71412,Big Bad Island,Super Mario,Expansion Set,2022,354,44.99,DE,2022-08-04,2024-07-12,yes
+71413,Blooper,Super Mario,Character Pack - Series 6,2023,46,,,,,no
+71414,Conkdor's Noggin Bopper,Super Mario,Expansion Set,2023,130,14.99,DE,2022-11-18,2024-01-03,yes
+71415,Ice Mario Suit and Frozen World,Super Mario,Expansion Set,2023,105,24.99,DE,2022-11-18,2024-01-03,yes
+71416,Lava Wave Ride,Super Mario,Expansion Set,2023,218,34.99,DE,2022-11-18,2024-01-03,yes
+71417,Fliprus Snow Adventure,Super Mario,Expansion Set,2023,567,64.99,DE,2022-11-18,2024-07-12,yes
+71418,Creativity Toolbox,Super Mario,Maker Set,2023,588,59.99,DE,2022-11-18,2024-01-03,yes
+71419,Peach's Garden Balloon Ride,Super Mario,Expansion Set,2023,453,49.99,DE,2022-11-19,2024-08-21,yes
 7142,X-wing Fighter,Star Wars,Episode IV,2002,267,,,,,no
+71420,Rambi the Rhino,Super Mario,Donkey Kong,2023,106,9.99,DE,2023-04-30,2025-01-08,yes
+71421,Dixie Kong's Jungle Jam,Super Mario,Donkey Kong,2023,174,26.99,DE,2023-04-30,2025-02-12,yes
+71422,Picnic at Mario's House,Super Mario,Expansion Set,2023,259,37.99,DE,2023-06-04,2025-10-14,yes
+71423,Dry Bowser Castle Battle,Super Mario,Expansion Set,2023,1321,104.99,DE,2023-03-12,2024-11-24,yes
+71424,Donkey Kong's Tree House,Super Mario,Donkey Kong,2023,555,64.99,DE,2023-04-30,2024-12-10,yes
+71425,Diddy Kong's Mine Cart Ride,Super Mario,Donkey Kong,2023,1157,104.99,DE,2023-04-30,2025-10-14,yes
+71426,Piranha Plant,Super Mario,Miscellaneous,2023,540,64.99,DE,2023-09-22,2026-08-19,yes
+71427,Larry's and Morton's Airships,Super Mario,Expansion Set,2023,1062,84.99,DE,2023-07-03,2025-01-01,yes
+71428,Yoshis' Egg-cellent Forest,Super Mario,Expansion Set,2024,107,9.99,DE,2023-11-16,2024-11-25,yes
+71429,Nabbit at Toad's Shop,Super Mario,Expansion Set,2024,230,19.99,DE,2023-11-04,2025-01-11,yes
 7143,Jedi Starfighter,Star Wars,Episode II,2002,138,,,,,no
+71430,Penguin Family Snow Adventure,Super Mario,Expansion Set,2024,228,19.99,DE,2023-11-04,2024-11-28,yes
+71431,Bowser's Muscle Car,Super Mario,Expansion Set,2024,458,29.99,DE,2023-11-16,2025-06-25,yes
+71432,Dorrie's Sunken Shipwreck Adventure,Super Mario,Expansion Set,2024,500,44.99,DE,2023-11-16,2024-11-30,yes
+71433,Goombas' Playground,Super Mario,Expansion Set,2024,173,14.99,DE,2024-05-02,2025-06-25,yes
+71434,Soda Jungle Maker Set,Super Mario,Maker Set,2024,598,54.99,DE,2024-05-02,2026-01-29,yes
+71435,Battle with Roy at Peach's Castle,Super Mario,Expansion Set,2024,738,64.99,DE,2024-03-10,2025-10-26,yes
+71436,King Boo's Haunted Mansion,Super Mario,Expansion Set,2024,932,74.99,DE,2024-03-10,2025-12-24,yes
+71437,The Bowser Express Train,Super Mario,Expansion Set,2024,1392,119.99,DE,2024-03-10,2025-10-18,yes
+71438,Super Mario World: Mario & Yoshi,Super Mario,Miscellaneous,2024,1215,129.99,DE,2024-07-26,,no
+71439,Adventures with Interactive LEGO Mario,Super Mario,Starter Course,2024,218,49.99,DE,2024-05-02,2026-08-13,yes
 7144,Slave I,Star Wars,Episode V,2000,166,,,,,no
+71440,Adventures with Interactive LEGO Luigi,Super Mario,Starter Course,2024,210,49.99,DE,2024-05-02,2026-10-09,yes
+71441,Adventures with Interactive LEGO Peach,Super Mario,Starter Course,2024,208,49.99,DE,2024-05-02,,no
 7146,TIE Fighter,Star Wars,Episode IV,2001,171,,,,,no
 7150,TIE Fighter & Y-wing,Star Wars,Episode IV,1999,409,,,,,no
 7151,Sith Infiltrator,Star Wars,Episode I,1999,244,,,,,no
@@ -1680,24 +1829,40 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 71872,Ultra Dragon Battle,Ninjago,Legends,2026,2178,199.99,DE,2026-05-03,,no
 71873,Cole vs. Evil Cole Spinner,Ninjago,Spinner Battle,2027,58,9.99,DE,2026-10-03,,no
 71875,Lloyd vs. Ras Spinner Battle,Ninjago,Spinner Battle,2027,153,19.99,DE,2026-10-03,,no
-71876,{?},Ninjago,,2027,,,,,,no
-71877,{?},Ninjago,,2027,,,,,,no
-71879,{?},Ninjago,,2027,,,,,,no
-71880,{?},Ninjago,,2027,,,,,,no
-71881,{?},Ninjago,,2027,,,,,,no
-71882,{?},Ninjago,,2027,,,,,,no
-71883,{?},Ninjago,,2027,,,,,,no
-71887,{?},Ninjago,,2027,,,,,,no
-71888,{?},Ninjago,,2027,,,,,,no
-71889,{?},Ninjago,,2027,,,,,,no
 7190,Millennium Falcon,Star Wars,Episode IV,2000,663,,,,,no
 7191,X-wing Fighter,Star Wars,Ultimate Collector Series,2000,1300,,,,,no
 7194,Yoda,Star Wars,Ultimate Collector Series,2002,1075,,,,,no
 7200,Final Duel I,Star Wars,Episode VI,2002,29,,,,,no
 7201,Final Duel II,Star Wars,Episode VI,2002,23,,,,,no
 7203,Jedi Defense I,Star Wars,Episode I,2002,59,,,,,no
+72031,Yoshi Bike,Super Mario,Mario Kart,2025,133,14.99,DE,2024-09-26,2026-07-28,yes
+72032,Standard Kart,Super Mario,Mario Kart,2025,174,19.99,DE,2024-09-26,2026-08-07,yes
+72033,Donkey Kong & DK Jumbo,Super Mario,Mario Kart,2025,387,34.99,DE,2024-09-26,2025-12-17,yes
+72034,Baby Mario vs. Baby Luigi,Super Mario,Mario Kart,2025,321,29.99,DE,2024-09-26,2026-07-09,yes
+72035,Toad's Garage,Super Mario,Mario Kart,2025,390,39.99,DE,2024-09-26,2026-10-06,yes
+72036,Baby Peach & Grand Prix Set,Super Mario,Mario Kart,2025,823,79.99,DE,2024-09-26,,no
+72037,Mario Kart - Mario & Standard Kart,Super Mario,Mario Kart,2025,1972,169.99,DE,2025-03-11,,no
+72038,Wario & King Boo,Super Mario,Mario Kart,2025,512,49.99,DE,2025-05-21,,no
+72039,Bowser's Castle,Super Mario,Mario Kart,2025,1068,99.99,DE,2025-05-21,,no
 7204,Jedi Defense II,Star Wars,Episode I,2002,53,,,,,no
+72040,Captain Toad's Camp,Super Mario,Expansion Set,2025,159,14.99,DE,2025-05-21,2026-07-11,yes
+72041,Party at Toad's House,Super Mario,Expansion Set,2025,276,29.99,DE,2025-05-21,,no
+72042,Prince Florian & Castle Bowser,Super Mario,Expansion Set,2025,1251,99.99,DE,2025-05-21,2026-06-25,yes
+72043,Interactive LEGO Mario & Standard Kart,Super Mario,Mario Kart,2025,278,49.99,DE,2025-05-21,2026-08-12,yes
+72044,Piranha Plant Power-Up Pursuit,Super Mario,Mario Kart,2025,588,49.99,DE,2025-07-03,,no
+72045,Shy Guy & P-Wing,Super Mario,Mario Kart,2025,249,19.99,DE,2025-07-03,,no
+72046,Game Boy,Super Mario,Miscellaneous,2025,421,59.99,DE,2025-07-25,,no
+72050,Mario Kart – Luigi & Mach 8,Super Mario,Mario Kart,2026,2234,179.99,DE,2026-03-11,,no
+72051,Donkey Kong Arcade,Super Mario,Donkey Kong,2026,1367,169.99,DE,2026-07-24,,no
+72052,Mario's Pipe Jump,Super Mario,,2027,61,9.99,DE,2026-08-27,,no
+72054,Racing with Mario,Super Mario,Mario Kart,2027,84,14.99,DE,2026-08-27,,no
+72055,Mario's Beach Adventures,Super Mario,,2027,196,19.99,DE,2026-08-27,,no
+72056,Luigi & Bowser Jr.'s Race,Super Mario,Mario Kart,2027,104,29.99,DE,2026-08-27,,no
+72057,Yoshi at Mario's House,Super Mario,,2027,147,39.99,DE,2026-08-27,,no
+72058,Bowser's Rumbling Race,Super Mario,Mario Kart,2027,409,59.99,DE,2026-08-27,,no
 7206,Fire Helicopter,City,Fire,2010,342,,,,,no
+72060,Fire Mario & Bowser's Castle,Super Mario,,2027,850,99.99,DE,2026-08-27,,no
+72061,Fire Luigi vs. Koopa Troopa Battle,Super Mario,,2027,241,29.99,DE,2026-08-27,,no
 7207,Fire Boat,City,Fire,2010,306,,,,,no
 7208,Fire Station,City,Fire,2010,662,,,,,no
 7213,Off-Road Fire Truck & Fireboat,City,Fire,2010,388,,,,,no
@@ -2174,36 +2339,6 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 75459,Imperial Lambda-class Shuttle,Star Wars,The Mandalorian,2026,961,149.99,DE,2026-05-05,,no
 75460,New Republic X-wing Starfighter,Star Wars,The Mandalorian and Grogu,2026,558,69.99,DE,2026-02-14,,no
 75461,Up-Scaled Darth Vader Minifigure,Star Wars,Up-Scaled Minifigure,2026,1028,99.99,DE,2026-05-04,,no
-75462,{?},Star Wars,,2027,,,,,,no
-75463,{?},Star Wars,,2027,,,,,,no
-75464,{?},Star Wars,,2027,,,,,,no
-75465,{?},Star Wars,,2027,,,,,,no
-75466,{?},Star Wars,,2027,,,,,,no
-75467,{?},Star Wars,,2027,,,,,,no
-75468,{?},Star Wars,,2027,,,,,,no
-75469,{?},Star Wars,,2027,,,,,,no
-75470,{?},Star Wars,,2027,,,,,,no
-75471,{?},Star Wars,,2027,,,,,,no
-75472,{?},Star Wars,,2027,,,,,,no
-75473,{?},Star Wars,,2027,,,,,,no
-75474,{?},Star Wars,,2027,,,,,,no
-75475,{?},Star Wars,,2027,,,,,,no
-75476,{?},Star Wars,,2027,,,,,,no
-75477,{?},Star Wars,,2027,,,,,,no
-75478,{?},Star Wars,,2027,,,,,,no
-75480,{?},Star Wars,,2027,,,,,,no
-75481,{?},Star Wars,,2027,,,,,,no
-75482,{?},Star Wars,,2027,,,,,,no
-75483,{?},Star Wars,,2027,,,,,,no
-75484,{?},Star Wars,,2027,,,,,,no
-75487,{?},Star Wars,,2027,,,,,,no
-75488,{?},Star Wars,,2027,,,,,,no
-75489,{?},Star Wars,,2027,,,,,,no
-75490,{?},Star Wars,,2027,,,,,,no
-75491,{?},Star Wars,,2027,,,,,,no
-75492,{?},Star Wars,,2027,,,,,,no
-75494,{?},Star Wars,,2027,,,,,,no
-75495,{?},Star Wars,,2027,,,,,,no
 75512,Millennium Falcon Cockpit,Star Wars,Promotional,2018,203,,,,,no
 75522,Mini Boost Droid Commander,Star Wars,Promotional,2019,62,,,,,no
 75523,Scarif Stormtrooper,Star Wars,Buildable Figures,2017,89,24.99,DE,2016-12-17,2017-09-03,yes
@@ -2223,7 +2358,6 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 75537,Darth Maul,Star Wars,Buildable Figures,2018,104,29.99,DE,2018-04-14,2019-01-09,yes
 75538,Super Battle Droid,Star Wars,Buildable Figures,2018,,,,,,no
 75539,501st Legion Clone Trooper & AT-RT Walker,Star Wars,Buildable Figures,2018,,,,,,no
-75659,{?},Star Wars,,2027,,,,,,no
 7566,Farmer,City,Farm,2010,16,,,,,no
 7567,Traveller,City,Airport,2010,21,,,,,no
 7630,Front-End Loader,City,Construction,2009,108,,,,,no
@@ -2297,6 +2431,7 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 7778,Midi-scale Millennium Falcon,Star Wars,Episode IV,2009,356,,,,,no
 77901,Sith Trooper Bust,Star Wars,Promotional,2019,484,,,,,no
 77904,Nebulon-B Frigate,Star Wars,Promotional,2020,459,,,,,no
+77907,Toad's Special Hideaway,Super Mario,Expansion Set,2020,120,,,,,no
 77943,Fire Station Starter Set,City,Fire,2021,239,,,,,no
 77944,Fire Station Headquarters,City,Fire,2021,908,,,,,no
 7848,Toys R Us Truck,City,Traffic,2010,356,,,,,no
@@ -2554,6 +2689,66 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 892511,Kai,Ninjago,Magazine Gift,2025,6,,,,,no
 892512,Cole,Ninjago,Magazine Gift,2025,1,,,,,no
 892513,Frak,Ninjago,Magazine Gift,2025,7,,,,,no
+910001,Castle in the Forest,BrickLink,2021 Designer Program,2021,1957,,,,,no
+910002,Studgate Train Station,BrickLink,2021 Designer Program,2023,4076,,,,,no
+910003,Mountain Windmill,BrickLink,2021 Designer Program,2022,2085,,,,,no
+910004,Winter Chalet,BrickLink,2021 Designer Program,2023,2705,,,,,no
+910008,Modular Construction Site,BrickLink,2021 Designer Program,2023,3371,,,,,no
+910009,Modular LEGO Store,BrickLink,2021 Designer Program,2022,2149,,,,,no
+910010,The Great Fishing Boat,BrickLink,2021 Designer Program,2021,1609,,,,,no
+910011,1950s Diner,BrickLink,2021 Designer Program,2023,1379,,,,,no
+910013,Retro Bowling Alley,BrickLink,2021 Designer Program,2022,2779,,,,,no
+910015,Clockwork Aquarium,BrickLink,2021 Designer Program,2022,874,,,,,no
+910016,Sheriff's Safe,BrickLink,2021 Designer Program,2021,580,,,,,no
+910017,Kakapo,BrickLink,2021 Designer Program,2021,1063,,,,,no
+910023,Venetian Houses,BrickLink,2021 Designer Program,2022,3470,,,,,no
+910027,Mountain View Observatory,BrickLink,2021 Designer Program,2023,3876,,,,,no
+910028,Pursuit of Flight,BrickLink,2021 Designer Program,2021,541,,,,,no
+910029,Mountain Fortress,BrickLink,Designer Program Series 1,2024,3995,,,,,no
+910030,Snack Shack,BrickLink,Designer Program Series 1,2024,539,44.99,DE,2024-02-08,2024-02-08,yes
+910031,General Store,BrickLink,Designer Program Series 1,2024,1906,139.99,DE,2024-02-08,2024-02-28,yes
+910032,Parisian Street,BrickLink,Designer Program Series 1,2024,3532,289.99,DE,2024-02-08,2024-02-28,yes
+910033,Old Train Engine Shed,BrickLink,Designer Program Series 1,2024,2331,219.99,DE,2024-02-08,2024-02-08,yes
+910034,Brick Cross Train Station,BrickLink,Designer Program Series 2,2024,3050,,,,,no
+910035,Logging Railway,BrickLink,Designer Program Series 2,2024,2731,189.99,DE,2024-06-07,2025-09-14,yes
+910036,Ocean House,BrickLink,Designer Program Series 2,2024,2207,179.99,DE,2024-06-07,2025-09-19,yes
+910037,Mushroom House,BrickLink,Designer Program Series 2,2024,964,,,,,no
+910038,Ominous Isle,BrickLink,Designer Program Series 2,2024,2809,219.99,DE,2024-06-07,2025-09-17,yes
+910039,The Art of Chocolate,BrickLink,Designer Program Series 3,2025,2615,209.99,DE,2024-10-09,2024-10-31,yes
+910040,Harbourmaster's Office,BrickLink,Designer Program Series 3,2025,2418,179.99,DE,2024-10-09,2024-10-31,yes
+910041,Camping Adventure,BrickLink,Designer Program Series 3,2025,669,49.99,DE,2024-10-09,2024-10-09,yes
+910042,Lost City,BrickLink,Designer Program Series 3,2025,3506,269.99,DE,2024-10-09,2024-10-31,yes
+910043,Forest Stronghold,BrickLink,Designer Program Series 3,2025,3395,,,,,no
+910044,Wild West Train,BrickLink,Designer Program Series 4,2025,3192,279.99,DE,2025-02-05,2026-02-18,yes
+910045,Siege Encampment,BrickLink,Designer Program Series 4,2025,2598,,,,,no
+910046,Merchant Boat,BrickLink,Designer Program Series 4,2025,2180,169.99,DE,2025-02-05,2026-02-18,yes
+910047,Medieval Seaside Market,BrickLink,Designer Program Series 4,2025,2560,,,,,no
+910048,Riverside Scholars,BrickLink,Designer Program Series 4,2025,2769,199.99,DE,2025-02-05,2025-03-02,yes
+910049,Adventure in Transylvania,BrickLink,Designer Program Series 5,2025,4056,349.99,DE,2025-06-11,2026-04-21,yes
+910050,Antique Shop,BrickLink,Designer Program Series 5,2025,1918,149.99,DE,2025-06-11,2025-06-25,yes
+910051,Mushroom Village,BrickLink,Designer Program Series 5,2025,2436,209.99,DE,2025-06-11,2026-04-29,yes
+910052,Popcorn Wagon,BrickLink,Designer Program Series 5,2025,594,54.99,DE,2025-06-11,2026-04-21,yes
+910053,The Thieves of Tortuga,BrickLink,Designer Program Series 5,2025,4002,339.99,DE,2025-06-11,2026-04-22,yes
+910054,The Art Factory,BrickLink,Designer Program Series 6,2025,2256,229.99,DE,2025-10-07,2025-10-13,yes
+910055,Gold Mine Expedition,BrickLink,Designer Program Series 6,2025,3382,299.99,DE,2025-10-07,2026-09-30,yes
+910056,Off-Road Adventure,BrickLink,Designer Program Series 6,2025,978,79.99,DE,2025-10-07,2025-10-13,yes
+910057,Outlaw Forest Den,BrickLink,Designer Program Series 6,2025,2618,229.99,DE,2025-10-07,2025-10-13,yes
+910058,Sequoia Tree Trail,BrickLink,Designer Program Series 6,2025,3187,269.99,DE,2025-10-07,2025-10-13,yes
+910059,Privateer Frigate Fortuna,BrickLink,Designer Program Series 7,2026,4087,349.99,DE,2026-02-17,2026-02-23,yes
+910060,Sushi Restaurant,BrickLink,Designer Program Series 7,2026,3604,279.99,DE,2026-02-17,2026-02-23,yes
+910061,Antique Collection,BrickLink,Designer Program Series 7,2026,1504,109.99,DE,2026-02-17,2026-02-23,yes
+910062,Alchemist's Shop,BrickLink,Designer Program Series 7,2026,2319,199.99,DE,2026-02-17,2026-02-23,yes
+910063,W.A.L.T.,BrickLink,Designer Program Series 7,2026,654,39.99,DE,2026-02-17,2026-02-23,yes
+910064,Dustmark Keep,BrickLink,Designer Program Series 8,2026,3960,349.99,DE,2026-06-10,2026-06-21,yes
+910065,Coconut Cape,BrickLink,Designer Program Series 8,2026,2384,209.99,DE,2026-06-10,2026-06-21,yes
+910066,Brick Railroad Locomotive,BrickLink,Designer Program Series 8,2026,1348,119.99,DE,2026-06-10,2026-06-21,yes
+910067,Hot Air Balloon,BrickLink,Designer Program Series 8,2026,883,79.99,DE,2026-06-10,2026-06-21,yes
+910068,University of Science,BrickLink,Designer Program Series 8,2026,3991,359.99,DE,2026-06-10,2026-06-21,yes
+910069,Fisherman's Village,BrickLink,Designer Program Series 9,2027,4027,349.99,DE,2026-10-07,,no
+910070,Sleepy Dragon Inn,BrickLink,Designer Program Series 9,2027,3121,269.99,DE,2026-10-07,,no
+910071,Wild West Blacksmith,BrickLink,Designer Program Series 9,2027,2533,219.99,DE,2026-10-07,,no
+910072,Woodbrick Freight Depot,BrickLink,Designer Program Series 9,2027,2252,219.99,DE,2026-10-07,,no
+910073,Pumpkin Patch,BrickLink,Designer Program Series 9,2027,613,49.99,DE,2026-10-07,,no
 911506,Snowspeeder,Star Wars,Magazine Gift,2015,19,,,,,no
 911508,Slave I,Star Wars,Magazine Gift,2015,20,,,,,no
 911509,Imperial Shooter,Star Wars,Magazine Gift,2015,20,,,,,no
@@ -2682,6 +2877,8 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 912511,Clone Shock Trooper,Star Wars,Magazine Gift,2025,6,,,,,no
 912512,U-wing,Star Wars,Magazine Gift,2025,37,,,,,no
 912513,Jango Fett's Starship,Star Wars,Magazine Gift,2025,38,,,,,no
+92176,NASA Apollo Saturn V,Ideas,NASA,2020,1969,119.99,DE,2020-11-02,2022-11-29,yes
+92177,Ship in a Bottle,Ideas,,2020,962,69.99,DE,2021-01-02,2021-11-15,yes
 9440,Venomari Shrine,Ninjago,Rise of the Snakes,2012,86,,,,,no
 9441,Kai's Blade Cycle,Ninjago,Rise of the Snakes,2012,188,,,,,no
 9442,Jay's Storm Fighter,Ninjago,Rise of the Snakes,2012,243,,,,,no
@@ -2848,6 +3045,19 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,first_available,last_avail
 9677,X-wing Starfighter & Yavin 4,Star Wars,Planet Set,2012,77,,,,,no
 9678,Twin-Pod Cloud Car & Bespin,Star Wars,Planet Set,2012,78,,,,,no
 9679,AT-ST & Endor,Star Wars,Planet Set,2012,65,,,,,no
+BL19001,Löwenstein Castle,BrickLink,AFOL Designer Program,2019,2015,,,,,no
+BL19002,Antique Fire Engine,BrickLink,AFOL Designer Program,2019,1278,,,,,no
+BL19003,Skyline Express,BrickLink,AFOL Designer Program,2019,1365,,,,,no
+BL19004,Wild West Saloon,BrickLink,AFOL Designer Program,2019,1496,,,,,no
+BL19005,Isle of Peril,BrickLink,AFOL Designer Program,2019,1301,,,,,no
+BL19006,Eight Studs,BrickLink,AFOL Designer Program,2019,1393,,,,,no
+BL19007,Science Tower,BrickLink,AFOL Designer Program,2019,1204,,,,,no
+BL19008,The LEGO Story,BrickLink,AFOL Designer Program,2019,1442,,,,,no
+BL19009,Imagine it! Build it!,BrickLink,AFOL Designer Program,2019,924,,,,,no
+BL19010,Hot Shot Carnival ,BrickLink,AFOL Designer Program,2019,591,,,,,no
+BL19011,Vintage Roadster,BrickLink,AFOL Designer Program,2019,474,,,,,no
+BL19012,Bikes!,BrickLink,AFOL Designer Program,2019,519,,,,,no
+BL19013,Steampunk Mini Chess,BrickLink,AFOL Designer Program,2019,371,,,,,no
 BOBAFETT1,White Boba Fett minifig and Star Wars book,Star Wars,Promotional,2010,5,,,,,no
 CELEB2012,Mini Slave I,Star Wars,Promotional,2012,80,,,,,no
 CELEB2015,Tatooine Mini-build,Star Wars,Promotional,2015,178,,,,,no
@@ -2915,6 +3125,7 @@ LOTRSWORD,Sword,The Lord of the Rings,Promotional,2012,31,,,,,no
 LUKE,Luke Skywalker,Star Wars,Promotional,2019,87,,,,,no
 LUKESFE,Luke,Star Wars,Promotional,2019,,,,,,no
 MAY2013,Holocron Droid,Star Wars,Promotional,2013,31,,,,,no
+NL2023,Green Yoshi,Super Mario,Promotional,2023,31,,,,,no
 NYCC2013,Yoda Display Box,Star Wars,Promotional,2013,,,,,,no
 PORG,Porg,Star Wars,Promotional,2018,75,,,,,no
 PROMOSW002,Anakin Skywalker (International Toy Fair 2005 Exclusive Figure),Star Wars,Promotional,2005,,,,,,no
