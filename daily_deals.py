@@ -1,7 +1,7 @@
 """Daily Lego deals digest.
 Vinted (newest 'lego' listings) -> set number from title -> sets.csv official
 price -> discount filter -> Telegram message.
-Env: TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, DRY_RUN (true = print only, keep state).
+Env: TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, RUN_MODE (dry-run | live | scheduled), DRY_RUN (true = print only).
 Requires: pip install curl_cffi requests"""
 import csv
 import html
@@ -356,12 +356,14 @@ def today_str():
 def main():
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(line_buffering=True)  # show progress live in the Actions log
-    dry = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
+    mode = os.environ.get("RUN_MODE", "").strip().lower()  # set by the GitHub workflow
+    dry = mode == "dry-run" or os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
     out = (lambda t: print("\n--- MESSAGE ---\n" + t)) if dry else send_telegram
     catalogue = load_catalogue()
     state = load_state()
     slot = None
-    if os.environ.get("GITHUB_EVENT_NAME") == "schedule":
+    # The Madrid-time slot guard applies to GitHub cron runs and to the external scheduler ("scheduled")
+    if os.environ.get("GITHUB_EVENT_NAME") == "schedule" or mode == "scheduled":
         slot = schedule_slot(state)
         if slot is None:
             return
