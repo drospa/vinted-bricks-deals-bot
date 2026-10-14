@@ -67,7 +67,7 @@ MAX_SW_FIGURES = 15       # identified Star Wars loose figures shown per message
 
 # Unidentified LOTR listings that are not LEGO sets (video games, puzzles, keychains, knock-off bricks)
 LOTR_JUNK = re.compile(
-    r"\b(ps[345]|xbox|playstation|nintendo|wii|3ds|2ds|ds|pc|jeu|juego|videojuego|game|puzzle|dimensions"
+    r"\b(ps[345]|ps ?vita|psp|xbox|playstation|nintendo|wii|3ds|2ds|ds|pc|jeu|juego|jogo|jogos|videojuego|game|puzzle|dimensions"
     r"|llavero|keychain|porte[- ]cl[eé]s?|bloques|bausteine)\b", re.I)
 
 # Lord of the Rings: no discount filter, every finding is listed
