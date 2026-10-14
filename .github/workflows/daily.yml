@@ -1,18 +1,23 @@
 name: daily-deals
 on:
   schedule:
-    # GitHub cron is UTC-only. These four cover 09:30 and 14:00 Madrid in both summer (UTC+2)
-    # and winter (UTC+1) time; daily_deals.py keeps exactly one run per Madrid slot.
+    # Backup trigger. GitHub cron is UTC-only and was not firing reliably, so the external scheduler
+    # is the primary trigger. Both go through the same Madrid-time slot guard in daily_deals.py,
+    # so a slot is never processed twice.
     - cron: "35 7 * * *"    # 09:35 Madrid in summer
     - cron: "35 8 * * *"    # 09:35 Madrid in winter
     - cron: "7 12 * * *"    # 14:07 Madrid in summer
     - cron: "7 13 * * *"    # 14:07 Madrid in winter
   workflow_dispatch:
     inputs:
-      dry_run:
-        description: "Print the digest in the log instead of sending it (state is not saved)"
-        type: boolean
-        default: true
+      mode:
+        description: "dry-run: print only, send nothing, save nothing | live: send now | scheduled: used by the external scheduler"
+        type: choice
+        options:
+          - dry-run
+          - live
+          - scheduled
+        default: dry-run
 
 permissions:
   contents: write
@@ -35,9 +40,9 @@ jobs:
           PYTHONUNBUFFERED: "1"
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          DRY_RUN: ${{ inputs.dry_run }}
+          RUN_MODE: ${{ inputs.mode }}
       - name: Save state
-        if: success() && !inputs.dry_run
+        if: success() && inputs.mode != 'dry-run'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
