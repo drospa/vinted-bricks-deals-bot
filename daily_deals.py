@@ -52,7 +52,7 @@ NUM_RE = re.compile(
 # Extra exclusions (all themes): knock-offs, BrickHeadz LOTR, numbered instruction booklets
 EXTRA_EXCLUDE = re.compile(
     r"\b(type lego|tipo lego|estilo lego|style lego|no ?lego|not lego|r[ée]plique|r[ée]plica|replica"
-    r"|brick ?-?heads?|brickz?headz|(?:4063[0-2]){1,3}"  # BrickHeadz LOTR (40630-40632)
+    r"|compatibles?|compat[ií]vel|compatibili?e?|kompatibel|botanicals?|brick ?-?heads?|brickz?headz|(?:4063[0-2]){1,3}"  # BrickHeadz LOTR (40630-40632)
     r"|(istruzioni|instrucciones|instructions|anleitung|notice|manual)\s*(n[°º.]?\s*)?\d+)\b", re.I)
 # Loose figures: excluded for every theme EXCEPT Star Wars and Lord of the Rings
 _FROM_SET = r"(from|out of|del|du|dal|aus dem)\s+(the\s+|el\s+|le\s+|il\s+)?(set|lot)"
@@ -181,12 +181,14 @@ def load_catalogue(path=CATALOGUE):
                 rrp = None
             cat[row["number"]] = {
                 "name": row["name"], "theme": row["theme"], "rrp": rrp,
+                "subtheme": row.get("subtheme") or "",
                 "retired": row["retired"] == "yes",
             }
     return cat
 
 
-def find_set(title, catalogue):
+def find_sets(title, catalogue):
+    """All distinct catalogue set numbers in the title, in order of appearance."""
     found = []
     for m in NUM_RE.finditer(title):
         n = m.group(1)
@@ -194,7 +196,28 @@ def find_set(title, catalogue):
             continue
         if n in catalogue and n not in found:
             found.append(n)
-    return found[0] if len(found) == 1 else None
+    return found
+
+
+def combine(nums, catalogue):
+    """One entry for a title with one or several sets. For a lot the price reference is the sum
+    of the official prices, but only when every set in the lot has one."""
+    cs = [catalogue[n] for n in nums]
+    if len(cs) == 1:
+        return nums[0], {**cs[0], "lot": False, "known_rrp": cs[0]["rrp"], "known_nums": nums[:]}
+    rrps = [c["rrp"] for c in cs]
+    known = [(n, c["rrp"]) for n, c in zip(nums, cs) if c["rrp"]]
+    themes = list(dict.fromkeys(c["theme"] for c in cs))
+    return " + ".join(nums), {
+        "name": " + ".join(dict.fromkeys(c["name"] for c in cs)),
+        "theme": " / ".join(themes),
+        "rrp": sum(rrps) if all(rrps) else None,
+        "known_rrp": sum(r for _, r in known) if known else None,
+        "known_nums": [n for n, _ in known],
+        "retired": all(c["retired"] for c in cs),
+        "subtheme": " / ".join(dict.fromkeys(c["subtheme"] for c in cs if c["subtheme"])),
+        "lot": True,
+    }
 
 
 def evaluate(items, catalogue):
@@ -205,10 +228,16 @@ def evaluate(items, catalogue):
         if EXCLUDE.search(t) or EXTRA_EXCLUDE.search(t):
             stats["excluded"] += 1
             continue
-        num = find_set(t, catalogue)
-        c = catalogue.get(num) if num else None
-        is_lotr = bool((c and LOTR_THEME.search(c["theme"] or "")) or (not c and LOTR_NAME.search(t)))
-        is_sw = bool((c and c["theme"] == "Star Wars") or (not c and SW_NAME.search(t)))
+        nums = find_sets(t, catalogue)
+        if nums:
+            kept = [n for n in nums if "botanical" not in catalogue[n]["subtheme"].lower()]
+            if not kept:  # only Botanical Collection sets in the title
+                stats["excluded"] += 1
+                continue
+            nums = kept
+        num, c = combine(nums, catalogue) if nums else (None, None)
+        is_lotr = bool((c and LOTR_THEME.search(f"{c['theme']} {c['subtheme']}")) or (not c and LOTR_NAME.search(t)))
+        is_sw = bool((c and "Star Wars" in c["theme"]) or (not c and SW_NAME.search(t)))
         if not (is_lotr or is_sw) and FIG_EXCL.search(t):
             stats["excluded"] += 1
             continue
@@ -220,7 +249,10 @@ def evaluate(items, catalogue):
             rrp = c["rrp"] if c else None
             disc = (1 - it["price"] / rrp) if rrp and it["price"] else None
             lotr.append({**it, "set_no": num or "?", "set_name": c["name"] if c else "set not identified",
-                         "rrp": rrp, "retired": bool(c and c["retired"]), "discount": disc, "figure": is_fig})
+                         "rrp": rrp, "retired": bool(c and c["retired"]), "discount": disc, "figure": is_fig,
+                         "lot": bool(c and c["lot"]),
+                         "known_rrp": c["known_rrp"] if c else None,
+                         "known_nums": c["known_nums"] if c else []})
             if c:
                 stats["matched"] += 1
             continue
@@ -238,7 +270,7 @@ def evaluate(items, catalogue):
         is_new = it["condition"].lower().startswith("nuevo")
         if discount >= (MIN_DISCOUNT_NEW if is_new else MIN_DISCOUNT_USED):
             deals.append({**it, "set_no": num, "set_name": c["name"], "theme": c["theme"],
-                          "rrp": c["rrp"], "retired": c["retired"], "discount": discount})
+                          "rrp": c["rrp"], "retired": c["retired"], "discount": discount, "lot": c["lot"]})
     deals.sort(key=lambda d: d["discount"], reverse=True)
     lotr.sort(key=lambda d: (d["discount"] is None, -(d["discount"] or 0)))
     suspicious = [d for d in deals if d["discount"] >= TOO_GOOD]
@@ -255,7 +287,7 @@ def build_messages(deals, suspicious, lotr, sw_figs, stats, warnings, today):
         f" · {len(sw_figs)} Star Wars figures" if sw_figs else "")
     blocks = []
     for i, d in enumerate(deals[:MAX_ITEMS], 1):
-        flags = " 🏷️ retired" if d["retired"] else ""
+        flags = (" 🏷️ retired" if d["retired"] else "") + (" 📦 lot" if d.get("lot") else "")
         blocks.append(
             f"\n{i}. <b>{esc(d['set_no'])} {esc(d['set_name'])}</b>\n"
             f"{d['price']:.0f}€ vs {d['rrp']:.0f}€ (−{d['discount'] * 100:.0f}%) · "
@@ -276,11 +308,17 @@ def build_messages(deals, suspicious, lotr, sw_figs, stats, warnings, today):
         blocks.append("\n🧙 <b>Lord of the Rings</b> (all listings, no discount filter):")
         for d in lotr:
             price = f"{d['price']:.0f}€" if d["price"] else "?"
-            ref = (f" vs {d['rrp']:.0f}€ ({-d['discount'] * 100:+.0f}%)" if d["discount"] is not None
-                   else ("" if d["set_no"] == "?" else " (no official price)"))
+            if d["discount"] is not None:
+                ref = f" vs {d['rrp']:.0f}€ ({-d['discount'] * 100:+.0f}%)"
+            elif d["set_no"] == "?":
+                ref = ""
+            elif d.get("lot") and d.get("known_rrp"):
+                ref = f" (lot; official price only known for {' + '.join(d['known_nums'])}: {d['known_rrp']:.0f}€)"
+            else:
+                ref = " (no official price)"
             blocks.append(
                 f"\n• <b>{esc(d['set_no'])} {esc(d['set_name'])}</b>: {price}{ref} · {esc(d['condition'])}"
-                f"{' 🏷️ retired' if d['retired'] else ''}{' 🧍 figure' if d.get('figure') else ''} · <a href=\"{esc(d['url'], quote=True)}\">link</a>")
+                f"{' 🏷️ retired' if d['retired'] else ''}{' 📦 lot' if d.get('lot') else ''}{' 🧍 figure' if d.get('figure') else ''} · <a href=\"{esc(d['url'], quote=True)}\">link</a>")
     if suspicious:
         blocks.append("\n⚠️ <b>Too good to be true</b> (likely parts, minifigs or mis-titled):")
         for d in suspicious[:MAX_SUSPICIOUS]:
