@@ -2,26 +2,26 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 10018,Darth Maul,Star Wars,Ultimate Collector Series,2001,1868,,,,,,,yes
 10019,Rebel Blockade Runner,Star Wars,Ultimate Collector Series,2001,1747,,,,,,,yes
 10026,Special Edition Naboo Starfighter,Star Wars,Ultimate Collector Series,2002,187,,,,,,,yes
-10030,Imperial Star Destroyer,Star Wars,Ultimate Collector Series,2002,3096,296.25,UK,yes,,2007-10-24,2008-02-08,yes
+10030,Imperial Star Destroyer,Star Wars,Ultimate Collector Series,2002,3096,269.99,US,yes,,2007-10-24,2008-11-26,yes
 10123,Cloud City,Star Wars,Episode V,2003,698,,,,,,,yes
 10129,Rebel Snowspeeder,Star Wars,Ultimate Collector Series,2003,1457,,,,,,,yes
 10131,TIE Fighter Collection,Star Wars,Legends,2004,682,,,,,,,yes
 10134,Y-wing Attack Starfighter,Star Wars,Ultimate Collector Series,2004,1473,,,,,,,yes
-10143,Death Star II,Star Wars,Ultimate Collector Series,2005,3449,296.25,UK,yes,,2007-10-24,2007-12-10,yes
-10144,Sandcrawler,Star Wars,Episode IV,2005,1669,127.57,UK,yes,,2007-10-24,2009-01-04,yes
-10174,Imperial AT-ST,Star Wars,Ultimate Collector Series,2006,1068,69.55,UK,yes,,2007-10-24,2009-01-28,yes
-10175,Vader's TIE Advanced,Star Wars,Ultimate Collector Series,2006,1212,94.79,UK,yes,,2007-10-24,2008-11-07,yes
-10178,Motorized Walking AT-AT,Star Wars,Episode V,2007,1137,106.64,UK,yes,,2007-10-24,2010-12-09,yes
-10179,Ultimate Collector's Millennium Falcon,Star Wars,Ultimate Collector Series,2007,5197,405.87,UK,yes,,2007-10-24,2010-04-09,yes
-10186,General Grievous,Star Wars,Ultimate Collector Series,2008,1085,75.36,UK,yes,,2008-05-04,2009-06-01,yes
+10143,Death Star II,Star Wars,Ultimate Collector Series,2005,3449,269.99,US,yes,,2007-10-24,2009-04-10,yes
+10144,Sandcrawler,Star Wars,Episode IV,2005,1669,139.99,US,yes,,2007-10-24,2009-01-20,yes
+10174,Imperial AT-ST,Star Wars,Ultimate Collector Series,2006,1068,79.99,US,yes,,2007-10-24,2009-03-31,yes
+10175,Vader's TIE Advanced,Star Wars,Ultimate Collector Series,2006,1212,99.99,US,yes,,2007-10-24,2009-02-13,yes
+10178,Motorized Walking AT-AT,Star Wars,Episode V,2007,1137,129.99,US,yes,,2007-10-24,2010-12-25,yes
+10179,Ultimate Collector's Millennium Falcon,Star Wars,Ultimate Collector Series,2007,5197,499.99,US,yes,,2007-10-24,2010-05-04,yes
+10186,General Grievous,Star Wars,Ultimate Collector Series,2008,1085,89.99,US,yes,,2008-05-04,2009-05-15,yes
 10188,Death Star,Star Wars,Ultimate Collector Series,2008,3803,419.99,DE,,,2015-01-14,2015-12-04,yes
-10195,Republic Dropship with AT-OT,Star Wars,The Clone Wars,2009,1758,218.04,UK,yes,,2009-03-27,2011-12-14,yes
-10198,Tantive IV,Star Wars,Episode IV,2009,1408,145.75,UK,yes,,2009-09-12,2011-12-26,yes
-10212,Imperial Shuttle,Star Wars,Ultimate Collector Series,2010,2503,291.51,UK,yes,,2010-09-02,2012-11-16,yes
-10215,Obi-Wan's Jedi Starfighter,Star Wars,Ultimate Collector Series,2010,676,112.57,UK,yes,,2010-10-27,2012-07-08,yes
-10221,Super Star Destroyer,Star Wars,Ultimate Collector Series,2011,3152,414.75,UK,yes,,2011-08-27,2014-10-04,yes
-10225,R2-D2,Star Wars,Ultimate Collector Series,2012,2127,177.74,UK,yes,,2012-05-04,2014-11-01,yes
-10227,B-wing Starfighter,Star Wars,Ultimate Collector Series,2012,1487,201.45,UK,yes,,2012-10-01,2013-11-23,yes
+10195,Republic Dropship with AT-OT,Star Wars,The Clone Wars,2009,1758,249.99,US,yes,,2009-03-27,2011-11-25,yes
+10198,Tantive IV,Star Wars,Episode IV,2009,1408,149.99,US,yes,,2009-09-12,2012-01-06,yes
+10212,Imperial Shuttle,Star Wars,Ultimate Collector Series,2010,2503,259.99,US,yes,,2010-09-02,2012-12-20,yes
+10215,Obi-Wan's Jedi Starfighter,Star Wars,Ultimate Collector Series,2010,676,99.99,US,yes,,2010-10-27,2012-03-16,yes
+10221,Super Star Destroyer,Star Wars,Ultimate Collector Series,2011,3152,399.99,US,yes,,2011-08-27,2014-06-03,yes
+10225,R2-D2,Star Wars,Ultimate Collector Series,2012,2127,179.99,US,yes,,2012-05-04,2014-11-08,yes
+10227,B-wing Starfighter,Star Wars,Ultimate Collector Series,2012,1487,199.99,US,yes,,2012-10-01,2013-11-05,yes
 10236,Ewok Village,Star Wars,Ultimate Collector Series,2013,1990,249.99,DE,,,2015-01-14,2017-02-24,yes
 10237,Tower of Orthanc,The Lord of the Rings,The Two Towers,2013,2359,199.99,DE,,,2015-01-14,2015-08-04,yes
 10240,Red Five X-wing Starfighter,Star Wars,Ultimate Collector Series,2013,1559,199.99,DE,,,2015-01-14,2015-12-26,yes
@@ -186,8 +186,8 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 20002,4x4 Fire Truck,City,Fire,2008,56,,,,,,,yes
 20006,Clone Turbo Tank,Star Wars,The Clone Wars,2008,64,,,,,,,yes
 20007,Republic Attack Cruiser,Star Wars,The Clone Wars,2009,84,,,,,,,yes
-20009,AT-TE Walker,Star Wars,The Clone Wars,2009,94,5.44,UK,yes,,2009-11-14,2010-07-01,yes
-20010,Republic Gunship,Star Wars,The Clone Wars,2009,94,5.44,UK,yes,,2009-11-14,2010-02-21,yes
+20009,AT-TE Walker,Star Wars,The Clone Wars,2009,94,5.16,UK,yes,,2009-11-14,2010-07-01,yes
+20010,Republic Gunship,Star Wars,The Clone Wars,2009,94,5.16,UK,yes,,2009-11-14,2010-02-21,yes
 20016,Imperial Shuttle,Star Wars,Episode VI,2010,70,,,,,,,yes
 20018,AT-AT Walker,Star Wars,Episode V,2010,83,,,,,,,yes
 20019,Slave I,Star Wars,Episode V,2011,76,,,,,,,yes
@@ -195,19 +195,19 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 20021,Bounty Hunter Assault Gunship,Star Wars,The Clone Wars,2011,81,,,,,,,yes
 2064,Rescue Plane,City,Medical,2007,116,,,,,,,yes
 21100,Shinkai 6500 Submarine,Ideas,Licensed,2011,413,,,,,,,yes
-21101,Hayabusa,Ideas,Licensed,2012,369,53.32,UK,yes,,2012-07-18,2012-12-25,yes
-21102,Minecraft Micro World - The Forest,Ideas,Licensed,2012,480,41.46,UK,yes,,2012-06-19,2014-10-04,yes
-21103,The DeLorean Time Machine,Ideas,Licensed,2013,401,41.46,UK,yes,,2013-08-01,2014-10-04,yes
-21104,NASA Mars Science Laboratory Curiosity Rover,Ideas,NASA,2014,295,29.61,UK,yes,,2013-12-27,2014-04-01,yes
+21101,Hayabusa,Ideas,Licensed,2012,369,49.99,US,yes,,2012-07-12,2013-11-05,yes
+21102,Minecraft Micro World - The Forest,Ideas,Licensed,2012,480,34.99,US,yes,,2012-06-19,2015-01-15,yes
+21103,The DeLorean Time Machine,Ideas,Licensed,2013,401,34.99,US,yes,,2013-08-01,2014-12-30,yes
+21104,NASA Mars Science Laboratory Curiosity Rover,Ideas,NASA,2014,295,29.99,US,yes,,2014-01-10,2014-01-20,yes
 21108,Ghostbusters Ecto-1,Ideas,Licensed,2014,508,49.99,DE,,,2015-01-14,2017-02-09,yes
 21109,Exo Suit,Ideas,,2014,321,34.99,DE,,,2015-01-14,2015-06-25,yes
-2111,Kai,Ninjago,Spinners,2011,19,8.88,UK,yes,,2010-12-28,2011-08-08,yes
+2111,Kai,Ninjago,Spinners,2011,19,9.99,US,yes,,2011-01-04,2011-06-29,yes
 21110,Research Institute,Ideas,,2014,165,19.99,DE,,,2015-01-21,2015-02-02,yes
-2112,Cole,Ninjago,Spinners,2011,19,8.88,UK,yes,,2010-12-28,2012-05-04,yes
-2113,Zane,Ninjago,Spinners,2011,19,8.88,UK,yes,,2010-12-28,2011-05-07,yes
-2114,Chopov,Ninjago,Spinners,2011,20,8.88,UK,yes,,2010-12-28,2011-12-28,yes
-2115,Bonezai,Ninjago,Spinners,2011,21,8.88,UK,yes,,2010-12-28,2012-01-16,yes
-2116,Krazi,Ninjago,Spinners,2011,22,8.88,UK,yes,,2010-12-28,2012-04-05,yes
+2112,Cole,Ninjago,Spinners,2011,19,9.99,US,yes,,2011-01-04,2011-07-21,yes
+2113,Zane,Ninjago,Spinners,2011,19,9.99,US,yes,,2011-01-04,2011-04-16,yes
+2114,Chopov,Ninjago,Spinners,2011,20,9.99,US,yes,,2011-01-04,2011-12-29,yes
+2115,Bonezai,Ninjago,Spinners,2011,21,9.99,US,yes,,2011-01-04,2012-01-20,yes
+2116,Krazi,Ninjago,Spinners,2011,22,9.99,US,yes,,2011-01-04,2012-01-20,yes
 21301,Birds,Ideas,,2015,580,44.99,DE,,,2015-01-14,2015-11-21,yes
 21302,The Big Bang Theory,Ideas,Licensed,2015,484,59.99,DE,,,2015-08-03,2017-01-06,yes
 21303,WALL-E,Ideas,Licensed,2015,677,49.99,DE,,,2015-09-02,2017-01-02,yes
@@ -281,36 +281,36 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 21372,La Catrina,Ideas,,2026,1212,119.99,DE,,,2026-07-14,,no
 21373,Downton Abbey,Ideas,Licensed,2026,4711,299.99,DE,,,2026-09-12,,no
 21376,Orange Cat,Ideas,,2026,1755,99.99,DE,,,2026-02-03,,no
-2170,Cole DX,Ninjago,Spinners,2011,21,8.88,UK,yes,,2011-03-29,2011-12-15,yes
-2171,Zane DX,Ninjago,Spinners,2011,22,8.88,UK,yes,,2011-03-29,2011-12-18,yes
-2172,Nya,Ninjago,Spinners,2011,21,8.88,UK,yes,,2011-03-29,2012-01-16,yes
-2173,Nuckal,Ninjago,Spinners,2011,26,8.88,UK,yes,,2011-03-29,2011-11-18,yes
-2174,Kruncha,Ninjago,Spinners,2011,24,8.88,UK,yes,,2011-08-05,2012-01-20,yes
-2175,Wyplash,Ninjago,Spinners,2011,23,8.88,UK,yes,,2011-08-11,2012-01-15,yes
+2170,Cole DX,Ninjago,Spinners,2011,21,9.99,US,yes,,2011-03-29,2012-03-07,yes
+2171,Zane DX,Ninjago,Spinners,2011,22,9.99,US,yes,,2011-03-29,2012-01-14,yes
+2172,Nya,Ninjago,Spinners,2011,21,9.99,US,yes,,2011-03-29,2011-12-05,yes
+2173,Nuckal,Ninjago,Spinners,2011,26,9.99,US,yes,,2011-03-29,2011-09-26,yes
+2174,Kruncha,Ninjago,Spinners,2011,24,9.99,US,yes,,2011-08-05,2012-02-04,yes
+2175,Wyplash,Ninjago,Spinners,2011,23,9.99,US,yes,,2011-08-11,2012-01-20,yes
 2230,In-flight Helicopter and Raft,City,Great Outdoors,2008,115,,,,,,,yes
-2254,Mountain Shrine,Ninjago,Pilot Season,2011,169,17.76,UK,yes,,2011-08-05,2011-12-26,yes
-2255,Sensei Wu,Ninjago,Spinners,2011,20,8.88,UK,yes,,2011-08-05,2012-01-14,yes
-2256,Lord Garmadon,Ninjago,Spinners,2011,23,8.88,UK,yes,,2011-08-05,2012-01-20,yes
-2257,Spinjitzu Starter Set,Ninjago,Spinners,2011,57,15.39,UK,yes,,2010-12-28,2012-01-14,yes
-2258,Ninja Ambush,Ninjago,Pilot Season,2011,71,7.69,UK,yes,,2010-12-28,2012-02-20,yes
-2259,Skull Motorbike,Ninjago,Pilot Season,2011,157,16.58,UK,yes,,2010-12-28,2011-12-13,yes
-2260,Ice Dragon Attack,Ninjago,Pilot Season,2011,158,23.69,UK,yes,,2010-12-28,2011-12-12,yes
-2263,Turbo Shredder,Ninjago,Pilot Season,2011,298,31.98,UK,yes,,2010-12-28,2012-03-05,yes
-2504,Spinjitzu Dojo,Ninjago,Pilot Season,2011,373,36.72,UK,yes,,2010-12-28,2012-01-01,yes
-2505,Garmadon's Dark Fortress,Ninjago,Pilot Season,2011,518,59.24,UK,yes,,2010-12-28,2011-12-03,yes
-2506,Skull Truck,Ninjago,Pilot Season,2011,515,54.5,UK,yes,,2011-08-05,2013-02-02,yes
-2507,Fire Temple,Ninjago,Pilot Season,2011,1174,109.01,UK,yes,,2011-08-05,2012-12-06,yes
-2508,Blacksmith Shop,Ninjago,Pilot Season,2011,189,17.76,UK,yes,,2011-08-05,2012-01-04,yes
-2509,Earth Dragon Defense,Ninjago,Pilot Season,2011,227,36.72,UK,yes,,2011-08-05,2011-12-18,yes
-2516,Ninja Training Outpost,Ninjago,Pilot Season,2011,45,4.73,UK,yes,,2010-12-28,2012-01-07,yes
-2518,Nuckal's ATV,Ninjago,Pilot Season,2011,174,23.69,UK,yes,,2010-12-28,2011-11-06,yes
-2519,Skeleton Bowling,Ninjago,Pilot Season,2011,371,31.98,UK,yes,,2010-12-28,2011-12-26,yes
-2520,Ninjago Battle Arena,Ninjago,Pilot Season,2011,463,42.65,UK,yes,,2010-12-28,2011-12-11,yes
-2521,Lightning Dragon Battle,Ninjago,Pilot Season,2011,645,73.46,UK,yes,,2011-08-05,2011-12-13,yes
-2824,LEGO City Advent Calendar,City,Seasonal,2010,271,29.61,UK,yes,,2010-09-05,2010-12-03,yes
+2254,Mountain Shrine,Ninjago,Pilot Season,2011,169,19.99,US,yes,,2011-08-05,2011-12-11,yes
+2255,Sensei Wu,Ninjago,Spinners,2011,20,9.99,US,yes,,2011-08-05,2011-12-21,yes
+2256,Lord Garmadon,Ninjago,Spinners,2011,23,9.99,US,yes,,2011-08-05,2011-12-28,yes
+2257,Spinjitzu Starter Set,Ninjago,Spinners,2011,57,19.99,US,yes,,2011-01-04,2012-01-10,yes
+2258,Ninja Ambush,Ninjago,Pilot Season,2011,71,6.99,US,yes,,2011-01-04,2011-11-30,yes
+2259,Skull Motorbike,Ninjago,Pilot Season,2011,157,14.99,US,yes,,2011-01-04,2011-11-28,yes
+2260,Ice Dragon Attack,Ninjago,Pilot Season,2011,158,19.99,US,yes,,2011-01-04,2011-11-24,yes
+2263,Turbo Shredder,Ninjago,Pilot Season,2011,298,29.99,US,yes,,2011-01-04,2011-12-01,yes
+2504,Spinjitzu Dojo,Ninjago,Pilot Season,2011,373,49.99,US,yes,,2011-01-04,2011-11-28,yes
+2505,Garmadon's Dark Fortress,Ninjago,Pilot Season,2011,518,69.99,US,yes,,2011-01-04,2011-11-25,yes
+2506,Skull Truck,Ninjago,Pilot Season,2011,515,59.99,US,yes,,2011-08-05,2012-11-13,yes
+2507,Fire Temple,Ninjago,Pilot Season,2011,1174,119.99,US,yes,,2011-08-05,2012-11-21,yes
+2508,Blacksmith Shop,Ninjago,Pilot Season,2011,189,19.99,US,yes,,2011-08-05,2011-12-15,yes
+2509,Earth Dragon Defense,Ninjago,Pilot Season,2011,227,34.99,US,yes,,2011-08-05,2011-11-28,yes
+2516,Ninja Training Outpost,Ninjago,Pilot Season,2011,45,4.99,US,yes,,2011-01-04,2011-12-06,yes
+2518,Nuckal's ATV,Ninjago,Pilot Season,2011,174,24.99,US,yes,,2011-01-04,2012-03-07,yes
+2519,Skeleton Bowling,Ninjago,Pilot Season,2011,371,29.99,US,yes,,2011-01-04,2012-01-08,yes
+2520,Ninjago Battle Arena,Ninjago,Pilot Season,2011,463,49.99,US,yes,,2011-01-04,2012-03-30,yes
+2521,Lightning Dragon Battle,Ninjago,Pilot Season,2011,645,79.99,US,yes,,2011-08-24,2011-11-12,yes
+2824,LEGO City Advent Calendar,City,Seasonal,2010,271,34.99,US,yes,,2010-09-05,2010-11-18,yes
 2853590,Stormtrooper,Star Wars,Promotional,2010,5,,,,yes,,,yes
 2853835,Boba Fett,Star Wars,Minifig Pack,2010,5,,,,,,,yes
-2856134,Ninjago Card Shrine,Ninjago,Promotional,2011,98,4.73,UK,yes,,2011-09-08,2011-10-04,yes
+2856134,Ninjago Card Shrine,Ninjago,Promotional,2011,98,6.99,US,yes,,2011-09-08,2012-02-07,yes
 2856197,Shadow ARF Trooper,Star Wars,Promotional,2011,5,,,,yes,,,yes
 2928,City In-Flight 2006,City,Airport,2006,141,,,,,,,yes
 30000,Medic's Car,City,Medical,2009,30,,,,,,,yes
@@ -365,7 +365,7 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 30229,Repair Lift ,City,Construction,2014,40,,,,,,,yes
 30240,Z-95 Headhunter,Star Wars,The Clone Wars,2013,54,,,,,,,yes
 30241,Mandalorian Fighter,Star Wars,The Clone Wars,2013,49,,,,,,,yes
-30242,Republic Frigate,Star Wars,The Clone Wars,2013,45,4.46,US,yes,,2013-08-02,2013-12-24,yes
+30242,Republic Frigate,Star Wars,The Clone Wars,2013,45,4.99,US,yes,,2013-08-02,2013-12-24,yes
 30243,Umbaran MHC,Star Wars,The Clone Wars,2013,49,,,,,,,yes
 30244,Anakin's Jedi Interceptor,Star Wars,Episode III,2014,45,,,,,,,yes
 30246,Imperial Shuttle,Star Wars,Episode VI,2014,57,,,,,,,yes
@@ -398,15 +398,15 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 30354,Hot Rod,City,Traffic,2017,38,,,,,,,yes
 30355,Jungle ATV,City,Jungle,2017,32,,,,,,,yes
 30356,Hot Dog Stand,City,General,2018,43,,,,,,,yes
-30357,Road Worker,City,Construction,2018,58,3.56,US,yes,,2020-06-02,2021-01-21,yes
+30357,Road Worker,City,Construction,2018,58,3.99,US,yes,,2020-06-02,2021-01-21,yes
 30358,Dragster,City,Racing,2018,40,,,,yes,,,yes
-30359,Police Water Plane,City,Mountain Police,2018,48,3.56,US,yes,,2020-06-02,2020-07-03,yes
-30360,Arctic Ice Saw,City,Arctic,2018,43,3.56,US,yes,,2020-06-02,2020-06-24,yes
+30359,Police Water Plane,City,Mountain Police,2018,48,3.99,US,yes,,2020-06-02,2020-07-03,yes
+30360,Arctic Ice Saw,City,Arctic,2018,43,3.99,US,yes,,2020-06-02,2020-06-24,yes
 30361,Fire ATV,City,Fire,2019,39,,,,yes,,,yes
 30362,Sky Police Jetpack,City,Sky Police,2019,33,,,,,,,yes
 30363,Race Boat,City,Harbour,2019,34,3.99,DE,,,2021-03-12,2022-08-05,yes
 30364,Popcorn Cart,City,General,2019,43,,,,,,,yes
-30365,Space Satellite,City,Mars Exploration,2019,36,3.56,US,yes,,2020-05-14,2021-07-08,yes
+30365,Space Satellite,City,Mars Exploration,2019,36,3.99,US,yes,,2020-05-14,2021-07-08,yes
 30366,Police Car,City,Police,2020,37,3.99,DE,,,2021-02-27,2022-01-22,yes
 30367,Police Helicopter,City,Police,2020,39,,,,,,,yes
 30368,Fire Rescue Water Scooter,City,Fire,2020,33,,,,,,,yes
@@ -483,27 +483,27 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 30723,Cole's Car,Ninjago,Rise of the Snakes,2026,39,,,,yes,,,no
 30727,TIE Advanced,Star Wars,Episode IV,2026,68,,,,,,,no
 30728,The Razor Crest,Star Wars,The Mandalorian and Grogu,2026,74,,,,yes,,,no
-3177,Small Car,City,Traffic,2010,43,4.73,UK,yes,,2009-12-30,2012-11-23,yes
-3178,Seaplane,City,General,2010,102,10.06,UK,yes,,2009-12-30,2012-12-20,yes
-3179,Repair Truck,City,Traffic,2010,118,11.84,UK,yes,,2009-12-30,2011-12-11,yes
-3180,Tank Truck,City,Traffic,2010,222,17.76,UK,yes,,2009-12-30,2011-12-05,yes
-3181,Passenger Plane,City,Airport,2010,309,42.65,UK,yes,,2010-06-01,2012-11-26,yes
-3182,Airport,City,Airport,2010,703,97.16,UK,yes,,2010-06-01,2012-11-26,yes
+3177,Small Car,City,Traffic,2010,43,4.99,US,yes,,2009-12-30,2012-11-17,yes
+3178,Seaplane,City,General,2010,102,10.99,US,yes,,2009-12-30,2012-11-23,yes
+3179,Repair Truck,City,Traffic,2010,118,12.99,US,yes,,2009-12-30,2011-12-26,yes
+3180,Tank Truck,City,Traffic,2010,222,19.99,US,yes,,2010-05-30,2011-12-18,yes
+3181,Passenger Plane,City,Airport,2010,309,39.99,US,yes,,2010-05-30,2012-10-10,yes
+3182,Airport,City,Airport,2010,703,99.99,US,yes,,2010-05-30,2012-12-07,yes
 3219,Mini TIE Fighter,Star Wars,Mini Building Set,2003,12,,,,,,,yes
-3221,LEGO City Truck,City,Traffic,2010,278,35.54,UK,yes,,2010-06-01,2012-12-07,yes
-3222,Helicopter and Limousine,City,Airport,2010,267,23.69,UK,yes,,2010-02-05,2010-12-03,yes
+3221,LEGO City Truck,City,Traffic,2010,278,34.99,US,yes,,2010-05-30,2012-11-26,yes
+3222,Helicopter and Limousine,City,Airport,2010,267,29.99,US,yes,,2010-08-05,2010-11-18,yes
 3340,"Star Wars #1 - Emperor Palpatine, Darth Maul and Darth Vader",Star Wars,Minifig Pack,2000,32,,,,,,,yes
 3341,"Star Wars #2 - Luke Skywalker, Han Solo and Boba Fett",Star Wars,Minifig Pack,2000,22,,,,,,,yes
 3342,Star Wars #3 - Chewbacca and 2 Biker Scouts,Star Wars,Minifig Pack,2000,22,,,,,,,yes
 3343,Star Wars #4 - Battle Droid Commander and 2 Battle Droids,Star Wars,Minifig Pack,2000,30,,,,,,,yes
-3365,Space Moon Buggy,City,Space,2011,37,4.73,UK,yes,,2011-03-05,2013-11-18,yes
-3366,Satellite Launch Pad,City,Space,2011,165,16.58,UK,yes,,2011-03-05,2013-12-22,yes
-3367,Space Shuttle,City,Space,2011,231,31.98,UK,yes,,2011-03-05,2013-11-26,yes
-3368,Space Centre,City,Space,2011,494,59.24,UK,yes,,2011-03-05,2013-11-23,yes
-3648,Police Chase,City,Police,2011,173,22.5,UK,yes,,2010-12-28,2012-01-14,yes
-3658,Police Helicopter,City,Police,2011,237,31.98,UK,yes,,2010-12-28,2012-11-17,yes
-3661,Bank & Money Transfer,City,Police,2011,405,49.76,UK,yes,,2010-12-28,2012-12-05,yes
-3677,Red Cargo Train,City,Trains,2011,831,165.89,UK,yes,,2011-08-05,2012-12-07,yes
+3365,Space Moon Buggy,City,Space,2011,37,4.99,US,yes,,2011-05-13,2013-11-07,yes
+3366,Satellite Launch Pad,City,Space,2011,165,19.99,US,yes,,2011-05-13,2013-12-26,yes
+3367,Space Shuttle,City,Space,2011,231,29.99,US,yes,,2011-03-05,2013-11-20,yes
+3368,Space Centre,City,Space,2011,494,69.99,US,yes,,2011-05-13,2013-11-24,yes
+3648,Police Chase,City,Police,2011,173,24.99,US,yes,,2011-08-05,2012-03-30,yes
+3658,Police Helicopter,City,Police,2011,237,34.99,US,yes,,2010-12-28,2012-11-26,yes
+3661,Bank & Money Transfer,City,Police,2011,405,49.99,US,yes,,2010-12-25,2012-12-25,yes
+3677,Red Cargo Train,City,Trains,2011,831,159.99,US,yes,,2011-08-05,2012-11-23,yes
 4002019,Christmas X-wing,Star Wars,Employee gift,2019,1038,,,,,,,yes
 4002021,The Temple of Celebrations,Ninjago,Employee gift,2021,1320,,,,,,,yes
 40110,LEGO City Coin Bank,City,Police,2014,122,12.99,DE,,,2015-01-14,2016-12-20,yes
@@ -584,32 +584,32 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 40912,Sea Serpent,Ideas,Promotional,2026,241,,,,yes,,,no
 40913,Vintage Parade Car,Icons,Promotional,2026,243,,,,yes,,,no
 40917,The Darksaber,Star Wars,Promotional,2026,278,,,,yes,,,no
-4200,Mining 4x4,City,Mining,2012,102,9.47,UK,yes,,2012-06-27,2013-12-08,yes
-4201,Loader and Tipper,City,Mining,2012,139,15.39,UK,yes,,2012-06-27,2014-11-21,yes
-4202,Mining Truck,City,Mining,2012,269,23.69,UK,yes,,2012-06-27,2012-12-07,yes
-4203,Excavator Transporter,City,Mining,2012,305,29.61,UK,yes,,2012-06-27,2014-11-21,yes
-4204,The Mine,City,Mining,2012,748,82.94,UK,yes,,2012-06-27,2014-11-10,yes
-4205,Off-road Command Centre,City,Forest Police,2012,403,41.46,UK,yes,,2011-12-24,2012-11-29,yes
-4207,City Garage,City,Town,2012,933,94.79,UK,yes,,2012-06-02,2013-12-15,yes
+4200,Mining 4x4,City,Mining,2012,102,11.99,US,yes,,2012-06-02,2013-12-02,yes
+4201,Loader and Tipper,City,Mining,2012,139,17.99,US,yes,,2012-06-02,2014-11-10,yes
+4202,Mining Truck,City,Mining,2012,269,34.99,US,yes,,2012-06-02,2012-11-17,yes
+4203,Excavator Transporter,City,Mining,2012,305,39.99,US,yes,,2012-06-02,2014-11-23,yes
+4204,The Mine,City,Mining,2012,748,99.99,US,yes,,2012-06-02,2014-11-29,yes
+4205,Off-road Command Centre,City,Forest Police,2012,403,39.99,US,yes,,2011-12-15,2012-09-11,yes
+4207,City Garage,City,Town,2012,933,119.99,US,yes,,2012-07-24,2014-01-11,yes
 4207901,Star Wars MINI Bonus Pack,Star Wars,Product Collection,2003,277,,,,,,,yes
-4208,Fire Truck,City,Forest Fire,2012,243,21.32,UK,yes,,2011-12-24,2012-11-27,yes
-4209,Fire Plane,City,Forest Fire,2012,522,47.39,UK,yes,,2011-12-24,2013-12-01,yes
-4210,Coast Guard Platform,City,Coast Guard,2008,469,52.13,UK,yes,,2008-07-10,2009-01-19,yes
-4427,Fire ATV,City,Forest Fire,2012,50,4.73,UK,yes,,2011-12-24,2012-12-26,yes
-4428,LEGO City Advent Calendar,City,Seasonal,2012,248,23.69,UK,yes,,2012-09-04,2012-12-01,yes
-4429,Helicopter Rescue,City,Medical,2012,425,41.46,UK,yes,,2012-06-02,2013-12-04,yes
-4430,Fire Transporter,City,Forest Fire,2012,522,47.39,UK,yes,,2011-12-24,2013-11-29,yes
-4431,Ambulance,City,Great Vehicles,2012,199,17.76,UK,yes,,2011-12-24,2012-12-25,yes
-4432,Garbage Truck,City,Great Vehicles,2012,208,21.32,UK,yes,,2011-12-24,2013-12-20,yes
-4433,Dirt Bike Transporter,City,Great Vehicles,2012,201,21.32,UK,yes,,2011-12-24,2013-12-01,yes
-4434,Dump Truck,City,Great Vehicles,2012,222,17.76,UK,yes,,2011-12-24,2012-12-26,yes
-4435,Car and Caravan,City,Great Vehicles,2012,218,17.76,UK,yes,,2011-12-24,2012-12-14,yes
-4436,Patrol Car,City,Forest Police,2012,97,9.47,UK,yes,,2011-12-24,2013-11-30,yes
-4437,Police Pursuit,City,Forest Police,2012,129,15.39,UK,yes,,2011-12-24,2015-01-19,yes
-4438,Robber's Hideout,City,Forest Police,2012,317,41.46,UK,yes,,2011-12-24,2012-12-13,yes
-4439,Heavy-Lift Helicopter,City,Forest Police,2012,393,41.46,UK,yes,,2011-12-24,2014-06-25,yes
-4440,Forest Police Station,City,Forest Police,2012,633,71.09,UK,yes,,2011-12-24,2013-11-25,yes
-4441,Police Dog Van,City,Forest Police,2012,313,23.69,UK,yes,,2011-12-24,2012-11-25,yes
+4208,Fire Truck,City,Forest Fire,2012,243,19.99,US,yes,,2011-12-15,2012-11-23,yes
+4209,Fire Plane,City,Forest Fire,2012,522,59.99,US,yes,,2011-12-15,2013-11-29,yes
+4210,Coast Guard Platform,City,Coast Guard,2008,469,49.99,US,yes,,2008-10-19,2009-03-17,yes
+4427,Fire ATV,City,Forest Fire,2012,50,5.99,US,yes,,2011-12-15,2012-11-19,yes
+4428,LEGO City Advent Calendar,City,Seasonal,2012,248,39.99,US,yes,,2012-08-28,2012-11-23,yes
+4429,Helicopter Rescue,City,Medical,2012,425,59.99,US,yes,,2012-07-24,2014-01-03,yes
+4430,Fire Transporter,City,Forest Fire,2012,522,49.99,US,yes,,2011-12-15,2013-12-12,yes
+4431,Ambulance,City,Great Vehicles,2012,199,19.99,US,yes,,2011-11-11,2012-11-18,yes
+4432,Garbage Truck,City,Great Vehicles,2012,208,19.99,US,yes,,2011-11-11,2013-11-05,yes
+4433,Dirt Bike Transporter,City,Great Vehicles,2012,201,19.99,US,yes,,2011-12-15,2013-12-02,yes
+4434,Dump Truck,City,Great Vehicles,2012,222,19.99,US,yes,,2011-12-15,2012-11-08,yes
+4435,Car and Caravan,City,Great Vehicles,2012,218,19.99,US,yes,,2011-11-11,2012-11-17,yes
+4436,Patrol Car,City,Forest Police,2012,97,11.99,US,yes,,2011-11-11,2013-12-15,yes
+4437,Police Pursuit,City,Forest Police,2012,129,17.99,US,yes,,2011-11-11,2014-12-21,yes
+4438,Robber's Hideout,City,Forest Police,2012,317,39.99,US,yes,,2011-12-15,2012-11-17,yes
+4439,Heavy-Lift Helicopter,City,Forest Police,2012,393,49.99,US,yes,,2011-11-11,2014-07-19,yes
+4440,Forest Police Station,City,Forest Police,2012,633,79.99,US,yes,,2011-11-11,2013-12-04,yes
+4441,Police Dog Van,City,Forest Police,2012,313,34.99,US,yes,,2011-11-11,2012-10-29,yes
 4442,Glider,City,Traffic,2012,101,,,,,,,yes
 4473,Police Helicopter,City,Police,2012,112,,,,,,,yes
 4475,Jabba's Message,Star Wars,Episode VI,2003,44,,,,,,,yes
@@ -640,11 +640,11 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 4521221,Gold Chrome Plated C-3PO,Star Wars,Minifig Pack,2007,3,,,,,,,yes
 4547551,Darth Vader,Star Wars,Promotional,2009,7,,,,,,,yes
 4636204,Ninjago promotional item,Ninjago,Promotional,2011,11,,,,,,,yes
-4641,Speedboat,City,Harbour,2011,34,4.73,UK,yes,,2011-05-15,2013-01-10,yes
-4642,Fishing Boat,City,Harbour,2011,64,16.58,UK,yes,,2011-05-15,2012-11-25,yes
-4643,Power Boat Transporter,City,Harbour,2011,254,23.69,UK,yes,,2011-05-15,2011-12-14,yes
-4644,Marina,City,Beach,2011,294,49.76,UK,yes,,2011-05-15,2013-01-11,yes
-4645,Harbour,City,Harbour,2011,551,85.31,UK,yes,,2011-05-15,2012-12-04,yes
+4641,Speedboat,City,Harbour,2011,34,4.99,US,yes,,2011-05-13,2012-11-26,yes
+4642,Fishing Boat,City,Harbour,2011,64,19.99,US,yes,,2011-05-13,2012-12-19,yes
+4643,Power Boat Transporter,City,Harbour,2011,254,39.99,US,yes,,2011-05-13,2012-01-20,yes
+4644,Marina,City,Beach,2011,294,49.99,US,yes,,2011-05-13,2012-12-10,yes
+4645,Harbour,City,Harbour,2011,551,89.99,US,yes,,2011-05-13,2012-11-07,yes
 4659612,Spinner ring,Ninjago,Promotional,2012,1,,,,,,,yes
 4659640,Special Edition Card,Ninjago,Promotional,2012,1,,,,,,,yes
 472407,Sabine Wren,Star Wars,Magazine Gift,2024,9,,,,,,,no
@@ -658,7 +658,7 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 4914,Fire Chief's Car,City,Fire,2005,31,,,,,,,yes
 4933,Street Sweeper,City,Construction,2007,14,,,,,,,yes
 4934,Police Swamp Boat,City,Police,2007,20,,,,,,,yes
-4936,Doc & Patient,City,Medical,2007,18,2.67,US,yes,,2008-03-23,2009-07-10,yes
+4936,Doc & Patient,City,Medical,2007,18,2.99,US,yes,,2008-03-23,2009-07-10,yes
 4937,Life Guard,City,Beach,2007,38,,,,,,,yes
 4938,Fire 4x4,City,Fire,2007,28,,,,,,,yes
 4991,Police Helicopter,City,Police,2007,31,,,,,,,yes
@@ -709,43 +709,43 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 5010391,Bo Katan,Star Wars,Promotional,2026,133,,,,,,,no
 5531,Police Motorcycle,City,Police,2005,18,,,,,,,yes
 5532,Fire Car,City,Fire,2005,28,,,,,,,yes
-5610,Builder,City,Construction,2008,23,2.9,UK,yes,,2008-01-02,2010-01-04,yes
-5611,Public Works,City,General,2008,31,2.31,UK,yes,,2008-01-02,2009-01-21,yes
-5612,Police Officer,City,Police,2008,21,2.95,UK,yes,,2008-01-02,2010-06-27,yes
-5613,Firefighter,City,Fire,2008,25,2.9,UK,yes,,2008-01-02,2010-01-29,yes
-5620,Street Cleaner,City,Construction,2008,22,2.95,UK,yes,,2008-05-21,2008-11-26,yes
-5621,Coast Guard Kayak,City,Coast Guard,2008,21,2.9,UK,yes,,2008-05-21,2009-02-03,yes
+5610,Builder,City,Construction,2008,23,3.49,US,yes,,2008-06-01,2009-11-06,yes
+5611,Public Works,City,General,2008,31,3.49,US,yes,,2008-06-01,2009-05-07,yes
+5612,Police Officer,City,Police,2008,21,3.49,US,yes,,2007-12-15,2010-06-27,yes
+5613,Firefighter,City,Fire,2008,25,3.49,US,yes,,2007-12-15,2010-01-01,yes
+5620,Street Cleaner,City,Construction,2008,22,3.49,US,yes,,2008-06-27,2009-04-06,yes
+5621,Coast Guard Kayak,City,Coast Guard,2008,21,3.49,US,yes,,2008-06-27,2009-03-17,yes
 5625,Police 4x4,City,Police,2008,32,,,,,,,yes
 5626,Coast Guard Bike,City,Coast Guard,2008,13,,,,,,,yes
 5627,Mini Dozer,City,Construction,2008,23,,,,,,,yes
 5642,Tipper Truck,City,Construction,2009,27,,,,,,,yes
-60000,Fire Motorcycle,City,Fire,2013,40,5.91,UK,yes,,2013-01-03,2015-01-05,yes
-60001,Fire Chief Car,City,Fire,2013,80,9.47,UK,yes,,2013-01-03,2015-01-01,yes
+60000,Fire Motorcycle,City,Fire,2013,40,6.99,US,yes,,2012-12-01,2015-01-07,yes
+60001,Fire Chief Car,City,Fire,2013,80,11.99,US,yes,,2012-12-01,2015-02-21,yes
 60002,Fire Truck,City,Fire,2013,208,19.99,DE,,,2015-01-14,2015-10-01,yes
 60003,Fire Emergency,City,Fire,2013,301,29.99,DE,,,2015-01-14,2015-11-14,yes
 60004,Fire Station,City,Fire,2013,753,79.99,DE,,,2015-01-14,2015-11-15,yes
-60005,Fire Boat,City,Fire,2013,222,29.61,UK,yes,,2013-01-03,2013-11-23,yes
-60006,Police ATV,City,Elite Police,2013,51,5.91,UK,yes,,2013-01-03,2014-10-27,yes
+60005,Fire Boat,City,Fire,2013,222,29.99,US,yes,,2012-12-28,2013-12-02,yes
+60006,Police ATV,City,Elite Police,2013,51,6.99,US,yes,,2012-12-01,2015-01-02,yes
 60007,High Speed Chase,City,Elite Police,2013,283,29.99,DE,,,2015-01-14,2015-12-06,yes
-60008,Museum Break-in,City,Elite Police,2013,563,59.24,UK,yes,,2013-01-03,2015-01-02,yes
-60009,Helicopter Arrest,City,Elite Police,2013,352,47.39,UK,yes,,2013-01-03,2014-11-21,yes
+60008,Museum Break-in,City,Elite Police,2013,563,69.99,US,yes,,2012-12-28,2015-04-11,yes
+60009,Helicopter Arrest,City,Elite Police,2013,352,49.99,US,yes,,2012-12-01,2015-01-13,yes
 60011,Surfer Rescue,City,Coast Guard,2013,32,5.99,DE,,,2015-01-14,2015-06-25,yes
 60012,Coast Guard 4x4 & Diving Boat,City,Coast Guard,2013,128,12.99,DE,,,2015-01-14,2015-06-25,yes
-60013,Coast Guard Helicopter,City,Coast Guard,2013,230,29.61,UK,yes,,2013-06-01,2013-12-02,yes
+60013,Coast Guard Helicopter,City,Coast Guard,2013,230,39.99,US,yes,,2013-05-26,2015-02-22,yes
 60014,Coast Guard Patrol,City,Coast Guard,2013,449,69.99,DE,,,2015-01-14,2015-06-25,yes
-60015,Coast Guard Plane,City,Coast Guard,2013,279,41.46,UK,yes,,2013-06-02,2014-11-21,yes
-60016,Tanker Truck,City,Great Vehicles,2013,191,21.32,UK,yes,,2013-01-03,2013-11-30,yes
-60017,Flatbed Truck,City,Great Vehicles,2013,212,21.32,UK,yes,,2013-01-03,2014-11-15,yes
-60018,Cement Mixer,City,Great Vehicles,2013,221,21.32,UK,yes,,2013-01-03,2013-11-27,yes
-60019,Stunt Plane,City,Racing,2013,140,11.84,UK,yes,,2013-06-02,2014-11-14,yes
-60020,Cargo Truck,City,Cargo,2013,321,29.61,UK,yes,,2013-06-04,2015-01-02,yes
-60021,Cargo Heliplane,City,Cargo,2013,393,41.46,UK,yes,,2013-06-04,2014-11-13,yes
-60022,Cargo Terminal,City,Cargo,2013,658,82.94,UK,yes,,2013-06-01,2015-01-01,yes
-60023,LEGO City Starter Set,City,Traffic,2013,272,23.69,UK,yes,,2013-06-02,2014-11-21,yes
-60024,LEGO City Advent Calendar,City,Seasonal,2013,244,23.69,UK,yes,,2013-09-02,2013-11-25,yes
-60025,Grand Prix Truck,City,Great Vehicles,2013,315,29.61,UK,yes,,2013-06-01,2014-11-21,yes
-60026,Town Square,City,Town,2013,914,94.79,UK,yes,,2013-06-01,2015-01-02,yes
-60027,Monster Truck Transporter,City,Great Vehicles,2013,299,29.61,UK,yes,,2013-06-02,2013-11-20,yes
+60015,Coast Guard Plane,City,Coast Guard,2013,279,44.99,US,yes,,2013-08-01,2015-01-10,yes
+60016,Tanker Truck,City,Great Vehicles,2013,191,19.99,US,yes,,2012-12-01,2013-11-30,yes
+60017,Flatbed Truck,City,Great Vehicles,2013,212,19.99,US,yes,,2012-12-01,2015-01-09,yes
+60018,Cement Mixer,City,Great Vehicles,2013,221,19.99,US,yes,,2012-12-01,2014-03-30,yes
+60019,Stunt Plane,City,Racing,2013,140,19.99,US,yes,,2013-08-01,2014-12-05,yes
+60020,Cargo Truck,City,Cargo,2013,321,39.99,US,yes,,2013-08-01,2014-11-28,yes
+60021,Cargo Heliplane,City,Cargo,2013,393,44.99,US,yes,,2013-08-01,2014-12-27,yes
+60022,Cargo Terminal,City,Cargo,2013,658,99.99,US,yes,,2013-08-01,2014-12-12,yes
+60023,LEGO City Starter Set,City,Traffic,2013,272,29.99,US,yes,,2013-08-01,2015-01-25,yes
+60024,LEGO City Advent Calendar,City,Seasonal,2013,244,29.99,US,yes,,2013-09-02,2013-11-21,yes
+60025,Grand Prix Truck,City,Great Vehicles,2013,315,29.99,US,yes,,2013-08-01,2015-01-21,yes
+60026,Town Square,City,Town,2013,914,119.99,US,yes,,2013-08-01,2014-12-28,yes
+60027,Monster Truck Transporter,City,Great Vehicles,2013,299,29.99,US,yes,,2013-08-01,2014-12-24,yes
 60031,City Corner,City,Town,2013,483,,,,,,,yes
 60032,Arctic Snowmobile,City,Arctic,2014,44,5.99,DE,,,2015-01-14,2015-11-04,yes
 60033,Arctic Ice Crawler,City,Arctic,2014,113,14.99,DE,,,2015-01-14,2015-12-11,yes
@@ -756,7 +756,7 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 60042,High Speed Police Chase,City,Police,2014,110,14.99,DE,,,2015-01-14,2015-09-30,yes
 60043,Prisoner Transporter,City,Police,2014,196,19.99,DE,,,2015-01-14,2015-09-30,yes
 60044,Mobile Police Unit,City,Police,2014,375,29.99,DE,,,2015-01-14,2016-11-16,yes
-60045,Police Patrol,City,Police,2014,408,47.39,UK,yes,,2013-12-26,2014-11-13,yes
+60045,Police Patrol,City,Police,2014,408,44.99,US,yes,,2014-01-02,2014-12-13,yes
 60046,Helicopter Surveillance,City,Police,2014,528,59.99,DE,,,2015-01-14,2015-12-01,yes
 60047,Police Station,City,Police,2014,854,99.99,DE,,,2015-01-14,2016-12-27,yes
 60048,Police Dog Unit,City,Police,2014,249,29.99,DE,,,2015-01-14,2016-01-02,yes
@@ -765,17 +765,17 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 60051,High-speed Passenger Train,City,Trains,2014,610,119.99,DE,,,2015-01-14,2018-06-15,yes
 60052,Cargo Train,City,Trains,2014,888,179.99,DE,,,2015-01-14,2018-06-15,yes
 60053,Race Car,City,Great Vehicles,2014,100,9.99,DE,,,2015-01-14,2015-12-07,yes
-60054,Light Repair Truck,City,Great Vehicles,2014,95,9.47,UK,yes,,2013-12-26,2014-11-20,yes
+60054,Light Repair Truck,City,Great Vehicles,2014,95,9.99,US,yes,,2013-12-02,2014-12-27,yes
 60055,Monster Truck,City,Great Vehicles,2014,78,9.99,DE,,,2015-01-14,2015-11-20,yes
-60056,Tow Truck,City,Great Vehicles,2014,227,21.32,UK,yes,,2013-12-26,2014-12-30,yes
+60056,Tow Truck,City,Great Vehicles,2014,227,19.99,US,yes,,2013-12-02,2014-12-09,yes
 60057,Camper Van,City,Great Vehicles,2014,195,19.99,DE,,,2015-01-14,2015-11-12,yes
-60058,SUV with Watercraft,City,Great Vehicles,2014,219,21.32,UK,yes,,2013-12-26,2015-01-14,yes
-60059,Logging Truck,City,Great Vehicles,2014,228,21.32,UK,yes,,2013-12-26,2014-10-31,yes
+60058,SUV with Watercraft,City,Great Vehicles,2014,219,19.99,US,yes,,2013-12-02,2014-12-27,yes
+60059,Logging Truck,City,Great Vehicles,2014,228,19.99,US,yes,,2013-12-02,2014-12-15,yes
 60060,Auto Transporter,City,Great Vehicles,2014,350,29.99,DE,,,2015-01-14,2015-09-30,yes
-60061,Airport Fire Truck,City,Airport,2014,326,29.61,UK,yes,,2013-12-26,2014-11-21,yes
+60061,Airport Fire Truck,City,Airport,2014,326,29.99,US,yes,,2013-12-02,2014-12-12,yes
 60062,Arctic Icebreaker,City,Arctic,2014,717,99.99,DE,,,2015-01-14,2015-11-07,yes
-60063,LEGO City Advent Calendar,City,Seasonal,2014,218,23.69,UK,yes,,2014-10-10,2014-11-10,yes
-60064,Arctic Supply Plane,City,Arctic,2014,374,59.24,UK,yes,,2014-06-01,2014-11-21,yes
+60063,LEGO City Advent Calendar,City,Seasonal,2014,218,29.99,US,yes,,2014-10-10,2015-01-10,yes
+60064,Arctic Supply Plane,City,Arctic,2014,374,49.99,US,yes,,2014-08-02,2014-12-28,yes
 60065,ATV Patrol,City,Swamp Police,2015,59,5.99,DE,,,2015-01-14,2015-11-30,yes
 60066,Swamp Police Starter Set,City,Swamp Police,2015,78,9.99,DE,,,2015-01-14,2015-12-24,yes
 60067,Helicopter Pursuit,City,Swamp Police,2015,253,29.99,DE,,,2015-01-14,2016-07-01,yes
@@ -1215,14 +1215,14 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 6141077,X-Wing and TIE Fighter,Star Wars,Promotional,2015,58,,,,,,,yes
 6176782,Escape the Space Slug,Star Wars,Promotional,2016,161,,,,yes,,,yes
 6182882,City Police Mission Pack,City,Police,2017,48,,,,,,,yes
-6205,V-wing Fighter,Star Wars,Episode III,2006,118,8.93,US,yes,,2007-10-24,2008-04-22,yes
-6206,TIE Interceptor,Star Wars,Episode VI,2006,212,21.32,UK,yes,,2007-10-24,2007-12-22,yes
+6205,V-wing Fighter,Star Wars,Episode III,2006,118,10.0,US,yes,,2007-10-24,2008-04-22,yes
+6206,TIE Interceptor,Star Wars,Episode VI,2006,212,20.24,UK,yes,,2007-10-24,2007-12-22,yes
 6207,A-wing Fighter,Star Wars,Episode VI,2006,194,,,,,,,yes
-6208,B-wing Fighter,Star Wars,Episode VI,2006,435,29.61,UK,yes,,2007-10-24,2008-01-05,yes
-6209,Slave I,Star Wars,Episode V,2006,537,44.65,US,yes,,2007-10-24,2007-11-23,yes
-6210,Jabba's Sail Barge,Star Wars,Episode VI,2006,781,71.09,UK,yes,,2007-10-24,2008-01-08,yes
-6211,Imperial Star Destroyer,Star Wars,Episode IV,2006,1367,94.79,UK,yes,,2007-10-24,2008-09-11,yes
-6212,X-wing Fighter,Star Wars,Episode V,2006,437,54.5,UK,yes,,2007-10-24,2011-06-26,yes
+6208,B-wing Fighter,Star Wars,Episode VI,2006,435,34.99,US,yes,,2007-10-24,2007-12-21,yes
+6209,Slave I,Star Wars,Episode V,2006,537,49.99,US,yes,,2007-10-24,2007-11-23,yes
+6210,Jabba's Sail Barge,Star Wars,Episode VI,2006,781,74.99,US,yes,,2007-10-24,2007-12-30,yes
+6211,Imperial Star Destroyer,Star Wars,Episode IV,2006,1367,99.99,US,yes,,2007-10-24,2008-04-08,yes
+6212,X-wing Fighter,Star Wars,Episode V,2006,437,49.99,US,yes,,2007-10-24,2011-09-07,yes
 6252770,Leia Organa,Star Wars,Promotional,2018,18,,,,,,,yes
 6252808,Chewbacca,Star Wars,Promotional,2018,22,,,,yes,,,yes
 6252810,Han Solo,Star Wars,Promotional,2018,23,,,,,,,yes
@@ -1280,7 +1280,7 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 66169,Bonus/Value Pack,City,Product Collection,2006,245,,,,,,,yes
 66171,Bonus/Value Pack,City,Product Collection,2005,121,,,,,,,yes
 66174,City Fire Value Pack,City,Product Collection,2008,595,,,,,,,yes
-66175,City Essential Vehicles Collection,City,Product Collection,2007,526,44.65,US,yes,,2007-10-24,2008-04-03,yes
+66175,City Essential Vehicles Collection,City,Product Collection,2007,526,49.99,US,yes,,2007-10-24,2008-04-03,yes
 66177,City Rescue Pack,City,Product Collection,2007,467,,,,,,,yes
 66179,Bonus/Value Pack,City,Product Collection,2006,141,,,,,,,yes
 66180,Bonus/Value Pack,City,Product Collection,2005,126,,,,,,,yes
@@ -1428,12 +1428,12 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 6966,Mini Jedi Starfighter,Star Wars,Episode III,2005,38,,,,,,,yes
 6967,Mini ARC-170 Starfighter,Star Wars,Episode III,2005,42,,,,,,,yes
 6968,Wookiee Attack,Star Wars,Episode III,2005,48,,,,,,,yes
-70500,Kai's Fire Mech,Ninjago,The Final Battle,2013,102,9.47,UK,yes,,2013-01-03,2013-12-02,yes
-70501,Warrior Bike,Ninjago,The Final Battle,2013,210,21.32,UK,yes,,2013-01-03,2014-01-22,yes
-70502,Cole's Earth Driller,Ninjago,The Final Battle,2013,171,21.32,UK,yes,,2013-01-03,2014-11-21,yes
-70503,The Golden Dragon,Ninjago,The Final Battle,2013,252,29.61,UK,yes,,2013-01-03,2014-10-26,yes
-70504,Garmatron,Ninjago,The Final Battle,2013,328,35.54,UK,yes,,2013-01-03,2014-07-05,yes
-70505,Temple of Light,Ninjago,The Final Battle,2013,565,71.09,UK,yes,,2013-01-03,2014-11-05,yes
+70500,Kai's Fire Mech,Ninjago,The Final Battle,2013,102,9.99,US,yes,,2012-12-28,2015-01-21,yes
+70501,Warrior Bike,Ninjago,The Final Battle,2013,210,19.99,US,yes,,2012-12-28,2013-12-13,yes
+70502,Cole's Earth Driller,Ninjago,The Final Battle,2013,171,19.99,US,yes,,2012-12-28,2014-12-06,yes
+70503,The Golden Dragon,Ninjago,The Final Battle,2013,252,29.99,US,yes,,2012-12-28,2015-01-21,yes
+70504,Garmatron,Ninjago,The Final Battle,2013,328,39.99,US,yes,,2012-12-28,2014-10-03,yes
+70505,Temple of Light,Ninjago,The Final Battle,2013,565,69.99,US,yes,,2012-12-28,2015-02-27,yes
 70588,Titanium Ninja Tumbler,Ninjago,Day of the Departed,2016,342,29.99,DE,,,2016-06-03,2017-11-05,yes
 70589,Rock Roader,Ninjago,Day of the Departed,2016,406,39.99,DE,,,2016-06-03,2017-11-11,yes
 70590,Airjitzu Battle Grounds,Ninjago,Day of the Departed,2016,666,59.99,DE,,,2016-06-03,2017-05-09,yes
@@ -1513,12 +1513,12 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 70688,Kai's Spinjitzu Ninja Training,Ninjago,Spinjitzu Ninja Training,2022,32,9.99,DE,,,2022-03-02,2022-11-16,yes
 70689,Lloyd's Spinjitzu Ninja Training,Ninjago,Spinjitzu Ninja Training,2022,32,9.99,DE,,,2022-03-02,2023-01-03,yes
 70690,Jay's Spinjitzu Ninja Training,Ninjago,Spinjitzu Ninja Training,2022,25,9.99,DE,,,2022-03-02,2022-12-13,yes
-70720,Hover Hunter,Ninjago,Rebooted,2014,79,11.84,UK,yes,,2013-12-26,2014-11-20,yes
-70721,Kai Fighter,Ninjago,Rebooted,2014,196,21.32,UK,yes,,2013-12-26,2014-11-07,yes
-70722,OverBorg Attack,Ninjago,Rebooted,2014,207,21.32,UK,yes,,2013-12-26,2014-10-30,yes
-70723,Thunder Raider,Ninjago,Rebooted,2014,334,29.61,UK,yes,,2013-12-26,2014-11-21,yes
-70724,NinjaCopter,Ninjago,Rebooted,2014,516,59.24,UK,yes,,2013-12-26,2014-11-21,yes
-70725,Nindroid MechDragon,Ninjago,Rebooted,2014,691,82.94,UK,yes,,2013-12-26,2015-01-16,yes
+70720,Hover Hunter,Ninjago,Rebooted,2014,79,11.99,US,yes,,2013-12-02,2015-05-23,yes
+70721,Kai Fighter,Ninjago,Rebooted,2014,196,19.99,US,yes,,2013-12-02,2015-02-17,yes
+70722,OverBorg Attack,Ninjago,Rebooted,2014,207,19.99,US,yes,,2013-12-02,2015-02-18,yes
+70723,Thunder Raider,Ninjago,Rebooted,2014,334,29.99,US,yes,,2013-12-02,2015-02-28,yes
+70724,NinjaCopter,Ninjago,Rebooted,2014,516,59.99,US,yes,,2013-12-02,2015-03-10,yes
+70725,Nindroid MechDragon,Ninjago,Rebooted,2014,691,89.99,US,yes,,2013-12-02,2015-03-20,yes
 70726,Destructoid,Ninjago,Rebooted,2014,253,29.99,DE,,,2015-01-14,2015-06-06,yes
 70727,X-1 Ninja Charger,Ninjago,Rebooted,2014,426,39.99,DE,,,2015-01-14,2015-05-29,yes
 70728,Battle for Ninjago City,Ninjago,Rebooted,2014,1223,109.99,DE,,,2015-01-14,2015-06-25,yes
@@ -1860,26 +1860,26 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 72056,Luigi & Bowser Jr.'s Race,Super Mario,Mario Kart,2027,104,29.99,DE,,,2026-08-27,,no
 72057,Yoshi at Mario's House,Super Mario,,2027,147,39.99,DE,,,2026-08-27,,no
 72058,Bowser's Rumbling Race,Super Mario,Mario Kart,2027,409,59.99,DE,,,2026-08-27,,no
-7206,Fire Helicopter,City,Fire,2010,342,23.69,UK,yes,,2009-12-30,2010-11-28,yes
+7206,Fire Helicopter,City,Fire,2010,342,39.99,US,yes,,2009-12-30,2010-11-25,yes
 72060,Fire Mario & Bowser's Castle,Super Mario,,2027,850,99.99,DE,,,2026-08-27,,no
 72061,Fire Luigi vs. Koopa Troopa Battle,Super Mario,,2027,241,29.99,DE,,,2026-08-27,,no
-7207,Fire Boat,City,Fire,2010,306,47.39,UK,yes,,2010-01-01,2012-01-04,yes
-7208,Fire Station,City,Fire,2010,662,73.46,UK,yes,,2009-12-31,2012-12-04,yes
-7213,Off-Road Fire Truck & Fireboat,City,Fire,2010,388,37.91,UK,yes,,2010-01-04,2012-12-03,yes
-7235,Police Motorcycle,City,Police,2005,28,4.73,UK,yes,,2007-10-24,2012-11-17,yes
-7236,Police Car,City,Police,2005,59,5.91,UK,yes,,2007-10-24,2010-12-03,yes
-7237,Police Station,City,Police,2005,586,47.39,UK,yes,,2007-10-24,2007-12-03,yes
-7238,Fire Helicopter,City,Fire,2005,75,9.47,UK,yes,,2007-10-24,2008-09-11,yes
-7239,Fire Truck,City,Fire,2005,214,17.76,UK,yes,,2007-10-24,2011-12-09,yes
+7207,Fire Boat,City,Fire,2010,306,49.99,US,yes,,2009-12-10,2011-11-22,yes
+7208,Fire Station,City,Fire,2010,662,79.99,US,yes,,2009-12-10,2012-10-17,yes
+7213,Off-Road Fire Truck & Fireboat,City,Fire,2010,388,39.99,US,yes,,2010-01-04,2012-03-16,yes
+7235,Police Motorcycle,City,Police,2005,28,3.99,US,yes,,2007-10-29,2012-01-08,yes
+7236,Police Car,City,Police,2005,59,5.99,US,yes,,2007-10-24,2010-11-18,yes
+7237,Police Station,City,Police,2005,586,69.99,US,yes,,2007-10-29,2008-02-06,yes
+7238,Fire Helicopter,City,Fire,2005,75,9.99,US,yes,,2007-10-24,2007-12-21,yes
+7239,Fire Truck,City,Fire,2005,214,22.99,US,yes,,2007-10-24,2011-12-05,yes
 7240,Fire Station,City,Fire,2005,260,,,,,,,yes
-7241,Fire Car,City,Fire,2005,46,4.73,UK,yes,,2007-10-24,2010-11-22,yes
-7242,Street Sweeper,City,Construction,2005,63,5.91,UK,yes,,2007-10-24,2008-09-11,yes
-7243,Construction Site,City,Construction,2005,298,35.72,US,yes,,2008-03-08,2008-03-08,yes
-7244,Speedboat,City,Harbour,2005,107,26.79,US,yes,,2007-10-24,2007-12-10,yes
-7245,Prisoner Transport,City,Police,2005,98,11.84,UK,yes,,2007-10-24,2010-12-03,yes
-7246,Mini Digger,City,Construction,2005,36,3.54,UK,yes,,2007-10-24,2008-09-11,yes
-7248,Digger,City,Construction,2005,127,11.84,UK,yes,,2007-10-24,2008-09-11,yes
-7249,XXL Mobile Crane,City,Construction,2005,524,41.46,UK,yes,,2007-10-24,2008-09-11,yes
+7241,Fire Car,City,Fire,2005,46,3.99,US,yes,,2007-10-24,2010-10-20,yes
+7242,Street Sweeper,City,Construction,2005,63,7.99,US,yes,,2007-10-24,2008-12-12,yes
+7243,Construction Site,City,Construction,2005,298,39.99,US,yes,,2008-03-08,2008-03-08,yes
+7244,Speedboat,City,Harbour,2005,107,29.99,US,yes,,2007-10-24,2007-12-10,yes
+7245,Prisoner Transport,City,Police,2005,98,12.99,US,yes,,2007-10-29,2008-12-10,yes
+7246,Mini Digger,City,Construction,2005,36,3.99,US,yes,,2007-10-24,2008-12-05,yes
+7248,Digger,City,Construction,2005,127,19.99,US,yes,,2007-10-24,2008-12-02,yes
+7249,XXL Mobile Crane,City,Construction,2005,524,69.99,US,yes,,2007-10-24,2008-12-12,yes
 7250,Clone Scout Walker,Star Wars,Episode III,2005,108,,,,,,,yes
 7251,Darth Vader Transformation,Star Wars,Episode III,2005,53,,,,,,,yes
 7252,Droid Tri-Fighter,Star Wars,Episode III,2005,148,,,,,,,yes
@@ -1895,58 +1895,58 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 7264,Imperial Inspection,Star Wars,Episode VI,2005,367,,,,,,,yes
 7266,Promotional Set,City,Fire,2005,19,,,,,,,yes
 7267,Paramedic,City,Medical,2005,13,,,,,,,yes
-7279,Police Minifigure Collection,City,Police,2011,57,10.06,UK,yes,,2010-12-28,2013-11-27,yes
+7279,Police Minifigure Collection,City,Police,2011,57,9.99,US,yes,,2010-12-03,2013-12-05,yes
 7280,Straight & Crossroad Plates,City,Road Plates,2005,2,9.99,DE,,,2015-01-14,2019-01-01,yes
 7281,T-Junction & Curved Road Plates,City,Road Plates,2005,2,9.99,DE,,,2015-01-14,2018-11-27,yes
 7283,Ultimate Space Battle,Star Wars,Episode III,2005,567,,,,,,,yes
-7285,Police Dog Unit,City,Police,2011,96,10.65,UK,yes,,2010-12-28,2012-01-10,yes
-7286,Prisoner Transport,City,Police,2011,173,16.58,UK,yes,,2010-12-28,2013-11-17,yes
-7287,Police Boat,City,Police,2011,172,23.69,UK,yes,,2010-12-28,2011-12-12,yes
-7288,Mobile Police Unit,City,Police,2011,408,49.76,UK,yes,,2010-12-28,2013-11-28,yes
+7285,Police Dog Unit,City,Police,2011,96,12.99,US,yes,,2010-12-03,2011-12-26,yes
+7286,Prisoner Transport,City,Police,2011,173,19.99,US,yes,,2010-12-03,2013-12-04,yes
+7287,Police Boat,City,Police,2011,172,39.99,US,yes,,2010-12-03,2011-12-08,yes
+7288,Mobile Police Unit,City,Police,2011,408,44.99,US,yes,,2010-12-03,2013-12-02,yes
 7324,LEGO City Advent Calendar,City,Seasonal,2005,203,,,,,,,yes
 7344,Dump Truck,City,Construction,2005,187,,,,,,,yes
-7498,Police Station,City,Police,2011,783,85.31,UK,yes,,2010-12-28,2013-11-29,yes
+7498,Police Station,City,Police,2011,783,99.99,US,yes,,2010-12-03,2013-12-01,yes
 7499,Flexible and Straight Tracks,City,Trains,2011,24,17.99,DE,,,2015-01-14,2018-06-29,yes
-75000,Clone Troopers vs. Droidekas,Star Wars,Episode II,2013,124,14.21,UK,yes,,2013-01-03,2015-01-02,yes
-75001,Republic Troopers vs. Sith Troopers,Star Wars,The Old Republic,2013,63,14.21,UK,yes,,2013-01-03,2015-01-02,yes
-75002,AT-RT,Star Wars,The Clone Wars,2013,222,23.69,UK,yes,,2013-01-03,2014-10-28,yes
-75003,A-wing Starfighter,Star Wars,Episode VI,2013,177,29.61,UK,yes,,2013-01-03,2015-01-02,yes
-75004,Z-95 Headhunter,Star Wars,The Clone Wars,2013,373,47.39,UK,yes,,2013-01-03,2015-01-02,yes
-75005,Rancor Pit,Star Wars,Episode VI,2013,380,71.09,UK,yes,,2013-01-03,2015-01-02,yes
-75006,Jedi Starfighter & Planet Kamino,Star Wars,Planet Set,2013,61,11.84,UK,yes,,2013-01-03,2013-12-02,yes
-75007,Republic Assault Ship & Planet Coruscant,Star Wars,Planet Set,2013,74,11.84,UK,yes,,2013-01-03,2013-12-29,yes
-75008,TIE Bomber & Asteroid Field,Star Wars,Planet Set,2013,60,11.84,UK,yes,,2013-01-03,2013-12-01,yes
-75009,Snowspeeder & Planet Hoth,Star Wars,Planet Set,2013,69,14.21,UK,yes,,2013-07-27,2013-11-23,yes
-75010,B-Wing Starfighter & Planet Endor,Star Wars,Planet Set,2013,83,14.21,UK,yes,,2013-07-27,2013-12-26,yes
-75011,Tantive IV & Planet Alderaan,Star Wars,Planet Set,2013,102,14.21,UK,yes,,2013-07-27,2014-01-22,yes
-75012,BARC Speeder with Sidecar,Star Wars,The Clone Wars,2013,226,29.61,UK,yes,,2013-01-03,2014-11-19,yes
-75013,Umbaran MHC (Mobile Heavy Cannon),Star Wars,The Clone Wars,2013,493,59.24,UK,yes,,2013-01-03,2014-12-30,yes
-75014,Battle of Hoth,Star Wars,Episode V,2013,426,47.39,UK,yes,,2013-01-03,2013-11-03,yes
-75015,Corporate Alliance Tank Droid,Star Wars,Episode II,2013,271,23.69,UK,yes,,2013-06-01,2015-01-02,yes
-75016,Homing Spider Droid,Star Wars,Episode II,2013,295,35.54,UK,yes,,2013-06-01,2015-01-14,yes
-75017,Duel on Geonosis,Star Wars,Episode II,2013,391,47.39,UK,yes,,2013-06-02,2015-01-13,yes
-75018,Jek-14's Stealth Starfighter,Star Wars,The Yoda Chronicles,2013,550,71.09,UK,yes,,2013-06-01,2014-11-21,yes
-75019,AT-TE ,Star Wars,Episode II,2013,794,94.79,UK,yes,,2013-06-01,2015-01-02,yes
-75020,Jabba's Sail Barge,Star Wars,Episode VI,2013,850,118.49,UK,yes,,2013-06-01,2015-01-02,yes
-75021,Republic Gunship,Star Wars,Episode II,2013,1175,130.34,UK,yes,,2013-06-02,2015-01-02,yes
-75022,Mandalorian Speeder,Star Wars,The Clone Wars,2013,211,29.61,UK,yes,,2013-06-01,2014-11-21,yes
-75023,LEGO Star Wars Advent Calendar,Star Wars,Seasonal,2013,254,29.61,UK,yes,,2013-09-02,2013-12-16,yes
-75024,HH-87 Starhopper,Star Wars,The Clone Wars,2013,362,47.39,UK,yes,,2013-07-27,2015-01-02,yes
-75025,Jedi Defender-class Cruiser,Star Wars,The Old Republic,2013,927,118.49,UK,yes,,2013-07-27,2014-11-21,yes
+75000,Clone Troopers vs. Droidekas,Star Wars,Episode II,2013,124,12.99,US,yes,,2012-12-28,2014-12-02,yes
+75001,Republic Troopers vs. Sith Troopers,Star Wars,The Old Republic,2013,63,12.99,US,yes,,2012-12-28,2015-01-09,yes
+75002,AT-RT,Star Wars,The Clone Wars,2013,222,19.99,US,yes,,2012-12-28,2014-12-05,yes
+75003,A-wing Starfighter,Star Wars,Episode VI,2013,177,24.99,US,yes,,2012-12-28,2014-11-29,yes
+75004,Z-95 Headhunter,Star Wars,The Clone Wars,2013,373,49.99,US,yes,,2012-12-28,2014-12-05,yes
+75005,Rancor Pit,Star Wars,Episode VI,2013,380,59.99,US,yes,,2012-12-28,2014-12-15,yes
+75006,Jedi Starfighter & Planet Kamino,Star Wars,Planet Set,2013,61,9.99,US,yes,,2013-03-01,2014-02-14,yes
+75007,Republic Assault Ship & Planet Coruscant,Star Wars,Planet Set,2013,74,9.99,US,yes,,2013-03-01,2014-05-06,yes
+75008,TIE Bomber & Asteroid Field,Star Wars,Planet Set,2013,60,9.99,US,yes,,2013-03-01,2014-02-04,yes
+75009,Snowspeeder & Planet Hoth,Star Wars,Planet Set,2013,69,13.49,UK,yes,,2013-07-27,2013-11-23,yes
+75010,B-Wing Starfighter & Planet Endor,Star Wars,Planet Set,2013,83,13.49,UK,yes,,2013-07-27,2013-12-26,yes
+75011,Tantive IV & Planet Alderaan,Star Wars,Planet Set,2013,102,13.49,UK,yes,,2013-07-27,2014-01-22,yes
+75012,BARC Speeder with Sidecar,Star Wars,The Clone Wars,2013,226,24.99,US,yes,,2012-12-28,2014-12-30,yes
+75013,Umbaran MHC (Mobile Heavy Cannon),Star Wars,The Clone Wars,2013,493,49.99,US,yes,,2012-12-28,2015-01-10,yes
+75014,Battle of Hoth,Star Wars,Episode V,2013,426,49.99,US,yes,,2012-12-28,2013-12-15,yes
+75015,Corporate Alliance Tank Droid,Star Wars,Episode II,2013,271,19.99,US,yes,,2013-08-01,2014-12-01,yes
+75016,Homing Spider Droid,Star Wars,Episode II,2013,295,29.99,US,yes,,2013-08-01,2014-11-30,yes
+75017,Duel on Geonosis,Star Wars,Episode II,2013,391,39.99,US,yes,,2013-08-01,2014-12-01,yes
+75018,Jek-14's Stealth Starfighter,Star Wars,The Yoda Chronicles,2013,550,69.99,US,yes,,2013-08-01,2014-12-03,yes
+75019,AT-TE ,Star Wars,Episode II,2013,794,89.99,US,yes,,2013-08-01,2014-12-08,yes
+75020,Jabba's Sail Barge,Star Wars,Episode VI,2013,850,119.99,US,yes,,2013-08-01,2015-01-02,yes
+75021,Republic Gunship,Star Wars,Episode II,2013,1175,119.99,US,yes,,2013-08-01,2014-12-30,yes
+75022,Mandalorian Speeder,Star Wars,The Clone Wars,2013,211,24.99,US,yes,,2013-08-01,2014-11-29,yes
+75023,LEGO Star Wars Advent Calendar,Star Wars,Seasonal,2013,254,39.99,US,yes,,2013-09-02,2013-11-24,yes
+75024,HH-87 Starhopper,Star Wars,The Clone Wars,2013,362,39.99,US,yes,,2013-08-01,2015-01-16,yes
+75025,Jedi Defender-class Cruiser,Star Wars,The Old Republic,2013,927,89.99,US,yes,,2013-08-01,2014-12-15,yes
 75028,Clone Turbo Tank,Star Wars,Microfighters,2014,96,9.99,DE,,,2015-01-14,2015-05-09,yes
-75029,AAT,Star Wars,Microfighters,2014,95,10.65,UK,yes,,2013-12-27,2015-01-13,yes
+75029,AAT,Star Wars,Microfighters,2014,95,9.99,US,yes,,2014-02-18,2015-01-21,yes
 75030,Millennium Falcon,Star Wars,Microfighters,2014,94,9.99,DE,,,2015-01-14,2015-06-25,yes
 75031,TIE Interceptor,Star Wars,Microfighters,2014,92,9.99,DE,,,2015-01-14,2015-06-25,yes
 75032,X-wing Fighter,Star Wars,Microfighters,2014,97,9.99,DE,,,2015-01-14,2015-06-25,yes
-75033,Star Destroyer,Star Wars,Microfighters,2014,97,10.65,UK,yes,,2013-12-27,2014-11-21,yes
+75033,Star Destroyer,Star Wars,Microfighters,2014,97,9.99,US,yes,,2014-02-18,2015-01-24,yes
 75034,Death Star Troopers,Star Wars,Episode VI,2014,100,16.99,DE,,,2015-01-14,2015-06-25,yes
 75035,Kashyyyk Troopers,Star Wars,Episode III,2014,99,16.99,DE,,,2015-01-14,2015-06-25,yes
 75036,Utapau Troopers,Star Wars,Episode III,2014,83,16.99,DE,,,2015-01-14,2015-06-25,yes
 75037,Battle on Saleucami,Star Wars,Episode III,2014,183,19.99,DE,,,2015-01-14,2015-11-26,yes
 75038,Jedi Interceptor,Star Wars,Episode III,2014,223,29.99,DE,,,2015-01-14,2015-11-10,yes
-75039,V-wing Starfighter,Star Wars,Episode III,2014,201,23.69,UK,yes,,2013-12-26,2014-11-10,yes
+75039,V-wing Starfighter,Star Wars,Episode III,2014,201,24.99,US,yes,,2014-02-18,2014-11-28,yes
 75040,General Grievous' Wheel Bike,Star Wars,Episode III,2014,261,29.99,DE,,,2015-01-14,2015-11-24,yes
-75041,Vulture Droid,Star Wars,Episode III,2014,205,23.69,UK,yes,,2014-01-16,2015-01-05,yes
+75041,Vulture Droid,Star Wars,Episode III,2014,205,24.99,US,yes,,2014-02-18,2015-02-17,yes
 75042,Droid Gunship,Star Wars,Episode III,2014,439,49.99,DE,,,2015-01-14,2015-12-05,yes
 75043,AT-AP,Star Wars,Episode III,2014,717,69.99,DE,,,2015-01-14,2015-12-02,yes
 75044,Droid Tri-Fighter,Star Wars,Episode III,2014,262,39.99,DE,,,2015-01-14,2015-12-19,yes
@@ -1960,7 +1960,7 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 75053,The Ghost,Star Wars,Rebels,2014,929,99.99,DE,,,2015-01-14,2015-12-10,yes
 75054,AT-AT,Star Wars,Episode V,2014,1137,119.99,DE,,,2015-01-14,2015-11-15,yes
 75055,Imperial Star Destroyer,Star Wars,Episode IV,2014,1359,129.99,DE,,,2015-01-14,2015-11-11,yes
-75056,LEGO Star Wars Advent Calendar,Star Wars,Seasonal,2014,274,29.61,UK,yes,,2014-10-10,2014-11-08,yes
+75056,LEGO Star Wars Advent Calendar,Star Wars,Seasonal,2014,274,39.99,US,yes,,2014-10-10,2014-11-16,yes
 75058,MTT,Star Wars,Episode I,2014,954,99.99,DE,,,2015-01-14,2016-01-02,yes
 75059,Sandcrawler,Star Wars,Ultimate Collector Series,2014,3296,299.99,DE,,,2015-01-14,2017-01-17,yes
 75060,Slave I,Star Wars,Ultimate Collector Series,2015,1996,199.99,DE,,,2015-01-14,2018-12-17,yes
@@ -2347,7 +2347,7 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 75526,Elite TIE Fighter Pilot,Star Wars,Buildable Figures,2017,94,19.99,DE,,,2017-09-02,2018-12-27,yes
 75528,Rey,Star Wars,Buildable Figures,2017,85,24.99,DE,,,2017-09-02,2018-07-06,yes
 75529,Elite Praetorian Guard,Star Wars,Buildable Figures,2017,92,24.99,DE,,,2017-09-02,2018-07-16,yes
-7553,LEGO City Advent Calendar,City,Seasonal,2011,232,21.32,UK,yes,,2011-08-27,2011-12-02,yes
+7553,LEGO City Advent Calendar,City,Seasonal,2011,232,34.99,US,yes,,2011-08-26,2011-11-28,yes
 75530,Chewbacca,Star Wars,Buildable Figures,2017,179,34.99,DE,,,2017-09-02,2018-12-27,yes
 75531,Stormtrooper Commander,Star Wars,Buildable Figures,2017,100,24.99,DE,,,2017-06-02,2018-06-29,yes
 75532,Scout Trooper & Speeder Bike,Star Wars,Buildable Figures,2017,452,54.99,DE,,,2017-06-02,2018-12-28,yes
@@ -2358,138 +2358,138 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 75537,Darth Maul,Star Wars,Buildable Figures,2018,104,29.99,DE,,,2018-04-14,2019-01-09,yes
 75538,Super Battle Droid,Star Wars,Buildable Figures,2018,,,,,,,,yes
 75539,501st Legion Clone Trooper & AT-RT Walker,Star Wars,Buildable Figures,2018,,,,,,,,yes
-7566,Farmer,City,Farm,2010,16,3.54,UK,yes,,2010-06-01,2010-12-03,yes
-7567,Traveller,City,Airport,2010,21,3.54,UK,yes,,2009-12-30,2010-11-25,yes
-7630,Front-End Loader,City,Construction,2009,108,11.84,UK,yes,,2008-12-28,2011-07-21,yes
-7631,Dump Truck,City,Construction,2009,189,17.76,UK,yes,,2008-12-28,2011-11-18,yes
-7632,Crawler Crane,City,Construction,2009,481,53.32,UK,yes,,2008-12-28,2010-12-03,yes
-7633,Construction Site,City,Construction,2009,898,82.94,UK,yes,,2008-12-28,2010-12-25,yes
-7634,Tractor,City,Farm,2009,78,10.06,UK,yes,,2009-03-07,2011-07-19,yes
-7635,4WD with Horse Trailer,City,Farm,2009,176,17.76,UK,yes,,2009-03-07,2011-07-21,yes
-7636,Combine Harvester,City,Farm,2009,360,41.46,UK,yes,,2009-03-07,2010-12-25,yes
-7637,Farm,City,Farm,2009,609,73.46,UK,yes,,2009-03-07,2011-06-21,yes
-7638,Tow Truck,City,Traffic,2009,129,11.84,UK,yes,,2009-06-03,2010-11-25,yes
-7639,Camper,City,Great Outdoors,2009,165,17.76,UK,yes,,2009-06-03,2011-12-07,yes
-7641,City Corner,City,Town,2009,483,59.24,UK,yes,,2009-06-03,2011-12-02,yes
-7642,Garage,City,Town,2009,953,82.94,UK,yes,,2009-06-03,2010-12-03,yes
+7566,Farmer,City,Farm,2010,16,3.99,US,yes,,2010-06-07,2011-01-04,yes
+7567,Traveller,City,Airport,2010,21,3.99,US,yes,,2009-12-30,2010-11-28,yes
+7630,Front-End Loader,City,Construction,2009,108,12.99,US,yes,,2008-12-28,2010-12-09,yes
+7631,Dump Truck,City,Construction,2009,189,19.99,US,yes,,2008-12-05,2010-12-03,yes
+7632,Crawler Crane,City,Construction,2009,481,59.99,US,yes,,2008-12-28,2010-12-25,yes
+7633,Construction Site,City,Construction,2009,898,99.99,US,yes,,2008-12-05,2010-11-08,yes
+7634,Tractor,City,Farm,2009,78,12.99,US,yes,,2009-02-09,2011-06-21,yes
+7635,4WD with Horse Trailer,City,Farm,2009,176,17.48,US,yes,,2008-12-08,2011-07-21,yes
+7636,Combine Harvester,City,Farm,2009,360,44.99,US,yes,,2009-02-09,2010-12-14,yes
+7637,Farm,City,Farm,2009,609,89.99,US,yes,,2009-02-09,2010-11-28,yes
+7638,Tow Truck,City,Traffic,2009,129,12.99,US,yes,,2009-05-30,2010-11-08,yes
+7639,Camper,City,Great Outdoors,2009,165,16.99,US,yes,,2009-05-30,2011-12-03,yes
+7641,City Corner,City,Town,2009,483,59.99,US,yes,,2009-05-30,2011-11-29,yes
+7642,Garage,City,Town,2009,953,99.99,US,yes,,2009-05-30,2010-11-28,yes
 7643,Air-Show Plane,City,Air Show,2009,115,,,,,,,yes
-7654,Droids Battle Pack,Star Wars,Episode III,2007,102,10.65,UK,yes,,2007-10-24,2008-09-11,yes
-7655,Clone Troopers Battle Pack,Star Wars,Episode III,2007,58,10.65,UK,yes,,2007-10-24,2008-09-11,yes
-7656,General Grievous Starfighter,Star Wars,Episode III,2007,232,23.69,UK,yes,,2007-10-24,2008-10-10,yes
-7657,AT-ST,Star Wars,Episode VI,2007,244,23.69,UK,yes,,2007-10-24,2008-09-11,yes
-7658,Y-wing Fighter,Star Wars,Episode IV,2007,454,47.39,UK,yes,,2007-10-24,2008-09-11,yes
-7659,Imperial Landing Craft,Star Wars,Episode IV,2007,471,58.01,UK,yes,,2007-10-24,2008-12-30,yes
-7660,Naboo N-1 Starfighter with Vulture Droid,Star Wars,Episode I,2007,280,35.54,UK,yes,,2007-10-24,2008-11-24,yes
-7661,Jedi Starfighter with Hyperdrive Booster Ring,Star Wars,Episode III,2007,575,58.01,UK,yes,,2007-10-24,2009-01-15,yes
-7662,Trade Federation MTT,Star Wars,Episode I,2007,1330,92.78,UK,yes,,2007-10-24,2008-12-30,yes
-7663,Sith Infiltrator,Star Wars,Episode I,2007,310,29.61,UK,yes,,2007-10-24,2008-11-12,yes
-7664,TIE Crawler,Star Wars,Legends,2007,548,47.39,UK,yes,,2007-10-24,2008-09-11,yes
-7665,Republic Cruiser,Star Wars,Episode I,2007,919,82.94,UK,yes,,2007-10-24,2008-12-05,yes
-7666,Hoth Rebel Base,Star Wars,Episode V,2007,548,44.65,US,yes,,2007-10-24,2009-01-16,yes
-7667,Imperial Dropship,Star Wars,Miscellaneous,2008,81,11.6,UK,yes,,2008-01-02,2009-12-02,yes
-7668,Rebel Scout Speeder,Star Wars,Miscellaneous,2008,82,11.6,UK,yes,,2008-01-02,2009-12-12,yes
-7669,Anakin's Jedi Starfighter,Star Wars,The Clone Wars,2008,153,25.47,UK,yes,,2008-01-02,2009-10-25,yes
-7670,Hailfire Droid & Spider Droid,Star Wars,The Clone Wars,2008,249,25.47,UK,yes,,2008-01-02,2009-12-06,yes
-7671,AT-AP Walker,Star Wars,Episode III,2008,392,46.39,UK,yes,,2008-01-02,2009-11-29,yes
-7672,Rogue Shadow,Star Wars,The Force Unleashed,2008,482,58.01,UK,yes,,2008-01-02,2009-12-06,yes
-7673,Magna Guard Starfighter,Star Wars,The Clone Wars,2008,431,46.39,UK,yes,,2008-07-28,2009-12-04,yes
-7674,V-19 Torrent,Star Wars,The Clone Wars,2008,471,58.01,UK,yes,,2008-07-28,2009-12-30,yes
-7675,AT-TE Walker,Star Wars,The Clone Wars,2008,798,82.94,UK,yes,,2008-07-28,2010-06-10,yes
-7676,Republic Attack Gunship,Star Wars,The Clone Wars,2008,1034,100.72,UK,yes,,2008-07-28,2010-04-09,yes
-7678,Droid Gunship,Star Wars,The Clone Wars,2008,329,29.02,UK,yes,,2008-07-28,2009-01-24,yes
-7679,Republic Fighter Tank,Star Wars,The Clone Wars,2008,592,58.01,UK,yes,,2008-07-28,2009-06-01,yes
-7680,The Twilight,Star Wars,The Clone Wars,2008,882,81.16,UK,yes,,2008-07-28,2009-12-10,yes
-7681,Separatist Spider Droid,Star Wars,The Clone Wars,2008,206,25.47,UK,yes,,2008-07-28,2009-12-06,yes
-7684,Pig Farm & Tractor,City,Farm,2010,256,31.98,UK,yes,,2010-03-03,2011-08-05,yes
-7685,Dozer,City,Construction,2009,352,23.17,UK,yes,,2008-12-28,2010-01-08,yes
-7686,Helicopter Transporter,City,Traffic,2009,377,23.17,UK,yes,,2009-06-03,2009-12-06,yes
-7687,LEGO City Advent Calendar,City,Seasonal,2009,257,23.17,UK,yes,,2009-09-12,2010-01-26,yes
+7654,Droids Battle Pack,Star Wars,Episode III,2007,102,9.99,US,yes,,2007-10-24,2008-09-11,yes
+7655,Clone Troopers Battle Pack,Star Wars,Episode III,2007,58,9.99,US,yes,,2007-10-24,2008-09-11,yes
+7656,General Grievous Starfighter,Star Wars,Episode III,2007,232,19.99,US,yes,,2007-10-24,2008-12-05,yes
+7657,AT-ST,Star Wars,Episode VI,2007,244,19.99,US,yes,,2007-10-24,2008-09-11,yes
+7658,Y-wing Fighter,Star Wars,Episode IV,2007,454,39.99,US,yes,,2007-10-24,2008-09-18,yes
+7659,Imperial Landing Craft,Star Wars,Episode IV,2007,471,49.99,US,yes,,2007-10-24,2008-12-19,yes
+7660,Naboo N-1 Starfighter with Vulture Droid,Star Wars,Episode I,2007,280,29.99,US,yes,,2007-10-24,2009-03-27,yes
+7661,Jedi Starfighter with Hyperdrive Booster Ring,Star Wars,Episode III,2007,575,49.99,US,yes,,2007-10-24,2009-01-28,yes
+7662,Trade Federation MTT,Star Wars,Episode I,2007,1330,99.99,US,yes,,2007-10-24,2008-12-18,yes
+7663,Sith Infiltrator,Star Wars,Episode I,2007,310,29.99,US,yes,,2007-10-24,2008-12-04,yes
+7664,TIE Crawler,Star Wars,Legends,2007,548,49.99,US,yes,,2007-10-24,2008-01-30,yes
+7665,Republic Cruiser,Star Wars,Episode I,2007,919,89.99,US,yes,,2007-10-24,2008-12-08,yes
+7666,Hoth Rebel Base,Star Wars,Episode V,2007,548,49.99,US,yes,,2007-10-24,2009-01-16,yes
+7667,Imperial Dropship,Star Wars,Miscellaneous,2008,81,9.99,US,yes,,2007-12-22,2009-04-17,yes
+7668,Rebel Scout Speeder,Star Wars,Miscellaneous,2008,82,9.99,US,yes,,2007-12-22,2009-05-08,yes
+7669,Anakin's Jedi Starfighter,Star Wars,The Clone Wars,2008,153,19.99,US,yes,,2007-12-22,2009-11-10,yes
+7670,Hailfire Droid & Spider Droid,Star Wars,The Clone Wars,2008,249,19.99,US,yes,,2007-12-22,2009-11-24,yes
+7671,AT-AP Walker,Star Wars,Episode III,2008,392,39.99,US,yes,,2007-12-22,2009-06-19,yes
+7672,Rogue Shadow,Star Wars,The Force Unleashed,2008,482,49.99,US,yes,,2007-12-22,2009-06-24,yes
+7673,Magna Guard Starfighter,Star Wars,The Clone Wars,2008,431,44.99,US,yes,,2008-07-28,2009-12-02,yes
+7674,V-19 Torrent,Star Wars,The Clone Wars,2008,471,54.99,US,yes,,2008-07-28,2009-12-04,yes
+7675,AT-TE Walker,Star Wars,The Clone Wars,2008,798,89.99,US,yes,,2008-07-28,2010-06-14,yes
+7676,Republic Attack Gunship,Star Wars,The Clone Wars,2008,1034,119.99,US,yes,,2008-07-28,2010-05-18,yes
+7678,Droid Gunship,Star Wars,The Clone Wars,2008,329,29.99,US,yes,,2008-07-28,2009-02-27,yes
+7679,Republic Fighter Tank,Star Wars,The Clone Wars,2008,592,49.99,US,yes,,2008-10-19,2009-12-17,yes
+7680,The Twilight,Star Wars,The Clone Wars,2008,882,99.99,US,yes,,2008-07-28,2009-11-29,yes
+7681,Separatist Spider Droid,Star Wars,The Clone Wars,2008,206,29.99,US,yes,,2008-07-28,2009-12-06,yes
+7684,Pig Farm & Tractor,City,Farm,2010,256,34.99,US,yes,,2010-03-03,2011-01-11,yes
+7685,Dozer,City,Construction,2009,352,39.99,US,yes,,2008-12-28,2009-12-15,yes
+7686,Helicopter Transporter,City,Traffic,2009,377,39.99,US,yes,,2009-05-30,2009-12-02,yes
+7687,LEGO City Advent Calendar,City,Seasonal,2009,257,29.99,US,yes,,2009-09-12,2009-11-24,yes
 7688,LEGO Sports Plane ,City,General,2010,105,,,,,,,yes
 7696,Commuter Jet,City,Airport,2011,108,,,,,,,yes
-7723,Police Pontoon Plane,City,Police,2008,215,41.46,UK,yes,,2008-02-25,2009-01-01,yes
-7724,LEGO City Advent Calendar,City,Seasonal,2008,196,17.76,UK,yes,,2008-08-28,2008-11-18,yes
-7726,Coast Guard Truck with Speed Boat,City,Coast Guard,2008,361,20.25,UK,yes,,2008-05-14,2009-02-10,yes
-7731,Mail Van,City,Traffic,2008,66,5.79,UK,yes,,2008-01-02,2009-01-16,yes
-7732,Air Mail,City,Airport,2008,88,9.23,UK,yes,,2008-01-02,2009-12-10,yes
-7733,Truck & Forklift,City,Cargo,2008,343,23.17,UK,yes,,2008-01-02,2009-11-16,yes
-7734,Cargo Plane,City,Cargo,2008,463,40.59,UK,yes,,2008-01-02,2009-11-23,yes
-7736,Coast Guard Quad Bike,City,Coast Guard,2008,33,4.09,UK,yes,,2008-05-14,2009-11-24,yes
-7737,Coast Guard 4WD & Jet Scooter,City,Coast Guard,2008,130,10.42,UK,yes,,2008-05-14,2009-11-20,yes
-7738,Coast Guard Helicopter & Life Raft,City,Coast Guard,2008,445,42.89,UK,yes,,2008-05-14,2009-12-31,yes
-7739,Coast Guard Patrol Boat & Tower,City,Coast Guard,2008,444,58.01,UK,yes,,2008-05-14,2009-12-12,yes
-7741,Police Helicopter,City,Police,2008,94,11.84,UK,yes,,2008-01-02,2013-12-01,yes
-7743,Police Truck,City,Police,2008,524,47.39,UK,yes,,2008-01-02,2010-12-14,yes
-7744,Police Headquarters,City,Police,2008,953,82.94,UK,yes,,2008-01-02,2010-12-03,yes
-7746,Single-Drum Roller,City,Construction,2009,208,29.61,UK,yes,,2009-02-09,2010-12-09,yes
-7747,Wind Turbine Transport,City,General,2009,444,49.76,UK,yes,,2009-07-02,2010-12-03,yes
-7748,Corporate Alliance Tank Droid,Star Wars,The Clone Wars,2009,216,29.61,UK,yes,,2009-06-17,2010-12-03,yes
-7749,Echo Base,Star Wars,Episode V,2009,155,29.61,UK,yes,,2009-06-04,2010-12-03,yes
-7751,Ahsoka's Starfighter and Vulture Droid,Star Wars,The Clone Wars,2009,291,37.08,UK,yes,,2008-12-28,2009-12-06,yes
-7752,Count Dooku's Solar Sailer,Star Wars,The Clone Wars,2009,385,47.39,UK,yes,,2008-12-28,2010-12-09,yes
-7753,Pirate Tank,Star Wars,The Clone Wars,2009,372,41.46,UK,yes,,2009-07-02,2010-12-11,yes
-7754,Home One Mon Calamari Star Cruiser,Star Wars,Episode VI,2009,789,106.64,UK,yes,,2009-07-02,2010-12-25,yes
-7778,Midi-scale Millennium Falcon,Star Wars,Episode IV,2009,356,41.46,UK,yes,,2009-07-02,2010-12-09,yes
+7723,Police Pontoon Plane,City,Police,2008,215,39.99,US,yes,,2008-05-26,2009-04-27,yes
+7724,LEGO City Advent Calendar,City,Seasonal,2008,196,29.99,US,yes,,2008-08-26,2009-02-21,yes
+7726,Coast Guard Truck with Speed Boat,City,Coast Guard,2008,361,39.99,US,yes,,2008-05-26,2009-01-19,yes
+7731,Mail Van,City,Traffic,2008,66,7.99,US,yes,,2007-12-28,2009-01-01,yes
+7732,Air Mail,City,Airport,2008,88,14.99,US,yes,,2007-12-22,2009-12-06,yes
+7733,Truck & Forklift,City,Cargo,2008,343,24.99,US,yes,,2007-12-22,2009-12-30,yes
+7734,Cargo Plane,City,Cargo,2008,463,49.99,US,yes,,2007-12-28,2009-11-19,yes
+7736,Coast Guard Quad Bike,City,Coast Guard,2008,33,4.99,US,yes,,2008-05-26,2009-12-02,yes
+7737,Coast Guard 4WD & Jet Scooter,City,Coast Guard,2008,130,9.99,US,yes,,2008-05-26,2009-12-02,yes
+7738,Coast Guard Helicopter & Life Raft,City,Coast Guard,2008,445,39.99,US,yes,,2008-05-26,2009-12-10,yes
+7739,Coast Guard Patrol Boat & Tower,City,Coast Guard,2008,444,59.99,US,yes,,2008-05-26,2009-12-02,yes
+7741,Police Helicopter,City,Police,2008,94,9.99,US,yes,,2007-12-16,2013-11-08,yes
+7743,Police Truck,City,Police,2008,524,44.99,US,yes,,2007-12-15,2010-11-28,yes
+7744,Police Headquarters,City,Police,2008,953,89.99,US,yes,,2007-12-22,2010-12-03,yes
+7746,Single-Drum Roller,City,Construction,2009,208,29.99,US,yes,,2009-02-03,2011-01-22,yes
+7747,Wind Turbine Transport,City,General,2009,444,59.99,US,yes,,2009-08-03,2011-01-22,yes
+7748,Corporate Alliance Tank Droid,Star Wars,The Clone Wars,2009,216,24.99,US,yes,,2009-06-28,2010-11-28,yes
+7749,Echo Base,Star Wars,Episode V,2009,155,24.99,US,yes,,2009-06-28,2010-11-28,yes
+7751,Ahsoka's Starfighter and Vulture Droid,Star Wars,The Clone Wars,2009,291,39.99,US,yes,,2008-12-28,2009-12-01,yes
+7752,Count Dooku's Solar Sailer,Star Wars,The Clone Wars,2009,385,54.99,US,yes,,2009-02-04,2011-01-07,yes
+7753,Pirate Tank,Star Wars,The Clone Wars,2009,372,39.99,US,yes,,2009-08-03,2010-12-25,yes
+7754,Home One Mon Calamari Star Cruiser,Star Wars,Episode VI,2009,789,109.99,US,yes,,2009-08-03,2011-01-07,yes
+7778,Midi-scale Millennium Falcon,Star Wars,Episode IV,2009,356,39.99,US,yes,,2009-08-03,2010-05-06,yes
 77901,Sith Trooper Bust,Star Wars,Promotional,2019,484,,,,,,,yes
 77904,Nebulon-B Frigate,Star Wars,Promotional,2020,459,,,,,,,yes
 77907,Toad's Special Hideaway,Super Mario,Expansion Set,2020,120,,,,,,,yes
-77943,Fire Station Starter Set,City,Fire,2021,239,29.61,UK,yes,,2021-09-03,2023-01-04,yes
-77944,Fire Station Headquarters,City,Fire,2021,908,106.64,UK,yes,,2021-09-03,2023-01-04,yes
+77943,Fire Station Starter Set,City,Fire,2021,239,28.11,UK,yes,,2021-09-03,2023-01-04,yes
+77944,Fire Station Headquarters,City,Fire,2021,908,101.24,UK,yes,,2021-09-03,2023-01-04,yes
 7848,Toys R Us Truck,City,Traffic,2010,356,,,,,,,yes
-7868,Mace Windu's Jedi Starfighter,Star Wars,The Clone Wars,2011,309,42.65,UK,yes,,2010-12-28,2011-11-30,yes
-7869,Battle for Geonosis,Star Wars,The Clone Wars,2011,331,42.65,UK,yes,,2010-12-28,2012-11-29,yes
-7877,Naboo Starfighter,Star Wars,Episode I,2011,318,48.57,UK,yes,,2011-08-05,2012-11-25,yes
-7879,Hoth Echo Base,Star Wars,Episode V,2011,773,109.01,UK,yes,,2011-08-05,2013-12-16,yes
-7890,Ambulance,City,Medical,2006,118,7.1,UK,yes,,2007-10-24,2008-12-04,yes
-7891,Airport Fire Truck,City,Airport,2006,148,11.84,UK,yes,,2007-10-24,2007-11-23,yes
-7892,Hospital,City,Medical,2006,382,35.54,UK,yes,,2007-10-24,2008-01-16,yes
-7893,Passenger Plane,City,Airport,2006,401,41.46,UK,yes,,2007-10-24,2008-01-01,yes
-7894,Airport,City,Airport,2006,700,82.94,UK,yes,,2007-10-24,2008-09-11,yes
+7868,Mace Windu's Jedi Starfighter,Star Wars,The Clone Wars,2011,309,39.99,US,yes,,2011-07-19,2011-12-26,yes
+7869,Battle for Geonosis,Star Wars,The Clone Wars,2011,331,39.99,US,yes,,2010-12-25,2012-12-11,yes
+7877,Naboo Starfighter,Star Wars,Episode I,2011,318,49.99,US,yes,,2011-07-19,2012-12-28,yes
+7879,Hoth Echo Base,Star Wars,Episode V,2011,773,89.99,US,yes,,2011-07-21,2013-12-02,yes
+7890,Ambulance,City,Medical,2006,118,7.99,US,yes,,2007-10-24,2008-09-11,yes
+7891,Airport Fire Truck,City,Airport,2006,148,14.99,US,yes,,2007-10-24,2007-12-14,yes
+7892,Hospital,City,Medical,2006,382,49.99,US,yes,,2007-10-24,2007-11-10,yes
+7893,Passenger Plane,City,Airport,2006,401,39.99,US,yes,,2007-10-24,2008-06-21,yes
+7894,Airport,City,Airport,2006,700,79.99,US,yes,,2007-10-24,2008-12-05,yes
 7895,Switching Tracks,City,Trains,2006,8,19.99,DE,,,2015-01-31,2018-10-28,yes
-7896,Straight & Curved Rails,City,Trains,2006,16,11.84,UK,yes,,2007-10-24,2010-12-03,yes
-7897,Passenger Train,City,Trains,2006,501,86.97,UK,yes,,2007-10-24,2009-11-27,yes
-7898,Cargo Train Deluxe,City,Trains,2006,856,121.76,UK,yes,,2007-10-24,2009-11-22,yes
+7896,Straight & Curved Rails,City,Trains,2006,16,15.99,US,yes,,2007-10-24,2010-12-18,yes
+7897,Passenger Train,City,Trains,2006,501,89.99,US,yes,,2007-10-24,2009-12-06,yes
+7898,Cargo Train Deluxe,City,Trains,2006,856,149.99,US,yes,,2007-10-24,2009-12-06,yes
 7899,Police Boat,City,Police,2006,199,,,,,,,yes
 7900,Heavy Loader,City,Construction,2006,347,,,,,,,yes
-79005,The Wizard Battle,The Lord of the Rings,The Fellowship of the Ring,2013,113,14.21,UK,yes,,2013-07-27,2014-12-09,yes
-79006,The Council of Elrond,The Lord of the Rings,The Fellowship of the Ring,2013,243,35.54,UK,yes,,2013-07-27,2014-12-05,yes
-79007,Battle at the Black Gate,The Lord of the Rings,The Return of the King,2013,656,71.09,UK,yes,,2013-07-27,2014-12-09,yes
-79008,Pirate Ship Ambush,The Lord of the Rings,The Return of the King,2013,756,106.64,UK,yes,,2013-07-27,2014-11-16,yes
-7901,Airplane Mechanic,City,Airport,2006,26,3.12,US,yes,,2007-10-24,2009-02-21,yes
-7902,Doctor's Car,City,Medical,2006,66,4.73,UK,yes,,2007-10-24,2008-11-07,yes
-7903,Rescue Helicopter,City,Medical,2006,249,17.76,UK,yes,,2007-10-24,2007-11-24,yes
+79005,The Wizard Battle,The Lord of the Rings,The Fellowship of the Ring,2013,113,12.99,US,yes,,2013-06-01,2015-01-12,yes
+79006,The Council of Elrond,The Lord of the Rings,The Fellowship of the Ring,2013,243,29.99,US,yes,,2013-06-01,2015-01-19,yes
+79007,Battle at the Black Gate,The Lord of the Rings,The Return of the King,2013,656,59.99,US,yes,,2013-06-07,2015-01-10,yes
+79008,Pirate Ship Ambush,The Lord of the Rings,The Return of the King,2013,756,99.99,US,yes,,2013-06-01,2014-12-02,yes
+7901,Airplane Mechanic,City,Airport,2006,26,3.49,US,yes,,2007-10-24,2009-02-21,yes
+7902,Doctor's Car,City,Medical,2006,66,5.99,US,yes,,2007-10-24,2008-12-05,yes
+7903,Rescue Helicopter,City,Medical,2006,249,19.99,US,yes,,2007-10-24,2008-03-08,yes
 7904,LEGO City Advent Calendar,City,Seasonal,2006,257,,,,,,,yes
-7905,Building Crane,City,Construction,2006,721,47.39,UK,yes,,2007-10-24,2007-11-30,yes
-7906,Fireboat,City,Fire,2007,187,42.65,UK,yes,,2007-10-24,2007-11-20,yes
-7907,LEGO City Advent Calendar,City,Seasonal,2007,232,15.39,UK,yes,,2007-10-24,2008-02-25,yes
-7913,Clone Trooper Battle Pack,Star Wars,The Clone Wars,2011,85,14.21,UK,yes,,2010-12-28,2012-12-06,yes
-7914,Mandalorian Battle Pack,Star Wars,The Clone Wars,2011,68,14.21,UK,yes,,2010-12-28,2013-01-25,yes
-7915,Imperial V-wing Starfighter,Star Wars,Episode III,2011,139,29.61,UK,yes,,2010-12-28,2012-12-19,yes
-7929,The Battle of Naboo,Star Wars,Episode I,2011,241,30.8,UK,yes,,2010-12-28,2012-12-01,yes
-7930,Bounty Hunter Assault Gunship,Star Wars,The Clone Wars,2011,389,48.57,UK,yes,,2010-12-28,2012-12-09,yes
-7931,T-6 Jedi Shuttle,Star Wars,The Clone Wars,2011,389,59.24,UK,yes,,2010-12-28,2012-11-24,yes
-7936,Level Crossing,City,Trains,2010,142,18.95,UK,yes,,2010-06-04,2011-12-09,yes
-7937,Train Station,City,Trains,2010,361,42.65,UK,yes,,2010-06-04,2013-12-02,yes
-7938,Passenger Train,City,Trains,2010,669,122.05,UK,yes,,2010-06-04,2014-06-25,yes
-7939,Cargo Train,City,Trains,2010,839,154.04,UK,yes,,2010-06-04,2014-06-25,yes
-7942,Off-Road Fire Rescue,City,Fire,2007,131,11.84,UK,yes,,2007-10-24,2012-12-25,yes
-7944,Fire Hovercraft,City,Fire,2007,274,29.61,UK,yes,,2007-10-24,2008-10-07,yes
-7945,Fire Station,City,Fire,2007,600,52.2,UK,yes,,2007-10-24,2009-11-14,yes
-7956,Ewok Attack,Star Wars,Episode VI,2011,166,30.8,UK,yes,,2011-08-05,2012-12-08,yes
-7957,Sith Nightspeeder,Star Wars,The Clone Wars,2011,214,30.8,UK,yes,,2011-08-05,2012-12-27,yes
-7958,LEGO Star Wars Advent Calendar,Star Wars,Seasonal,2011,266,29.61,UK,yes,,2011-09-08,2011-11-03,yes
-7959,Geonosian Starfighter,Star Wars,The Clone Wars,2011,155,35.54,UK,yes,,2011-08-05,2013-01-07,yes
-7961,Darth Maul's Sith Infiltrator,Star Wars,Episode I,2011,479,71.09,UK,yes,,2011-08-05,2013-02-02,yes
-7962,Anakin Skywalker and Sebulba's Podracers,Star Wars,Episode I,2011,810,97.16,UK,yes,,2011-08-05,2013-02-02,yes
-7964,Republic Frigate,Star Wars,The Clone Wars,2011,1015,122.05,UK,yes,,2011-08-05,2012-12-01,yes
-7965,Millennium Falcon,Star Wars,Episode IV,2011,1254,157.6,UK,yes,,2011-08-05,2014-10-03,yes
-7990,Cement Mixer,City,Traffic,2007,213,16.22,UK,yes,,2007-10-24,2009-11-14,yes
-7991,Recycle Truck,City,Traffic,2007,206,16.22,UK,yes,,2007-10-24,2009-11-27,yes
-7992,Container Stacker,City,Harbour,2007,218,17.36,UK,yes,,2007-10-24,2009-01-07,yes
-7993,Service Station,City,Town,2007,402,34.78,UK,yes,,2007-10-24,2009-11-20,yes
-7994,LEGO City Harbour,City,Harbour,2007,659,69.55,UK,yes,,2007-10-24,2009-01-24,yes
-7996,Train Rail Crossing,City,Trains,2007,4,17.36,UK,yes,,2007-10-24,2008-12-10,yes
-7997,Train Station,City,Trains,2007,387,37.08,UK,yes,,2007-10-24,2009-10-25,yes
-7998,Heavy Hauler,City,Traffic,2007,332,41.46,UK,yes,,2007-10-24,2008-01-29,yes
+7905,Building Crane,City,Construction,2006,721,69.99,US,yes,,2007-10-24,2008-09-11,yes
+7906,Fireboat,City,Fire,2007,187,34.99,US,yes,,2007-10-24,2008-09-11,yes
+7907,LEGO City Advent Calendar,City,Seasonal,2007,232,24.99,US,yes,,2007-10-24,2008-01-30,yes
+7913,Clone Trooper Battle Pack,Star Wars,The Clone Wars,2011,85,12.99,US,yes,,2010-12-25,2012-10-03,yes
+7914,Mandalorian Battle Pack,Star Wars,The Clone Wars,2011,68,12.99,US,yes,,2010-12-25,2012-10-28,yes
+7915,Imperial V-wing Starfighter,Star Wars,Episode III,2011,139,19.99,US,yes,,2010-12-25,2012-10-05,yes
+7929,The Battle of Naboo,Star Wars,Episode I,2011,241,24.99,US,yes,,2010-12-25,2012-10-24,yes
+7930,Bounty Hunter Assault Gunship,Star Wars,The Clone Wars,2011,389,49.99,US,yes,,2010-12-25,2012-11-24,yes
+7931,T-6 Jedi Shuttle,Star Wars,The Clone Wars,2011,389,59.99,US,yes,,2010-12-25,2012-10-30,yes
+7936,Level Crossing,City,Trains,2010,142,19.99,US,yes,,2010-06-19,2012-02-25,yes
+7937,Train Station,City,Trains,2010,361,49.99,US,yes,,2010-06-07,2013-12-26,yes
+7938,Passenger Train,City,Trains,2010,669,129.99,US,yes,,2010-06-14,2014-06-12,yes
+7939,Cargo Train,City,Trains,2010,839,179.99,US,yes,,2010-06-19,2014-06-16,yes
+7942,Off-Road Fire Rescue,City,Fire,2007,131,9.99,US,yes,,2007-10-24,2012-11-16,yes
+7944,Fire Hovercraft,City,Fire,2007,274,29.99,US,yes,,2007-10-24,2008-11-26,yes
+7945,Fire Station,City,Fire,2007,600,59.99,US,yes,,2007-10-24,2009-12-06,yes
+7956,Ewok Attack,Star Wars,Episode VI,2011,166,24.99,US,yes,,2011-07-19,2012-11-12,yes
+7957,Sith Nightspeeder,Star Wars,The Clone Wars,2011,214,24.99,US,yes,,2011-07-19,2012-10-30,yes
+7958,LEGO Star Wars Advent Calendar,Star Wars,Seasonal,2011,266,39.99,US,yes,,2011-08-26,2011-11-25,yes
+7959,Geonosian Starfighter,Star Wars,The Clone Wars,2011,155,29.99,US,yes,,2011-07-19,2012-12-06,yes
+7961,Darth Maul's Sith Infiltrator,Star Wars,Episode I,2011,479,69.99,US,yes,,2011-07-19,2012-10-22,yes
+7962,Anakin Skywalker and Sebulba's Podracers,Star Wars,Episode I,2011,810,89.99,US,yes,,2011-07-19,2012-11-24,yes
+7964,Republic Frigate,Star Wars,The Clone Wars,2011,1015,119.99,US,yes,,2011-07-19,2012-11-01,yes
+7965,Millennium Falcon,Star Wars,Episode IV,2011,1254,139.99,US,yes,,2011-07-19,2014-12-01,yes
+7990,Cement Mixer,City,Traffic,2007,213,14.99,US,yes,,2007-10-24,2009-12-12,yes
+7991,Recycle Truck,City,Traffic,2007,206,16.99,US,yes,,2007-10-24,2009-12-30,yes
+7992,Container Stacker,City,Harbour,2007,218,19.99,US,yes,,2007-10-24,2008-11-07,yes
+7993,Service Station,City,Town,2007,402,39.99,US,yes,,2007-10-24,2009-01-04,yes
+7994,LEGO City Harbour,City,Harbour,2007,659,89.99,US,yes,,2007-10-24,2008-09-11,yes
+7996,Train Rail Crossing,City,Trains,2007,4,24.99,US,yes,,2007-10-24,2010-02-23,yes
+7997,Train Station,City,Trains,2007,387,44.99,US,yes,,2007-10-24,2010-01-13,yes
+7998,Heavy Hauler,City,Traffic,2007,332,34.99,US,yes,,2007-10-24,2008-09-11,yes
 8000,Pit Droid,Star Wars,Technic,2000,223,,,,,,,yes
 8001,Battle Droid,Star Wars,Technic,2000,363,,,,,,,yes
 8002,Destroyer Droid,Star Wars,Technic,2000,558,,,,,,,yes
@@ -2499,52 +2499,52 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 8010,Darth Vader,Star Wars,Technic,2002,391,,,,,,,yes
 8011,Jango Fett,Star Wars,Technic,2002,422,,,,,,,yes
 8012,Super Battle Droid,Star Wars,Technic,2002,379,,,,,,,yes
-8014,Clone Walker Battle Pack,Star Wars,The Clone Wars,2009,72,11.84,UK,yes,,2008-12-28,2010-12-03,yes
-8015,Assassin Droids Battle Pack,Star Wars,The Clone Wars,2009,94,11.84,UK,yes,,2008-12-28,2010-11-28,yes
-8016,Hyena Droid Bomber,Star Wars,The Clone Wars,2009,232,29.61,UK,yes,,2008-12-28,2010-11-28,yes
-8017,Darth Vader's TIE Fighter,Star Wars,Episode IV,2009,251,41.46,UK,yes,,2008-12-28,2010-11-28,yes
-8018,Armored Assault Tank (AAT),Star Wars,The Clone Wars,2009,407,47.39,UK,yes,,2008-12-28,2010-12-03,yes
-8019,Republic Attack Shuttle,Star Wars,The Clone Wars,2009,636,59.24,UK,yes,,2009-01-03,2010-12-03,yes
+8014,Clone Walker Battle Pack,Star Wars,The Clone Wars,2009,72,11.99,US,yes,,2008-12-28,2010-12-18,yes
+8015,Assassin Droids Battle Pack,Star Wars,The Clone Wars,2009,94,11.99,US,yes,,2008-12-28,2010-12-03,yes
+8016,Hyena Droid Bomber,Star Wars,The Clone Wars,2009,232,19.99,US,yes,,2008-12-28,2010-12-03,yes
+8017,Darth Vader's TIE Fighter,Star Wars,Episode IV,2009,251,29.99,US,yes,,2008-12-28,2010-11-28,yes
+8018,Armored Assault Tank (AAT),Star Wars,The Clone Wars,2009,407,49.99,US,yes,,2008-12-28,2010-11-28,yes
+8019,Republic Attack Shuttle,Star Wars,The Clone Wars,2009,636,59.99,US,yes,,2008-12-28,2010-11-28,yes
 8028,TIE Fighter,Star Wars,,2008,44,,,,,,,yes
 8029,Mini Snowspeeder,Star Wars,Episode V,2008,66,,,,,,,yes
-8031,V-19 Torrent,Star Wars,The Clone Wars,2008,66,3.56,US,yes,,2009-09-12,2009-10-13,yes
+8031,V-19 Torrent,Star Wars,The Clone Wars,2008,66,3.99,US,yes,,2009-09-12,2009-10-13,yes
 8033,General Grievous' Starfighter,Star Wars,The Clone Wars,2009,44,,,,,,,yes
-8036,Separatist Shuttle,Star Wars,The Clone Wars,2009,259,41.46,UK,yes,,2009-06-17,2010-12-03,yes
-8037,Anakin's Y-wing Starfighter,Star Wars,The Clone Wars,2009,570,59.24,UK,yes,,2009-06-17,2010-11-22,yes
-8038,The Battle of Endor,Star Wars,Episode VI,2009,890,100.72,UK,yes,,2009-06-04,2011-12-15,yes
-8039,Venator-class Republic Attack Cruiser,Star Wars,The Clone Wars,2009,1170,122.05,UK,yes,,2009-06-03,2011-11-21,yes
-8083,Rebel Trooper Battle Pack,Star Wars,Episode V,2010,79,11.84,UK,yes,,2009-12-30,2011-12-08,yes
-8084,Snowtrooper Battle Pack,Star Wars,Episode V,2010,74,11.84,UK,yes,,2009-12-30,2012-01-08,yes
-8085,Freeco Speeder,Star Wars,The Clone Wars,2010,177,26.06,UK,yes,,2009-12-30,2011-12-11,yes
-8086,Droid Tri-Fighter,Star Wars,The Clone Wars,2010,268,30.8,UK,yes,,2009-12-30,2011-12-12,yes
-8087,TIE Defender,Star Wars,Legends,2010,304,47.39,UK,yes,,2009-12-30,2010-12-25,yes
-8088,ARC-170 Starfighter,Star Wars,Episode III,2010,396,59.24,UK,yes,,2009-12-30,2011-12-06,yes
-8089,Hoth Wampa Cave,Star Wars,Episode V,2010,297,42.65,UK,yes,,2010-07-24,2011-12-26,yes
-8091,Republic Swamp Speeder,Star Wars,Episode III,2010,176,36.72,UK,yes,,2010-01-04,2011-12-05,yes
-8092,Luke's Landspeeder,Star Wars,Episode IV,2010,163,30.8,UK,yes,,2010-01-04,2012-11-26,yes
-8093,Plo Koon's Jedi Starfighter,Star Wars,The Clone Wars,2010,175,30.8,UK,yes,,2010-07-24,2011-12-07,yes
-8095,General Grievous' Starfighter,Star Wars,The Clone Wars,2010,454,54.5,UK,yes,,2010-07-24,2011-12-10,yes
-8096,Emperor Palpatine's Shuttle,Star Wars,Episode III,2010,592,73.46,UK,yes,,2010-07-24,2012-01-13,yes
-8097,Slave I,Star Wars,Episode V,2010,573,97.16,UK,yes,,2010-07-24,2012-01-05,yes
-8098,Clone Turbo Tank,Star Wars,The Clone Wars,2010,1141,122.05,UK,yes,,2010-07-24,2012-01-20,yes
-8099,Midi-scale Imperial Star Destroyer,Star Wars,Episode IV,2010,423,41.46,UK,yes,,2010-07-24,2010-12-25,yes
+8036,Separatist Shuttle,Star Wars,The Clone Wars,2009,259,29.99,US,yes,,2009-06-28,2010-11-28,yes
+8037,Anakin's Y-wing Starfighter,Star Wars,The Clone Wars,2009,570,59.99,US,yes,,2009-06-28,2010-12-11,yes
+8038,The Battle of Endor,Star Wars,Episode VI,2009,890,99.99,US,yes,,2009-06-28,2011-11-28,yes
+8039,Venator-class Republic Attack Cruiser,Star Wars,The Clone Wars,2009,1170,119.99,US,yes,,2009-06-28,2010-12-03,yes
+8083,Rebel Trooper Battle Pack,Star Wars,Episode V,2010,79,11.99,US,yes,,2009-12-30,2011-12-27,yes
+8084,Snowtrooper Battle Pack,Star Wars,Episode V,2010,74,11.99,US,yes,,2009-12-30,2011-12-26,yes
+8085,Freeco Speeder,Star Wars,The Clone Wars,2010,177,24.99,US,yes,,2009-12-30,2011-12-04,yes
+8086,Droid Tri-Fighter,Star Wars,The Clone Wars,2010,268,24.99,US,yes,,2009-12-30,2011-11-29,yes
+8087,TIE Defender,Star Wars,Legends,2010,304,49.99,US,yes,,2009-12-30,2010-12-25,yes
+8088,ARC-170 Starfighter,Star Wars,Episode III,2010,396,59.99,US,yes,,2009-12-30,2012-05-05,yes
+8089,Hoth Wampa Cave,Star Wars,Episode V,2010,297,39.99,US,yes,,2010-07-30,2011-11-23,yes
+8091,Republic Swamp Speeder,Star Wars,Episode III,2010,176,29.99,US,yes,,2010-01-04,2012-02-06,yes
+8092,Luke's Landspeeder,Star Wars,Episode IV,2010,163,24.99,US,yes,,2010-01-04,2012-11-26,yes
+8093,Plo Koon's Jedi Starfighter,Star Wars,The Clone Wars,2010,175,24.99,US,yes,,2010-07-30,2011-12-15,yes
+8095,General Grievous' Starfighter,Star Wars,The Clone Wars,2010,454,49.99,US,yes,,2010-07-30,2012-04-15,yes
+8096,Emperor Palpatine's Shuttle,Star Wars,Episode III,2010,592,59.99,US,yes,,2010-07-30,2011-12-10,yes
+8097,Slave I,Star Wars,Episode V,2010,573,79.99,US,yes,,2010-07-30,2011-11-26,yes
+8098,Clone Turbo Tank,Star Wars,The Clone Wars,2010,1141,119.99,US,yes,,2010-07-30,2012-04-11,yes
+8099,Midi-scale Imperial Star Destroyer,Star Wars,Episode IV,2010,423,39.99,US,yes,,2010-08-02,2011-01-11,yes
 81007,Design your own LEGO City set,City,Miscellaneous,2020,,,,,,,,yes
-8128,Cad Bane's Speeder,Star Wars,The Clone Wars,2010,318,54.5,UK,yes,,2010-07-24,2011-12-11,yes
-8129,AT-AT Walker,Star Wars,Episode V,2010,815,109.01,UK,yes,,2010-07-24,2011-12-13,yes
-8398,BBQ Stand,City,General,2009,22,2.95,UK,yes,,2008-12-28,2010-06-27,yes
-8401,City Minifigure Collection,City,Town,2009,60,9.47,UK,yes,,2008-12-28,2010-11-25,yes
-8402,Sports Car,City,Traffic,2009,68,9.47,UK,yes,,2009-06-03,2010-12-03,yes
-8403,City House,City,Town,2010,383,35.54,UK,yes,,2010-08-05,2010-12-03,yes
-8404,Public Transport Station,City,Town,2010,864,97.16,UK,yes,,2010-08-05,2011-12-10,yes
-850445,Ninjago Character Card Shrine,Ninjago,Promotional,2012,88,15.39,UK,yes,,2012-06-02,2014-01-25,yes
+8128,Cad Bane's Speeder,Star Wars,The Clone Wars,2010,318,49.99,US,yes,,2010-08-02,2012-03-29,yes
+8129,AT-AT Walker,Star Wars,Episode V,2010,815,109.99,US,yes,,2010-08-02,2011-12-02,yes
+8398,BBQ Stand,City,General,2009,22,3.49,US,yes,,2009-06-28,2010-04-28,yes
+8401,City Minifigure Collection,City,Town,2009,60,9.99,US,yes,,2008-12-28,2010-10-28,yes
+8402,Sports Car,City,Traffic,2009,68,9.99,US,yes,,2009-06-28,2010-11-25,yes
+8403,City House,City,Town,2010,383,39.99,US,yes,,2010-08-09,2010-12-25,yes
+8404,Public Transport Station,City,Town,2010,864,99.99,US,yes,,2010-08-09,2011-11-28,yes
+850445,Ninjago Character Card Shrine,Ninjago,Promotional,2012,88,14.99,US,yes,,2012-06-02,2013-01-03,yes
 850617,Police Accessory Pack,City,Elite Police,2013,34,9.09,DE,,,2015-01-14,2016-07-06,yes
 850618,Fire Accessory Pack,City,Fire,2013,43,9.09,DE,,,2015-01-14,2016-06-27,yes
-850632,NINJAGO Battle Pack,Ninjago,The Final Battle,2013,36,12.43,UK,yes,,2013-03-01,2013-11-19,yes
+850632,NINJAGO Battle Pack,Ninjago,The Final Battle,2013,36,14.99,US,yes,,2013-03-01,2013-05-04,yes
 850932,Polar Accessory Set,City,Arctic,2014,41,12.99,DE,,,2015-03-18,2015-05-12,yes
 851342,Ninja Army Building Set,Ninjago,Possession,2015,37,12.99,DE,,,2015-09-02,2017-01-20,yes
-853106,Ninjago Battle Arena,Ninjago,Spinners,2011,8,24.87,UK,yes,,2011-01-04,2012-09-10,yes
+853106,Ninjago Battle Arena,Ninjago,Spinners,2011,8,19.99,US,yes,,2011-01-04,2012-09-26,yes
 853111,Ninjago Weapons Set + Lenticular Card,Ninjago,Booster Pack,2011,26,,,,,,,yes
-853378,LEGO City Accessory Pack,City,Forest Fire,2012,43,11.84,UK,yes,,2012-03-03,2014-01-22,yes
+853378,LEGO City Accessory Pack,City,Forest Fire,2012,43,14.99,US,yes,,2012-03-03,2013-02-17,yes
 853544,NINJAGO Accessory Set,Ninjago,Skybound,2016,36,12.99,DE,,,2016-06-03,2019-06-18,yes
 853570,Police Accessory Set,City,Prison Island,2016,26,12.99,DE,,,2016-01-02,2020-02-12,yes
 853687,Accessory Set,Ninjago,The Hands of Time,2017,26,12.99,DE,,,2017-03-01,2019-12-07,yes
@@ -2704,7 +2704,7 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 910023,Venetian Houses,BrickLink,2021 Designer Program,2022,3470,,,,,,,yes
 910027,Mountain View Observatory,BrickLink,2021 Designer Program,2023,3876,,,,,,,yes
 910028,Pursuit of Flight,BrickLink,2021 Designer Program,2021,541,,,,,,,yes
-910029,Mountain Fortress,BrickLink,Designer Program Series 1,2024,3995,339.43,US,yes,,2025-06-02,2025-06-06,yes
+910029,Mountain Fortress,BrickLink,Designer Program Series 1,2024,3995,379.99,US,yes,,2025-06-02,2025-06-06,yes
 910030,Snack Shack,BrickLink,Designer Program Series 1,2024,539,44.99,DE,,,2024-02-08,2024-02-08,yes
 910031,General Store,BrickLink,Designer Program Series 1,2024,1906,139.99,DE,,,2024-02-08,2024-02-28,yes
 910032,Parisian Street,BrickLink,Designer Program Series 1,2024,3532,289.99,DE,,,2024-02-08,2024-02-28,yes
@@ -2712,17 +2712,17 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 910034,Brick Cross Train Station,BrickLink,Designer Program Series 2,2024,3050,,,,,,,no
 910035,Logging Railway,BrickLink,Designer Program Series 2,2024,2731,189.99,DE,,,2024-06-07,2025-09-14,yes
 910036,Ocean House,BrickLink,Designer Program Series 2,2024,2207,179.99,DE,,,2024-06-07,2025-09-19,yes
-910037,Mushroom House,BrickLink,Designer Program Series 2,2024,964,80.38,US,yes,,2026-02-21,2026-04-12,yes
+910037,Mushroom House,BrickLink,Designer Program Series 2,2024,964,89.99,US,yes,,2026-02-21,2026-04-12,yes
 910038,Ominous Isle,BrickLink,Designer Program Series 2,2024,2809,219.99,DE,,,2024-06-07,2025-09-17,yes
 910039,The Art of Chocolate,BrickLink,Designer Program Series 3,2025,2615,209.99,DE,,,2024-10-09,2024-10-31,yes
 910040,Harbourmaster's Office,BrickLink,Designer Program Series 3,2025,2418,179.99,DE,,,2024-10-09,2024-10-31,yes
 910041,Camping Adventure,BrickLink,Designer Program Series 3,2025,669,49.99,DE,,,2024-10-09,2024-10-09,yes
 910042,Lost City,BrickLink,Designer Program Series 3,2025,3506,269.99,DE,,,2024-10-09,2024-10-31,yes
-910043,Forest Stronghold,BrickLink,Designer Program Series 3,2025,3395,267.97,US,yes,,2026-02-25,2026-02-26,yes
+910043,Forest Stronghold,BrickLink,Designer Program Series 3,2025,3395,299.99,US,yes,,2026-02-25,2026-02-26,yes
 910044,Wild West Train,BrickLink,Designer Program Series 4,2025,3192,279.99,DE,,,2025-02-05,2026-02-18,yes
-910045,Siege Encampment,BrickLink,Designer Program Series 4,2025,2598,237.0,UK,yes,,2026-01-28,2026-02-05,yes
+910045,Siege Encampment,BrickLink,Designer Program Series 4,2025,2598,229.99,US,yes,,2026-02-13,2026-02-13,yes
 910046,Merchant Boat,BrickLink,Designer Program Series 4,2025,2180,169.99,DE,,,2025-02-05,2026-02-18,yes
-910047,Medieval Seaside Market,BrickLink,Designer Program Series 4,2025,2560,205.44,US,yes,,2026-02-13,2026-04-22,yes
+910047,Medieval Seaside Market,BrickLink,Designer Program Series 4,2025,2560,229.99,US,yes,,2026-02-13,2026-04-22,yes
 910048,Riverside Scholars,BrickLink,Designer Program Series 4,2025,2769,199.99,DE,,,2025-02-05,2025-03-02,yes
 910049,Adventure in Transylvania,BrickLink,Designer Program Series 5,2025,4056,349.99,DE,,,2025-06-11,2026-04-21,yes
 910050,Antique Shop,BrickLink,Designer Program Series 5,2025,1918,149.99,DE,,,2025-06-11,2025-06-25,yes
@@ -2879,47 +2879,47 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 912513,Jango Fett's Starship,Star Wars,Magazine Gift,2025,38,,,,,,,no
 92176,NASA Apollo Saturn V,Ideas,NASA,2020,1969,119.99,DE,,,2020-11-02,2022-11-29,yes
 92177,Ship in a Bottle,Ideas,,2020,962,69.99,DE,,,2021-01-02,2021-11-15,yes
-9440,Venomari Shrine,Ninjago,Rise of the Snakes,2012,86,7.1,UK,yes,,2011-12-24,2012-11-26,yes
-9441,Kai's Blade Cycle,Ninjago,Rise of the Snakes,2012,188,15.39,UK,yes,,2011-12-24,2012-11-26,yes
-9442,Jay's Storm Fighter,Ninjago,Rise of the Snakes,2012,243,23.69,UK,yes,,2011-12-24,2012-12-06,yes
-9443,Rattlecopter,Ninjago,Rise of the Snakes,2012,327,29.61,UK,yes,,2011-12-24,2012-12-04,yes
-9444,Cole's Tread Assault,Ninjago,Rise of the Snakes,2012,286,35.54,UK,yes,,2011-12-24,2012-12-11,yes
-9445,Fangpyre Truck Ambush,Ninjago,Rise of the Snakes,2012,452,47.39,UK,yes,,2011-12-24,2012-12-03,yes
-9446,Destiny's Bounty,Ninjago,Rise of the Snakes,2012,680,71.09,UK,yes,,2011-12-27,2012-11-28,yes
-9447,Lasha's Bite Cycle,Ninjago,Rise of the Snakes,2012,250,23.69,UK,yes,,2012-06-27,2014-01-22,yes
-9448,Samurai Mech,Ninjago,Rise of the Snakes,2012,452,35.54,UK,yes,,2012-06-27,2014-02-07,yes
-9449,Ultra Sonic Raider,Ninjago,Rise of the Snakes,2012,622,71.09,UK,yes,,2012-06-27,2013-12-30,yes
-9450,Epic Dragon Battle,Ninjago,Rise of the Snakes,2012,915,106.64,UK,yes,,2012-06-27,2014-01-22,yes
-9455,Fangpyre Mech,Ninjago,Rise of the Snakes,2012,255,23.69,UK,yes,,2011-12-29,2012-10-30,yes
-9456,Spinner Battle Arena,Ninjago,Spinners,2012,418,41.46,UK,yes,,2011-12-24,2013-01-25,yes
-9457,Fangpyre Wrecking Ball,Ninjago,Rise of the Snakes,2012,415,59.24,UK,yes,,2011-12-24,2012-12-13,yes
-9469,Gandalf Arrives,The Lord of the Rings,The Fellowship of the Ring,2012,83,14.21,UK,yes,,2012-07-21,2013-06-26,yes
-9470,Shelob Attacks,The Lord of the Rings,The Return of the King,2012,227,23.69,UK,yes,,2012-07-21,2013-09-14,yes
-9471,Uruk-Hai Army,The Lord of the Rings,The Two Towers,2012,257,35.54,UK,yes,,2012-07-21,2013-11-30,yes
-9472,Attack on Weathertop,The Lord of the Rings,The Fellowship of the Ring,2012,430,59.24,UK,yes,,2012-07-21,2013-06-26,yes
-9473,The Mines of Moria,The Lord of the Rings,The Fellowship of the Ring,2012,776,82.94,UK,yes,,2012-07-21,2013-12-02,yes
-9474,The Battle of Helm's Deep,The Lord of the Rings,The Two Towers,2012,1368,118.49,UK,yes,,2012-07-21,2013-12-02,yes
-9476,The Orc Forge,The Lord of the Rings,The Fellowship of the Ring,2012,363,47.39,UK,yes,,2012-07-21,2013-06-26,yes
-9488,Elite Clone Trooper & Commando Droid Battle Pack,Star Wars,The Clone Wars,2012,98,14.21,UK,yes,,2012-01-01,2013-11-15,yes
-9489,Endor Rebel Trooper & Imperial Trooper Battle Pack,Star Wars,Episode VI,2012,77,14.21,UK,yes,,2012-01-01,2013-11-30,yes
-9490,Droid Escape,Star Wars,Episode IV,2012,137,23.69,UK,yes,,2012-01-01,2013-12-01,yes
-9491,Geonosian Cannon,Star Wars,The Clone Wars,2012,132,23.69,UK,yes,,2012-01-01,2014-01-17,yes
-9492,TIE Fighter,Star Wars,Episode IV,2012,413,59.24,UK,yes,,2012-01-01,2013-12-16,yes
-9493,X-wing Starfighter,Star Wars,Episode IV,2012,560,59.24,UK,yes,,2012-01-01,2014-11-21,yes
-9494,Anakin's Jedi Interceptor,Star Wars,Episode III,2012,300,41.46,UK,yes,,2012-01-01,2013-12-26,yes
-9495,Gold Leader's Y-wing Starfighter,Star Wars,Episode IV,2012,458,59.24,UK,yes,,2012-01-01,2013-12-06,yes
-9496,Desert Skiff,Star Wars,Episode VI,2012,213,29.61,UK,yes,,2012-06-02,2013-12-27,yes
-9497,Republic Striker-class Starfighter,Star Wars,The Old Republic,2012,376,47.39,UK,yes,,2012-06-02,2014-01-01,yes
-9498,Saesee Tiin's Jedi Starfighter,Star Wars,The Clone Wars,2012,244,35.54,UK,yes,,2012-06-02,2014-01-01,yes
-9499,Gungan Sub,Star Wars,Episode I,2012,465,65.17,UK,yes,,2012-06-02,2013-12-25,yes
-9500,Sith Fury-class Interceptor,Star Wars,The Old Republic,2012,748,94.79,UK,yes,,2012-06-02,2013-12-30,yes
-9509,LEGO Star Wars Advent Calendar,Star Wars,Seasonal,2012,234,29.61,UK,yes,,2012-09-04,2012-12-23,yes
+9440,Venomari Shrine,Ninjago,Rise of the Snakes,2012,86,6.99,US,yes,,2011-11-29,2012-11-09,yes
+9441,Kai's Blade Cycle,Ninjago,Rise of the Snakes,2012,188,14.99,US,yes,,2011-11-29,2012-11-21,yes
+9442,Jay's Storm Fighter,Ninjago,Rise of the Snakes,2012,243,24.99,US,yes,,2011-11-29,2012-11-10,yes
+9443,Rattlecopter,Ninjago,Rise of the Snakes,2012,327,29.99,US,yes,,2011-11-29,2012-10-26,yes
+9444,Cole's Tread Assault,Ninjago,Rise of the Snakes,2012,286,39.99,US,yes,,2011-11-29,2012-09-30,yes
+9445,Fangpyre Truck Ambush,Ninjago,Rise of the Snakes,2012,452,49.99,US,yes,,2011-12-24,2012-10-30,yes
+9446,Destiny's Bounty,Ninjago,Rise of the Snakes,2012,680,79.99,US,yes,,2011-12-27,2012-10-31,yes
+9447,Lasha's Bite Cycle,Ninjago,Rise of the Snakes,2012,250,24.99,US,yes,,2012-06-02,2013-12-23,yes
+9448,Samurai Mech,Ninjago,Rise of the Snakes,2012,452,39.99,US,yes,,2012-06-02,2013-11-29,yes
+9449,Ultra Sonic Raider,Ninjago,Rise of the Snakes,2012,622,79.99,US,yes,,2012-06-02,2015-01-05,yes
+9450,Epic Dragon Battle,Ninjago,Rise of the Snakes,2012,915,119.99,US,yes,,2012-06-02,2015-02-28,yes
+9455,Fangpyre Mech,Ninjago,Rise of the Snakes,2012,255,24.99,US,yes,,2011-12-29,2012-09-27,yes
+9456,Spinner Battle Arena,Ninjago,Spinners,2012,418,39.99,US,yes,,2011-12-24,2012-11-27,yes
+9457,Fangpyre Wrecking Ball,Ninjago,Rise of the Snakes,2012,415,49.99,US,yes,,2011-12-28,2012-10-19,yes
+9469,Gandalf Arrives,The Lord of the Rings,The Fellowship of the Ring,2012,83,12.99,US,yes,,2012-05-16,2013-11-05,yes
+9470,Shelob Attacks,The Lord of the Rings,The Return of the King,2012,227,19.99,US,yes,,2012-05-16,2013-12-02,yes
+9471,Uruk-Hai Army,The Lord of the Rings,The Two Towers,2012,257,29.99,US,yes,,2012-05-16,2013-11-05,yes
+9472,Attack on Weathertop,The Lord of the Rings,The Fellowship of the Ring,2012,430,59.99,US,yes,,2012-05-16,2013-02-21,yes
+9473,The Mines of Moria,The Lord of the Rings,The Fellowship of the Ring,2012,776,79.99,US,yes,,2012-05-16,2013-11-18,yes
+9474,The Battle of Helm's Deep,The Lord of the Rings,The Two Towers,2012,1368,129.99,US,yes,,2012-05-16,2013-11-05,yes
+9476,The Orc Forge,The Lord of the Rings,The Fellowship of the Ring,2012,363,39.99,US,yes,,2012-05-16,2013-11-14,yes
+9488,Elite Clone Trooper & Commando Droid Battle Pack,Star Wars,The Clone Wars,2012,98,12.99,US,yes,,2012-02-02,2013-12-21,yes
+9489,Endor Rebel Trooper & Imperial Trooper Battle Pack,Star Wars,Episode VI,2012,77,12.99,US,yes,,2012-02-02,2013-11-05,yes
+9490,Droid Escape,Star Wars,Episode IV,2012,137,19.99,US,yes,,2012-02-02,2013-12-12,yes
+9491,Geonosian Cannon,Star Wars,The Clone Wars,2012,132,19.99,US,yes,,2012-02-02,2014-05-04,yes
+9492,TIE Fighter,Star Wars,Episode IV,2012,413,54.99,US,yes,,2012-02-02,2014-02-17,yes
+9493,X-wing Starfighter,Star Wars,Episode IV,2012,560,59.99,US,yes,,2012-02-21,2015-01-02,yes
+9494,Anakin's Jedi Interceptor,Star Wars,Episode III,2012,300,39.99,US,yes,,2012-02-02,2013-12-09,yes
+9495,Gold Leader's Y-wing Starfighter,Star Wars,Episode IV,2012,458,49.99,US,yes,,2012-02-02,2013-11-29,yes
+9496,Desert Skiff,Star Wars,Episode VI,2012,213,24.99,US,yes,,2012-07-23,2014-05-03,yes
+9497,Republic Striker-class Starfighter,Star Wars,The Old Republic,2012,376,44.99,US,yes,,2012-07-23,2013-11-21,yes
+9498,Saesee Tiin's Jedi Starfighter,Star Wars,The Clone Wars,2012,244,29.99,US,yes,,2012-07-23,2014-03-04,yes
+9499,Gungan Sub,Star Wars,Episode I,2012,465,69.99,US,yes,,2012-07-23,2013-12-05,yes
+9500,Sith Fury-class Interceptor,Star Wars,The Old Republic,2012,748,89.99,US,yes,,2012-07-23,2014-03-30,yes
+9509,LEGO Star Wars Advent Calendar,Star Wars,Seasonal,2012,234,49.99,US,yes,,2012-08-28,2013-02-21,yes
 951440,Police Buggy,City,FunPack,2026,37,,,,,,,no
 951441,Construction Worker with Wheel Loader,City,FunPack,2026,39,,,,,,,no
 951466,Kai with Motorcycle,Ninjago,FunPack,2026,35,,,,,,,no
 951467,Lloyd with Mech,Ninjago,FunPack,2026,45,,,,,,,no
-9515,The Malevolence,Star Wars,The Clone Wars,2012,1101,118.49,UK,yes,,2012-06-02,2013-12-26,yes
-9516,Jabba's Palace,Star Wars,Episode VI,2012,717,142.19,UK,yes,,2012-06-02,2013-12-26,yes
+9515,The Malevolence,Star Wars,The Clone Wars,2012,1101,119.99,US,yes,,2012-07-23,2014-05-03,yes
+9516,Jabba's Palace,Star Wars,Episode VI,2012,717,119.99,US,yes,,2012-07-23,2014-03-04,yes
 951701,Policeman and crook,City,Magazine Gift,2017,16,,,,,,,yes
 951702,Workman and wheelbarrow,City,Magazine Gift,2017,10,,,,,,,yes
 951703,Diver and shark,City,Magazine Gift,2017,11,,,,,,,yes
@@ -3002,7 +3002,7 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 952410,Jungle Explorer,City,Magazine Gift,2024,21,,,,,,,no
 952411,Astronaut with Equipment,City,Magazine Gift,2024,23,,,,,,,no
 952412,Ice Adventure,City,Magazine Gift,2024,10,,,,,,,no
-9525,Pre Vizsla's Mandalorian Fighter,Star Wars,The Clone Wars,2012,403,59.24,UK,yes,,2012-07-22,2013-12-26,yes
+9525,Pre Vizsla's Mandalorian Fighter,Star Wars,The Clone Wars,2012,403,49.99,US,yes,,2012-07-23,2014-05-03,yes
 952501,Police Chase,City,Magazine Gift,2025,19,,,,,,,no
 952502,Construction Worker with Rotary Cutter,City,Magazine Gift,2025,28,,,,,,,no
 952503,Diver with Robot and Shark,City,Magazine Gift,2025,20,,,,,,,no
@@ -3015,36 +3015,36 @@ number,name,theme,subtheme,year,pieces,rrp,rrp_region,rrp_approx,promo,first_ava
 952510,Construction Worker with Vibration Plate,City,Magazine Gift,2025,26,,,,,,,no
 952511,Astronaut with Alien and Crystal,City,Magazine Gift,2025,20,,,,,,,no
 952512,Snowmobile,City,Magazine Gift,2025,23,,,,,,,no
-9526,Palpatine's Arrest,Star Wars,Episode III,2012,645,71.09,UK,yes,,2012-08-01,2013-11-11,yes
-9551,Kendo Cole,Ninjago,Booster pack,2012,28,4.73,UK,yes,,2011-12-24,2012-06-03,yes
-9552,Lloyd Garmadon,Ninjago,Booster pack,2012,26,4.73,UK,yes,,2011-12-24,2012-06-03,yes
-9553,Jay ZX,Ninjago,Booster pack,2012,28,4.73,UK,yes,,2011-12-24,2012-11-06,yes
-9554,Zane ZX,Ninjago,Booster pack,2012,37,4.73,UK,yes,,2012-05-18,2012-09-13,yes
-9555,Mezmo,Ninjago,Booster pack,2012,32,4.73,UK,yes,,2012-05-18,2012-08-30,yes
-9556,Bytar,Ninjago,Booster pack,2012,25,4.73,UK,yes,,2012-09-04,2012-11-14,yes
-9557,Lizaru,Ninjago,Booster pack,2012,25,4.73,UK,yes,,2012-09-04,2012-11-16,yes
-9558,Training Set,Ninjago,Spinners,2012,219,17.76,UK,yes,,2011-12-24,2013-02-02,yes
-9561,Kai ZX,Ninjago,Spinners,2012,21,8.88,UK,yes,,2012-03-03,2012-06-03,yes
-9562,Lasha,Ninjago,Spinners,2012,21,8.88,UK,yes,,2011-12-24,2012-05-23,yes
-9563,Kendo Zane,Ninjago,Spinners,2012,22,8.88,UK,yes,,2011-12-24,2012-05-21,yes
-9564,Snappa,Ninjago,Spinners,2012,20,8.88,UK,yes,,2011-12-24,2012-06-03,yes
-9566,Samurai X,Ninjago,Spinners,2012,23,8.88,UK,yes,,2011-12-24,2012-06-03,yes
-9567,Fang-Suei,Ninjago,Spinners,2012,19,8.88,UK,yes,,2012-03-03,2012-06-03,yes
-9569,Spitta,Ninjago,Spinners,2012,20,8.88,UK,yes,,2012-05-18,2012-11-15,yes
-9570,NRG Jay,Ninjago,Spinners,2012,20,8.88,UK,yes,,2012-05-18,2012-09-03,yes
-9571,Fangdam,Ninjago,Spinners,2012,20,8.88,UK,yes,,2012-05-18,2012-10-05,yes
-9572,NRG Cole,Ninjago,Spinners,2012,20,8.88,UK,yes,,2012-05-18,2012-11-23,yes
-9573,Slithraa,Ninjago,Spinners,2012,20,8.88,UK,yes,,2012-09-04,2013-01-11,yes
-9574,Lloyd ZX,Ninjago,Spinners,2012,23,8.88,UK,yes,,2012-09-04,2012-09-24,yes
-9579,Starter Set,Ninjago,Spinners,2012,62,15.39,UK,yes,,2011-12-24,2012-10-15,yes
-9590,NRG Zane,Ninjago,Spinners,2012,23,8.88,UK,yes,,2012-09-04,2012-11-24,yes
-9591,Weapon Pack,Ninjago,Spinners,2012,73,15.39,UK,yes,,2012-05-18,2012-11-23,yes
-9674,Naboo Starfighter & Naboo,Star Wars,Planet Set,2012,56,11.84,UK,yes,,2012-01-01,2013-02-02,yes
-9675,Sebulba's Podracer & Tatooine,Star Wars,Planet Set,2012,80,11.84,UK,yes,,2012-01-01,2013-02-02,yes
-9676,TIE Interceptor & Death Star,Star Wars,Planet Set,2012,65,11.84,UK,yes,,2012-01-01,2012-12-03,yes
-9677,X-wing Starfighter & Yavin 4,Star Wars,Planet Set,2012,77,11.84,UK,yes,,2012-06-02,2013-08-04,yes
-9678,Twin-Pod Cloud Car & Bespin,Star Wars,Planet Set,2012,78,11.84,UK,yes,,2012-06-02,2013-09-02,yes
-9679,AT-ST & Endor,Star Wars,Planet Set,2012,65,11.84,UK,yes,,2012-06-02,2013-07-31,yes
+9526,Palpatine's Arrest,Star Wars,Episode III,2012,645,89.99,US,yes,,2012-07-23,2014-03-04,yes
+9551,Kendo Cole,Ninjago,Booster pack,2012,28,4.99,US,yes,,2011-12-24,2012-03-15,yes
+9552,Lloyd Garmadon,Ninjago,Booster pack,2012,26,4.99,US,yes,,2011-12-24,2012-04-06,yes
+9553,Jay ZX,Ninjago,Booster pack,2012,28,4.99,US,yes,,2011-12-24,2012-10-23,yes
+9554,Zane ZX,Ninjago,Booster pack,2012,37,4.99,US,yes,,2012-06-02,2012-08-09,yes
+9555,Mezmo,Ninjago,Booster pack,2012,32,4.99,US,yes,,2012-06-02,2012-07-23,yes
+9556,Bytar,Ninjago,Booster pack,2012,25,4.99,US,yes,,2012-08-28,2012-12-15,yes
+9557,Lizaru,Ninjago,Booster pack,2012,25,4.99,US,yes,,2012-08-28,2012-12-14,yes
+9558,Training Set,Ninjago,Spinners,2012,219,19.99,US,yes,,2012-01-10,2012-11-09,yes
+9561,Kai ZX,Ninjago,Spinners,2012,21,9.99,US,yes,,2012-03-03,2012-04-17,yes
+9562,Lasha,Ninjago,Spinners,2012,21,9.99,US,yes,,2011-12-24,2012-02-17,yes
+9563,Kendo Zane,Ninjago,Spinners,2012,22,9.99,US,yes,,2011-12-28,2012-01-20,yes
+9564,Snappa,Ninjago,Spinners,2012,20,9.99,US,yes,,2011-12-24,2012-03-01,yes
+9566,Samurai X,Ninjago,Spinners,2012,23,9.99,US,yes,,2011-12-24,2012-02-23,yes
+9567,Fang-Suei,Ninjago,Spinners,2012,19,9.99,US,yes,,2012-03-03,2012-04-19,yes
+9569,Spitta,Ninjago,Spinners,2012,20,9.99,US,yes,,2012-06-02,2012-11-04,yes
+9570,NRG Jay,Ninjago,Spinners,2012,20,9.99,US,yes,,2012-06-02,2012-07-11,yes
+9571,Fangdam,Ninjago,Spinners,2012,20,9.99,US,yes,,2012-06-02,2012-07-30,yes
+9572,NRG Cole,Ninjago,Spinners,2012,20,9.99,US,yes,,2012-06-02,2012-11-19,yes
+9573,Slithraa,Ninjago,Spinners,2012,20,9.99,US,yes,,2012-08-28,2012-10-13,yes
+9574,Lloyd ZX,Ninjago,Spinners,2012,23,9.99,US,yes,,2012-08-28,2012-10-06,yes
+9579,Starter Set,Ninjago,Spinners,2012,62,19.99,US,yes,,2011-12-24,2012-03-09,yes
+9590,NRG Zane,Ninjago,Spinners,2012,23,9.99,US,yes,,2012-08-28,2012-10-31,yes
+9591,Weapon Pack,Ninjago,Spinners,2012,73,19.99,US,yes,,2012-06-02,2012-11-23,yes
+9674,Naboo Starfighter & Naboo,Star Wars,Planet Set,2012,56,9.99,US,yes,,2012-02-02,2012-11-05,yes
+9675,Sebulba's Podracer & Tatooine,Star Wars,Planet Set,2012,80,9.99,US,yes,,2012-02-02,2012-11-05,yes
+9676,TIE Interceptor & Death Star,Star Wars,Planet Set,2012,65,9.99,US,yes,,2012-02-02,2012-11-23,yes
+9677,X-wing Starfighter & Yavin 4,Star Wars,Planet Set,2012,77,9.99,US,yes,,2012-07-23,2013-05-04,yes
+9678,Twin-Pod Cloud Car & Bespin,Star Wars,Planet Set,2012,78,9.99,US,yes,,2012-07-23,2013-11-05,yes
+9679,AT-ST & Endor,Star Wars,Planet Set,2012,65,9.99,US,yes,,2012-07-23,2013-12-25,yes
 BL19001,Löwenstein Castle,BrickLink,AFOL Designer Program,2019,2015,,,,,,,yes
 BL19002,Antique Fire Engine,BrickLink,AFOL Designer Program,2019,1278,,,,,,,yes
 BL19003,Skyline Express,BrickLink,AFOL Designer Program,2019,1365,,,,,,,yes
