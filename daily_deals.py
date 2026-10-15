@@ -185,6 +185,8 @@ def load_catalogue(path=CATALOGUE):
                 "name": row["name"], "theme": row["theme"], "rrp": rrp,
                 "subtheme": row.get("subtheme") or "",
                 "retired": row["retired"] == "yes",
+                "approx": (row.get("rrp_approx") or "") == "yes",
+                "promo": (row.get("promo") or "") == "yes",
             }
     return cat
 
@@ -207,6 +209,7 @@ def combine(nums, catalogue):
     cs = [catalogue[n] for n in nums]
     if len(cs) == 1:
         return nums[0], {**cs[0], "lot": False, "known_rrp": cs[0]["rrp"], "known_nums": nums[:]}
+    # lot: approximate if any part is; promo only if every part is
     rrps = [c["rrp"] for c in cs]
     known = [(n, c["rrp"]) for n, c in zip(nums, cs) if c["rrp"]]
     themes = list(dict.fromkeys(c["theme"] for c in cs))
@@ -217,6 +220,8 @@ def combine(nums, catalogue):
         "known_rrp": sum(r for _, r in known) if known else None,
         "known_nums": [n for n, _ in known],
         "retired": all(c["retired"] for c in cs),
+        "approx": any(c.get("approx") for c in cs),
+        "promo": all(c.get("promo") for c in cs),
         "subtheme": " / ".join(dict.fromkeys(c["subtheme"] for c in cs if c["subtheme"])),
         "lot": True,
     }
@@ -263,6 +268,7 @@ def evaluate(items, catalogue):
             rrp = c["rrp"] if c else None
             disc = (1 - it["price"] / rrp) if rrp and it["price"] else None
             lotr.append({**it, "set_no": num or "?", "set_name": c["name"] if c else "set not identified",
+                         "approx": bool(c and c.get("approx")), "promo": bool(c and c.get("promo")),
                          "rrp": rrp, "retired": bool(c and c["retired"]), "discount": disc, "figure": is_fig,
                          "lot": bool(c and c["lot"]),
                          "known_rrp": c["known_rrp"] if c else None,
@@ -284,7 +290,8 @@ def evaluate(items, catalogue):
         is_new = it["condition"].lower().startswith("nuevo")
         if discount >= (MIN_DISCOUNT_NEW if is_new else MIN_DISCOUNT_USED):
             deals.append({**it, "set_no": num, "set_name": c["name"], "theme": c["theme"],
-                          "rrp": c["rrp"], "retired": c["retired"], "discount": discount, "lot": c["lot"]})
+                          "rrp": c["rrp"], "retired": c["retired"], "discount": discount, "lot": c["lot"],
+                          "approx": c.get("approx", False)})
     deals.sort(key=lambda d: d["discount"], reverse=True)
     lotr.sort(key=lambda d: (d["discount"] is None, -(d["discount"] or 0)))
     suspicious = [d for d in deals if d["discount"] >= TOO_GOOD]
@@ -302,6 +309,11 @@ def fmt_pct(discount):
 
 COND_SHORT = {"nuevo con etiquetas": "new, tags", "nuevo sin etiquetas": "new",
               "muy bueno": "very good", "bueno": "good", "satisfactorio": "fair"}
+
+
+def rrp_str(d):
+    """Official price; '~' marks a price converted from GBP/USD/CAD (no euro price published)."""
+    return f"{'~' if d.get('approx') else ''}{d['rrp']:.0f}€"
 
 
 def cond_short(cond):
@@ -339,11 +351,11 @@ def lotr_blocks(lotr):
         g.sort(key=lambda x: x["price"] or 0)
         d0 = g[0]
         if d0["rrp"]:
-            ref = f"RRP {d0['rrp']:.0f}€"
+            ref = f"RRP {rrp_str(d0)}"
         elif d0.get("lot") and d0.get("known_rrp"):
             ref = f"RRP known only for {' + '.join(d0['known_nums'])}: {d0['known_rrp']:.0f}€"
         else:
-            ref = "no RRP"
+            ref = "GWP, no RRP" if d0.get("promo") else "no RRP"
         flags = (" 🏷️" if d0["retired"] else "") + (" 📦 lot" if d0.get("lot") else "")
         entries = " · ".join(
             link(x, price(x)) + (f" {fmt_pct(x['discount'])}" if x["discount"] is not None else "")
@@ -381,7 +393,7 @@ def build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings,
         flags = (" 🏷️ retired" if d["retired"] else "") + (" 📦 lot" if d.get("lot") else "")
         blocks.append(
             f"\n{i}. <b>{esc(d['set_no'])} {esc(d['set_name'])}</b>\n"
-            f"{d['price']:.0f}€ vs {d['rrp']:.0f}€ ({fmt_pct(d['discount'])}) · "
+            f"{d['price']:.0f}€ vs {rrp_str(d)} ({fmt_pct(d['discount'])}) · "
             f"{esc(d['condition'])} · {esc(d['theme'])}{flags}\n"
             f"<a href=\"{esc(d['url'], quote=True)}\">Open on Vinted</a>"
         )
@@ -400,7 +412,7 @@ def build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings,
         blocks.append("\n\n⚠️ <b>Too good to be true</b> (likely parts, minifigs or mis-titled):")
         for d in suspicious[:MAX_SUSPICIOUS]:
             blocks.append(
-                f"\n• {esc(d['set_no'])} {esc(d['set_name'])}: {d['price']:.0f}€ vs {d['rrp']:.0f}€ "
+                f"\n• {esc(d['set_no'])} {esc(d['set_name'])}: {d['price']:.0f}€ vs {rrp_str(d)} "
                 f"({fmt_pct(d['discount'])}) · <a href=\"{esc(d['url'], quote=True)}\">link</a>")
         if len(suspicious) > MAX_SUSPICIOUS:
             blocks.append(f"\n… and {len(suspicious) - MAX_SUSPICIOUS} more")
@@ -411,7 +423,7 @@ def build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings,
             f"{len(deals) + len(suspicious)} at ≥{MIN_DISCOUNT_NEW * 100:.0f}% off\n"
             f"LotR: {len(lotr)} new ({plural(len(lotr) - n_figs - n_unid, 'set')}, {plural(n_figs, 'figure')}, {n_unid} unidentified)"
             f" · {lotr_info['already']} already reported, still listed"
-            f"\nPrices exclude shipping and buyer fee.</i>")
+            f"\nPrices exclude shipping and buyer fee. ~ = RRP converted from GBP/USD.</i>")
     for w in warnings:
         foot += f"\n⚠️ {esc(w)}"
     # Telegram's 4096 limit counts the text after HTML parsing, so link URLs do not count
