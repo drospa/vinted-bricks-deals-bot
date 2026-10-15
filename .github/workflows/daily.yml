@@ -8,6 +8,8 @@ on:
     - cron: "35 8 * * *"    # 09:35 Madrid in winter
     - cron: "7 12 * * *"    # 14:07 Madrid in summer
     - cron: "7 13 * * *"    # 14:07 Madrid in winter
+    - cron: "7 17 * * *"    # 19:07 Madrid in summer
+    - cron: "7 18 * * *"    # 19:07 Madrid in winter
   workflow_dispatch:
     inputs:
       mode:
