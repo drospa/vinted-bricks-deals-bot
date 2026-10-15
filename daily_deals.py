@@ -11,6 +11,7 @@ import random
 import re
 import sys
 import time
+from collections import Counter
 from datetime import datetime
 
 import requests
@@ -64,6 +65,7 @@ FIG_RE = re.compile(
     + _FROM_SET + r"|(lor|sw)\d{2,4})\b", re.I)
 SW_NAME = re.compile(r"\b(star ?wars|guerra de las galaxias|guerre des [eé]toiles)\b", re.I)
 MAX_SW_FIGURES = 15       # identified Star Wars loose figures shown per message
+ALERTED_CAP = 5000        # listing IDs remembered as already reported (older ones may be re-sent)
 
 # Unidentified LOTR listings that are not LEGO sets (video games, puzzles, keychains, knock-off bricks)
 LOTR_JUNK = re.compile(
@@ -220,29 +222,41 @@ def combine(nums, catalogue):
     }
 
 
+def new_stats(n):
+    """Counters for one batch. Invariant: scanned == sum(excluded) + matched + unidentified."""
+    return {"scanned": n, "excluded": Counter(), "matched": 0, "unidentified": 0, "no_price": 0}
+
+
+def check_stats(stats, label):
+    total = sum(stats["excluded"].values()) + stats["matched"] + stats["unidentified"]
+    if total != stats["scanned"]:
+        print(f"WARNING counters ({label}): scanned={stats['scanned']} but "
+              f"excluded+matched+unidentified={total}", flush=True)
+
+
 def evaluate(items, catalogue):
     deals, lotr, sw_figs = [], [], []
-    stats = {"scanned": len(items), "excluded": 0, "matched": 0, "no_price": 0}
+    stats = new_stats(len(items))
     for it in items:
         t = it["title"]
         if EXCLUDE.search(t) or EXTRA_EXCLUDE.search(t):
-            stats["excluded"] += 1
+            stats["excluded"]["keywords"] += 1
             continue
         nums = find_sets(t, catalogue)
         if nums:
             kept = [n for n in nums if "botanical" not in catalogue[n]["subtheme"].lower()]
             if not kept:  # only Botanical Collection sets in the title
-                stats["excluded"] += 1
+                stats["excluded"]["botanical"] += 1
                 continue
             nums = kept
         num, c = combine(nums, catalogue) if nums else (None, None)
         is_lotr = bool((c and LOTR_THEME.search(f"{c['theme']} {c['subtheme']}")) or (not c and LOTR_NAME.search(t)))
         is_sw = bool((c and "Star Wars" in c["theme"]) or (not c and SW_NAME.search(t)))
         if not (is_lotr or is_sw) and FIG_EXCL.search(t):
-            stats["excluded"] += 1
+            stats["excluded"]["figure"] += 1
             continue
         if is_lotr and not c and LOTR_JUNK.search(t):
-            stats["excluded"] += 1
+            stats["excluded"]["not Lego"] += 1
             continue
         is_fig = bool((is_lotr or is_sw) and FIG_RE.search(t))
         if is_lotr:
@@ -253,10 +267,10 @@ def evaluate(items, catalogue):
                          "lot": bool(c and c["lot"]),
                          "known_rrp": c["known_rrp"] if c else None,
                          "known_nums": c["known_nums"] if c else []})
-            if c:
-                stats["matched"] += 1
+            stats["matched" if c else "unidentified"] += 1
             continue
         if not c:
+            stats["unidentified"] += 1
             continue
         stats["matched"] += 1
         if is_fig:  # loose Star Wars figure: the set's official price says nothing about it, so no discount test
@@ -280,65 +294,140 @@ def evaluate(items, catalogue):
 
 
 # ---------------- message / telegram ----------------
-def build_messages(deals, suspicious, lotr, sw_figs, stats, warnings, today):
+def fmt_pct(discount):
+    """Price change vs official price, one format everywhere: '-62%', '+7%'. ASCII minus only."""
+    change = -discount * 100
+    return f"{'+' if change > 0 else '-' if change < 0 else ''}{abs(change):.0f}%"
+
+
+COND_SHORT = {"nuevo con etiquetas": "new, tags", "nuevo sin etiquetas": "new",
+              "muy bueno": "very good", "bueno": "good", "satisfactorio": "fair"}
+
+
+def cond_short(cond):
+    return COND_SHORT.get((cond or "").strip().lower(), cond or "?")
+
+
+def short_title(t, n=45):
+    t = re.sub(r"\s+", " ", t or "").strip()
+    return t if len(t) <= n else t[:n - 1].rstrip() + "…"
+
+
+def set_label(d):
+    name = re.sub(r"^The Lord of the Rings:\s*", "", d["set_name"])
+    return f"{d['set_no']} {name}"
+
+
+def lotr_blocks(lotr):
+    """Lord of the Rings, every listing, grouped: complete sets by set, then unidentified, then figures."""
+    esc = html.escape
+    link = lambda d, text: f"<a href=\"{esc(d['url'], quote=True)}\">{esc(text)}</a>"
+    price = lambda d: f"{d['price']:.0f}€" if d["price"] else "?€"
+    sets = [d for d in lotr if d["set_no"] != "?" and not d["figure"]]
+    unid = [d for d in lotr if d["set_no"] == "?" and not d["figure"]]
+    figs = [d for d in lotr if d["figure"]]
+    blocks = []
+    groups = {}
+    for d in sets:
+        groups.setdefault(d["set_no"], []).append(d)
+    def best(g):
+        ds = [x["discount"] for x in g if x["discount"] is not None]
+        return (not ds, -(max(ds) if ds else 0), g[0]["set_no"])
+    if groups:
+        blocks.append("\n\n🧙 <b>Lord of the Rings sets</b>")
+    for g in sorted(groups.values(), key=best):
+        g.sort(key=lambda x: x["price"] or 0)
+        d0 = g[0]
+        if d0["rrp"]:
+            ref = f"RRP {d0['rrp']:.0f}€"
+        elif d0.get("lot") and d0.get("known_rrp"):
+            ref = f"RRP known only for {' + '.join(d0['known_nums'])}: {d0['known_rrp']:.0f}€"
+        else:
+            ref = "no RRP"
+        flags = (" 🏷️" if d0["retired"] else "") + (" 📦 lot" if d0.get("lot") else "")
+        entries = " · ".join(
+            link(x, price(x)) + (f" {fmt_pct(x['discount'])}" if x["discount"] is not None else "")
+            + f" {cond_short(x['condition'])}" for x in g)
+        blocks.append(f"\n<b>{esc(set_label(d0))}</b> · {ref}{flags}\n   {entries}")
+    if unid:
+        unid.sort(key=lambda x: x["price"] or 0)
+        blocks.append(f"\n\n❓ <b>LotR, set not identified</b> ({len(unid)})")
+        blocks += [f"\n• {link(x, short_title(x['title']))} {price(x)} {cond_short(x['condition'])}" for x in unid]
+    if figs:
+        figs.sort(key=lambda x: x["price"] or 0)
+        blocks.append(f"\n\n🧍 <b>LotR figures</b> ({len(figs)}, no discount shown)")
+        blocks += [f"\n• {link(x, short_title(x['title']))} {price(x)} {cond_short(x['condition'])}"
+                   + (f" · {esc(x['set_no'])}" if x["set_no"] != "?" else "") for x in figs]
+    return blocks
+
+
+def plural(n, word):
+    return f"{n} {word}{'' if n == 1 else 's'}"
+
+
+def fmt_excluded(c):
+    if not c:
+        return "0 excluded"
+    return f"{sum(c.values())} excluded (" + ", ".join(f"{k} {v}" for k, v in c.most_common()) + ")"
+
+
+def build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings, today):
     esc = html.escape
     head = f"🧱 <b>Lego deals {today}</b>: {len(deals)} found" + (
-        f" · {len(lotr)} Lord of the Rings" if lotr else "") + (
+        f" · {len(lotr)} new Lord of the Rings" if lotr else "") + (
         f" · {len(sw_figs)} Star Wars figures" if sw_figs else "")
     blocks = []
     for i, d in enumerate(deals[:MAX_ITEMS], 1):
         flags = (" 🏷️ retired" if d["retired"] else "") + (" 📦 lot" if d.get("lot") else "")
         blocks.append(
             f"\n{i}. <b>{esc(d['set_no'])} {esc(d['set_name'])}</b>\n"
-            f"{d['price']:.0f}€ vs {d['rrp']:.0f}€ (−{d['discount'] * 100:.0f}%) · "
+            f"{d['price']:.0f}€ vs {d['rrp']:.0f}€ ({fmt_pct(d['discount'])}) · "
             f"{esc(d['condition'])} · {esc(d['theme'])}{flags}\n"
             f"<a href=\"{esc(d['url'], quote=True)}\">Open on Vinted</a>"
         )
     if len(deals) > MAX_ITEMS:
         blocks.append(f"\n… and {len(deals) - MAX_ITEMS} more")
     if sw_figs:
-        blocks.append("\n🧍 <b>Star Wars loose figures</b> (set number found in title; no discount filter, newest first):")
+        blocks.append("\n\n🧍 <b>Star Wars loose figures</b> (set number found in title; no discount filter, newest first):")
         for d in sw_figs[:MAX_SW_FIGURES]:
             blocks.append(
                 f"\n• <b>{esc(d['set_no'])} {esc(d['set_name'])}</b>: {d['price']:.0f}€ · {esc(d['condition'])} · "
                 f"<a href=\"{esc(d['url'], quote=True)}\">link</a>")
         if len(sw_figs) > MAX_SW_FIGURES:
             blocks.append(f"\n… and {len(sw_figs) - MAX_SW_FIGURES} more")
-    if lotr:
-        blocks.append("\n🧙 <b>Lord of the Rings</b> (all listings, no discount filter):")
-        for d in lotr:
-            price = f"{d['price']:.0f}€" if d["price"] else "?"
-            if d["discount"] is not None:
-                ref = f" vs {d['rrp']:.0f}€ ({-d['discount'] * 100:+.0f}%)"
-            elif d["set_no"] == "?":
-                ref = ""
-            elif d.get("lot") and d.get("known_rrp"):
-                ref = f" (lot; official price only known for {' + '.join(d['known_nums'])}: {d['known_rrp']:.0f}€)"
-            else:
-                ref = " (no official price)"
-            blocks.append(
-                f"\n• <b>{esc(d['set_no'])} {esc(d['set_name'])}</b>: {price}{ref} · {esc(d['condition'])}"
-                f"{' 🏷️ retired' if d['retired'] else ''}{' 📦 lot' if d.get('lot') else ''}{' 🧍 figure' if d.get('figure') else ''} · <a href=\"{esc(d['url'], quote=True)}\">link</a>")
+    blocks += lotr_blocks(lotr)
     if suspicious:
-        blocks.append("\n⚠️ <b>Too good to be true</b> (likely parts, minifigs or mis-titled):")
+        blocks.append("\n\n⚠️ <b>Too good to be true</b> (likely parts, minifigs or mis-titled):")
         for d in suspicious[:MAX_SUSPICIOUS]:
             blocks.append(
                 f"\n• {esc(d['set_no'])} {esc(d['set_name'])}: {d['price']:.0f}€ vs {d['rrp']:.0f}€ "
-                f"(−{d['discount'] * 100:.0f}%) · <a href=\"{esc(d['url'], quote=True)}\">link</a>")
+                f"({fmt_pct(d['discount'])}) · <a href=\"{esc(d['url'], quote=True)}\">link</a>")
         if len(suspicious) > MAX_SUSPICIOUS:
             blocks.append(f"\n… and {len(suspicious) - MAX_SUSPICIOUS} more")
-    foot = (f"\n<i>Scanned {stats['scanned']} new listings · {stats['matched']} matched to a set "
-            f"· {stats['excluded']} excluded. Prices exclude shipping and buyer fee.</i>")
+    n_figs = sum(1 for d in lotr if d["figure"])
+    n_unid = sum(1 for d in lotr if d["set_no"] == "?" and not d["figure"])
+    foot = (f"\n\n<i>Vinted: {stats['scanned']} new listings · {stats['matched']} matched · "
+            f"{stats['unidentified']} unidentified · {esc(fmt_excluded(stats['excluded']))} · "
+            f"{len(deals) + len(suspicious)} at ≥{MIN_DISCOUNT_NEW * 100:.0f}% off\n"
+            f"LotR: {len(lotr)} new ({plural(len(lotr) - n_figs - n_unid, 'set')}, {plural(n_figs, 'figure')}, {n_unid} unidentified)"
+            f" · {lotr_info['already']} already reported, still listed"
+            f"\nPrices exclude shipping and buyer fee.</i>")
     for w in warnings:
         foot += f"\n⚠️ {esc(w)}"
+    # Telegram's 4096 limit counts the text after HTML parsing, so link URLs do not count
     messages, cur = [], head
     for b in blocks + [foot]:
-        if len(cur) + len(b) > 3800:
+        if visible_len(cur) + visible_len(b) > 3800:
             messages.append(cur)
-            cur = ""
+            cur = b.lstrip("\n")
+            continue
         cur += b
     messages.append(cur)
     return messages
+
+
+def visible_len(s):
+    return len(html.unescape(re.sub(r"<[^>]+>", "", s)))
 
 
 def send_telegram(text):
@@ -350,6 +439,24 @@ def send_telegram(text):
     )
     if r.status_code != 200:
         raise RuntimeError(f"Telegram error {r.status_code}: {r.text[:200]}")
+
+
+def send_safe(text):
+    """Send; if Telegram rejects the length, split on line boundaries by raw size and retry."""
+    try:
+        send_telegram(text)
+    except RuntimeError as e:
+        if "too long" not in str(e).lower():
+            raise
+        print("Message too long for Telegram, re-splitting by raw length", flush=True)
+        cur = ""
+        for line in text.split("\n"):
+            if cur and len(cur) + len(line) + 1 > 3800:
+                send_telegram(cur)
+                cur = ""
+            cur += ("\n" if cur else "") + line
+        if cur:
+            send_telegram(cur)
 
 
 # ---------------- state ----------------
@@ -396,7 +503,7 @@ def main():
         sys.stdout.reconfigure(line_buffering=True)  # show progress live in the Actions log
     mode = os.environ.get("RUN_MODE", "").strip().lower()  # set by the GitHub workflow
     dry = mode == "dry-run" or os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
-    out = (lambda t: print("\n--- MESSAGE ---\n" + t)) if dry else send_telegram
+    out = (lambda t: print("\n--- MESSAGE ---\n" + t)) if dry else send_safe
     catalogue = load_catalogue()
     state = load_state()
     slot = None
@@ -406,7 +513,8 @@ def main():
         if slot is None:
             return
     last_id = int(state.get("last_id", 0))
-    alerted = set(state.get("alerted", []))
+    alerted_order = list(dict.fromkeys(state.get("alerted", [])))  # oldest first
+    alerted = set(alerted_order)
 
     by_id, error, complete, reached = {}, None, False, False
     for page in range(1, MAX_PAGES + 1):
@@ -462,9 +570,17 @@ def main():
     deals, suspicious, lotr, sw_figs, stats = evaluate(new_items, catalogue)
     seen = {d["id"] for d in lotr}
     fresh = [it for it in extra.values() if it["id"] not in alerted and it["id"] not in seen]
-    lotr += evaluate(fresh, catalogue)[2]
+    _, _, lotr_extra, _, lotr_stats = evaluate(fresh, catalogue)
+    lotr += lotr_extra
     lotr.sort(key=lambda d: (d["discount"] is None, -(d["discount"] or 0)))
-    for m in build_messages(deals, suspicious, lotr, sw_figs, stats, warnings, today_str()):
+    check_stats(stats, "main scan")
+    check_stats(lotr_stats, "LotR searches")
+    # Count only search results that are actually LotR listings (the searches also return other Lego)
+    old = [it for i, it in extra.items() if i in alerted]
+    lotr_info = {"active": len(extra), "already": len(evaluate(old, catalogue)[2])}
+    print(f"LotR: {len(lotr)} new, {lotr_info['already']} already reported | main stats {stats} | "
+          f"LotR search stats {lotr_stats}")
+    for m in build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings, today_str()):
         out(m)
 
     if not dry:
@@ -472,7 +588,9 @@ def main():
             state["last_id"] = max(by_id)
         if slot and not error:
             state["last_slot"] = slot
-        state["alerted"] = (list(alerted) + [d["id"] for d in deals + suspicious + lotr + sw_figs])[-1000:]
+        sent = [d["id"] for d in deals + suspicious + lotr + sw_figs]
+        # Ordered list, oldest first, so the cap evicts the oldest IDs (a set lost the order)
+        state["alerted"] = list(dict.fromkeys(alerted_order + sent))[-ALERTED_CAP:]
         save_state(state)
 
 
