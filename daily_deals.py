@@ -312,7 +312,7 @@ COND_SHORT = {"nuevo con etiquetas": "new, tags", "nuevo sin etiquetas": "new",
 
 
 def rrp_str(d):
-    """Official price; '~' marks a price converted from GBP/USD/CAD (no euro price published)."""
+    """Official price; '~' marks a price estimated from the US/UK/CA price (no euro price published)."""
     return f"{'~' if d.get('approx') else ''}{d['rrp']:.0f}€"
 
 
@@ -423,7 +423,7 @@ def build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings,
             f"{len(deals) + len(suspicious)} at ≥{MIN_DISCOUNT_NEW * 100:.0f}% off\n"
             f"LotR: {len(lotr)} new ({plural(len(lotr) - n_figs - n_unid, 'set')}, {plural(n_figs, 'figure')}, {n_unid} unidentified)"
             f" · {lotr_info['already']} already reported, still listed"
-            f"\nPrices exclude shipping and buyer fee. ~ = RRP converted from GBP/USD.</i>")
+            f"\nPrices exclude shipping and buyer fee. ~ = RRP estimated from US/UK price.</i>")
     for w in warnings:
         foot += f"\n⚠️ {esc(w)}"
     # Telegram's 4096 limit counts the text after HTML parsing, so link URLs do not count

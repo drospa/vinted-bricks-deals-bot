@@ -4,6 +4,7 @@ Run rarely (manually or monthly); the daily bot only reads sets.csv.
 Needs env var BRICKSET_API_KEY. Requires: pip install requests"""
 import csv
 import json
+import statistics
 import os
 import re
 import sys
@@ -18,9 +19,14 @@ KEY = os.environ.get("BRICKSET_API_KEY", "")
 TERMS = ["star wars", "lord of the rings", "city", "icons", "ninjago",
          "super mario", "ideas", "bricklink"]
 PRICE_REGIONS = ["ES", "DE"]  # euro prices: first region with a price wins (DE as proxy for Spain)
-# Fallback when no euro price exists (mostly sets from before ~2014): converted at today's ECB
-# rate and marked approximate. Order = preference.
-FX_REGIONS = [("UK", "GBP"), ("US", "USD"), ("CA", "CAD")]
+# Fallback when no euro price exists (mostly sets from before ~2014), marked approximate.
+# The regional price is scaled by a factor calibrated in each build from sets that have both a
+# DE price and that region's price (median DE/region ratio). Currency conversion is not used
+# while calibration works: LEGO sets euro prices by price point, not by exchange rate
+# (e.g. 79006: 29.99 GBP converts to ~35.5 EUR, but US 29.99 USD sat at the same price point).
+# Order = preference (US first: its ratio to DE is the most stable, to be confirmed in the log).
+FX_REGIONS = [("US", "USD"), ("UK", "GBP"), ("CA", "CAD")]
+MIN_CALIBRATION = 30  # sets needed per region; below this, that region falls back to the ECB rate
 FX_FALLBACK = {"GBP": 0.85, "USD": 1.10, "CAD": 1.50}  # units per 1 EUR, only if the ECB fetch fails
 ECB_URL = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
 RETIRED_AFTER_YEARS = 3  # set with no LEGO.com data in any region and older than this: retired
@@ -103,7 +109,29 @@ def is_promo(s):
     return any(PROMO_TAG.search(str(t)) for t in tags)
 
 
-def to_row(s, today, fx):
+def calibrate(all_sets, fx):
+    """Price factor per fallback region: median of DE price / region price over sets with both."""
+    factors = {}
+    for reg, cur in FX_REGIONS:
+        ratios = []
+        for s in all_sets:
+            lc = s.get("LEGOCom") or {}
+            de, other = (lc.get("DE") or {}).get("retailPrice"), (lc.get(reg) or {}).get("retailPrice")
+            if de and other:
+                ratios.append(de / other)
+        if len(ratios) >= MIN_CALIBRATION:
+            q = statistics.quantiles(ratios, n=4)
+            factors[reg] = statistics.median(ratios)
+            within = sum(1 for r in ratios if abs(r / factors[reg] - 1) <= 0.10) / len(ratios)
+            print(f"Calibration {reg}: factor {factors[reg]:.3f} from {len(ratios)} sets "
+                  f"(IQR {q[0]:.3f}-{q[2]:.3f}, {within:.0%} within ±10%)")
+        elif fx.get(cur):
+            factors[reg] = 1 / fx[cur]
+            print(f"Calibration {reg}: only {len(ratios)} sets, using ECB rate factor {factors[reg]:.3f}")
+    return factors
+
+
+def to_row(s, today, factors):
     lc = s.get("LEGOCom") or {}
     price = region = first = last = None
     approx = False
@@ -114,10 +142,10 @@ def to_row(s, today, fx):
             first, last = _dates(d)
             break
     if price is None:
-        for reg, cur in FX_REGIONS:
+        for reg, _cur in FX_REGIONS:
             d = lc.get(reg) or {}
-            if d.get("retailPrice") is not None and fx.get(cur):
-                price, region, approx = round(d["retailPrice"] / fx[cur], 2), reg, True
+            if d.get("retailPrice") and factors.get(reg):
+                price, region, approx = round(d["retailPrice"] * factors[reg], 2), reg, True
                 first, last = _dates(d)
                 break
     promo = is_promo(s)
@@ -152,17 +180,18 @@ def main():
     print("Themes selected:", themes)
     for term, names in candidates.items():
         print(f"  also contains '{term}' (NOT selected):", names)
-    rows = {}
+    all_sets = []
     for th in themes:
         sets = fetch_theme(th)
         print(f"  {th}: {len(sets)} sets")
-        for s in sets:
-            if s.get("numberVariant") not in (None, 1):
-                continue
-            rows[str(s.get("number"))] = to_row(s, today, fx)
-            if str(s.get("number")) in CHECK_SETS:
-                raw[str(s.get("number"))] = s
+        all_sets += [s for s in sets if s.get("numberVariant") in (None, 1)]
         time.sleep(1)
+    factors = calibrate(all_sets, fx)
+    rows = {}
+    for s in all_sets:
+        rows[str(s.get("number"))] = to_row(s, today, factors)
+        if str(s.get("number")) in CHECK_SETS:
+            raw[str(s.get("number"))] = s
     ordered = sorted(rows.values(), key=lambda r: r["number"])
     with open(OUT, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=FIELDS)
