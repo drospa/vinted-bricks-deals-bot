@@ -361,6 +361,10 @@ def lotr_blocks(lotr):
     return blocks
 
 
+def plural(n, word):
+    return f"{n} {word}{'' if n == 1 else 's'}"
+
+
 def fmt_excluded(c):
     if not c:
         return "0 excluded"
@@ -405,7 +409,7 @@ def build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings,
     foot = (f"\n\n<i>Vinted: {stats['scanned']} new listings · {stats['matched']} matched · "
             f"{stats['unidentified']} unidentified · {esc(fmt_excluded(stats['excluded']))} · "
             f"{len(deals) + len(suspicious)} at ≥{MIN_DISCOUNT_NEW * 100:.0f}% off\n"
-            f"LotR: {len(lotr)} new ({len(lotr) - n_figs - n_unid} sets, {n_figs} figures, {n_unid} unidentified)"
+            f"LotR: {len(lotr)} new ({plural(len(lotr) - n_figs - n_unid, 'set')}, {plural(n_figs, 'figure')}, {n_unid} unidentified)"
             f" · {lotr_info['already']} already reported, still listed"
             f"\nPrices exclude shipping and buyer fee.</i>")
     for w in warnings:
@@ -571,7 +575,9 @@ def main():
     lotr.sort(key=lambda d: (d["discount"] is None, -(d["discount"] or 0)))
     check_stats(stats, "main scan")
     check_stats(lotr_stats, "LotR searches")
-    lotr_info = {"active": len(extra), "already": sum(1 for i in extra if i in alerted)}
+    # Count only search results that are actually LotR listings (the searches also return other Lego)
+    old = [it for i, it in extra.items() if i in alerted]
+    lotr_info = {"active": len(extra), "already": len(evaluate(old, catalogue)[2])}
     print(f"LotR: {len(lotr)} new, {lotr_info['already']} already reported | main stats {stats} | "
           f"LotR search stats {lotr_stats}")
     for m in build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings, today_str()):
