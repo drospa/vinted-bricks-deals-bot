@@ -35,6 +35,8 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install curl_cffi requests
+      - name: Format tests
+        run: python -m unittest discover -s tests
       - run: python -u daily_deals.py
         env:
           PYTHONUNBUFFERED: "1"
