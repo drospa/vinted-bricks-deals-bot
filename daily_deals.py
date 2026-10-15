@@ -68,6 +68,27 @@ FIG_RE = re.compile(
 # "sans figurine" / "sin minifiguras" / "without minifigs": the set without its figures, not a figure
 NEG_FIG = re.compile(r"\b(sans|sin|without|senza|ohne|no)\s+(las?\s+|les?\s+|the\s+|le\s+)?"
                      r"(mini[ -]?fig\w*|figurines?|figuras?|figures?|personnages?)", re.I)
+# "con minifiguras" / "with minifigures" / "avec figurines": describes a set that includes its figures
+WITH_FIG = re.compile(r"\b(con|with|avec|mit|inclu\w*|incl)\s+(sus\s+|las\s+|les\s+|the\s+|all\s+|todas\s+las\s+|"
+                      r"toutes\s+les\s+|alle\s+)?(\d+\s+)?(mini[ -]?fig\w*|figurines?|figuras?|figures?|personnages?)"
+                      r"|\b(mini[ -]?fig\w*|figuras?|figurines?)\s+(incluid\w*|inclus\w*|included|incluse)", re.I)
+# A title that says the set is complete is the set, not a loose figure ("minifigure set 11373 completo")
+COMPLETE = re.compile(r"\b(complet[oaei]?s?|complete|compleet|komplett|completi)\b", re.I)
+FIG_SET_MIN_SHARE = 0.30  # a "complete" listing priced under 30% of the official price is still treated as a figure
+
+# Third-party accessories sold for a set (lighting kits, display cases, alternative builds): not the set itself
+ACCESSORY = re.compile(
+    r"\b(yeabricks|briksmax|vonado|lightailing|game ?of ?bricks|kyglaring|brickbling|lego ?lite"
+    r"|kit\s+(de\s+)?(iluminaci\w+|luz|luces|led|lumi\w+|light\w*|eclairage|beleuchtung|illuminazione)"
+    r"|(led|light|lighting|lumi[eè]re)\s+kit|iluminaci[oó]n\s+led|led\s+(lighting|light|lights|luces|iluminaci\w+)"
+    r"|eclairage\s+led|led\s+beleuchtung|beleuchtungs\w*|illuminazione\s+led"
+    r"|(vitrina|urna|vitrine|display\s+(case|box)|caja\s+expositora|acr[ií]lico|acrylic)\s+(para|for|pour|per|f[üu]r)"
+    r"|alternative?\s+build|alternate\s+build|alt\s+build|b[ -]model|modelo\s+alternativo)\b", re.I)
+# Incomplete sets in the languages Vinted Spain shows (ES/EN/FR/DE are in EXCLUDE already)
+INCOMPLETE = re.compile(
+    r"\b(incompleet|onvolledig|incompleti|mancante|mancanti|mancano|niet\s+compleet"
+    r"|(?<!no )(?<!no le )(?<!sin )falta(n)?\s+(algunas?\s+|unas?\s+|\d+\s+)?(piezas?|pe[cç]as?|minifig\w*|figuras?)"
+    r"|(?<!no )missing\s+(pieces?|parts?|minifig\w*)|(?<!no )pieces?\s+missing|(?<!sans )pi[eè]ces?\s+manquantes?)\b", re.I)
 SW_NAME = re.compile(r"\b(star ?wars|guerra de las galaxias|guerre des [eé]toiles)\b", re.I)
 MAX_SW_FIGURES = 15       # identified Star Wars loose figures shown per message
 ALERTED_CAP = 5000        # listing IDs remembered as already reported (older ones may be re-sent)
@@ -260,9 +281,15 @@ def evaluate(items, catalogue):
     stats["by_name"] = 0
     for it in items:
         t = it["title"]
-        ft = NEG_FIG.sub(" ", t)  # text for figure checks
+        ft = WITH_FIG.sub(" ", NEG_FIG.sub(" ", t))  # text for figure checks
         if EXCLUDE.search(t) or EXTRA_EXCLUDE.search(t):
             stats["excluded"]["keywords"] += 1
+            continue
+        if ACCESSORY.search(t):
+            stats["excluded"]["accessory"] += 1
+            continue
+        if INCOMPLETE.search(t):
+            stats["excluded"]["incomplete"] += 1
             continue
         nums = find_sets(t, catalogue)
         by_name = False
@@ -280,13 +307,18 @@ def evaluate(items, catalogue):
         num, c = combine(nums, catalogue) if nums else (None, None)
         is_lotr = bool((c and LOTR_THEME.search(f"{c['theme']} {c['subtheme']}")) or (not c and LOTR_NAME.search(t)))
         is_sw = bool((c and "Star Wars" in c["theme"]) or (not c and SW_NAME.search(t)))
-        if not (is_lotr or is_sw) and FIG_EXCL.search(ft):
+        # Titles saying the set is complete describe the set even if they mention figures
+        complete_set = bool(c and not by_name and COMPLETE.search(t) and (
+            not c["rrp"] or (it["price"] or 0) >= FIG_SET_MIN_SHARE * c["rrp"]))
+        if not (is_lotr or is_sw) and FIG_EXCL.search(ft) and not complete_set:
             stats["excluded"]["figure"] += 1
             continue
         if is_lotr and not c and LOTR_JUNK.search(t):
             stats["excluded"]["not Lego"] += 1
             continue
         is_fig = bool((is_lotr or is_sw) and FIG_RE.search(ft))
+        if is_fig and complete_set:
+            is_fig = False  # "minifigure set 11373 completo" at 60€ of 75€: the set
         if is_lotr:
             rrp = c["rrp"] if c else None
             disc = (1 - it["price"] / rrp) if rrp and it["price"] else None
