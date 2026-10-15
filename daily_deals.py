@@ -17,6 +17,8 @@ from datetime import datetime
 import requests
 from curl_cffi import requests as cr
 
+from name_match import NameIndex, load_aliases
+
 # ---------------- configuration ----------------
 BASE = "https://www.vinted.es"
 QUERY = "lego"
@@ -63,6 +65,9 @@ FIG_EXCL = re.compile(
 FIG_RE = re.compile(
     r"\b(mini[ -]?fig\w*|figurines?|figurita\w*|personnages?|figuras?|figures?|figuur|figuren|"
     + _FROM_SET + r"|(lor|sw)\d{2,4})\b", re.I)
+# "sans figurine" / "sin minifiguras" / "without minifigs": the set without its figures, not a figure
+NEG_FIG = re.compile(r"\b(sans|sin|without|senza|ohne|no)\s+(las?\s+|les?\s+|the\s+|le\s+)?"
+                     r"(mini[ -]?fig\w*|figurines?|figuras?|figures?|personnages?)", re.I)
 SW_NAME = re.compile(r"\b(star ?wars|guerra de las galaxias|guerre des [eé]toiles)\b", re.I)
 MAX_SW_FIGURES = 15       # identified Star Wars loose figures shown per message
 ALERTED_CAP = 5000        # listing IDs remembered as already reported (older ones may be re-sent)
@@ -239,15 +244,33 @@ def check_stats(stats, label):
               f"excluded+matched+unidentified={total}", flush=True)
 
 
+_name_index = {}
+
+
+def name_index(catalogue):
+    key = id(catalogue)
+    if key not in _name_index:
+        _name_index[key] = NameIndex(catalogue, load_aliases())
+    return _name_index[key]
+
+
 def evaluate(items, catalogue):
     deals, lotr, sw_figs = [], [], []
     stats = new_stats(len(items))
+    stats["by_name"] = 0
     for it in items:
         t = it["title"]
+        ft = NEG_FIG.sub(" ", t)  # text for figure checks
         if EXCLUDE.search(t) or EXTRA_EXCLUDE.search(t):
             stats["excluded"]["keywords"] += 1
             continue
         nums = find_sets(t, catalogue)
+        by_name = False
+        # No set number: try the set name, never for loose figures or non-Lego junk
+        if not nums and not (FIG_RE.search(ft) or FIG_EXCL.search(ft) or LOTR_JUNK.search(t)):
+            n = name_index(catalogue).match(t)
+            if n:
+                nums, by_name = [n], True
         if nums:
             kept = [n for n in nums if "botanical" not in catalogue[n]["subtheme"].lower()]
             if not kept:  # only Botanical Collection sets in the title
@@ -257,13 +280,13 @@ def evaluate(items, catalogue):
         num, c = combine(nums, catalogue) if nums else (None, None)
         is_lotr = bool((c and LOTR_THEME.search(f"{c['theme']} {c['subtheme']}")) or (not c and LOTR_NAME.search(t)))
         is_sw = bool((c and "Star Wars" in c["theme"]) or (not c and SW_NAME.search(t)))
-        if not (is_lotr or is_sw) and FIG_EXCL.search(t):
+        if not (is_lotr or is_sw) and FIG_EXCL.search(ft):
             stats["excluded"]["figure"] += 1
             continue
         if is_lotr and not c and LOTR_JUNK.search(t):
             stats["excluded"]["not Lego"] += 1
             continue
-        is_fig = bool((is_lotr or is_sw) and FIG_RE.search(t))
+        is_fig = bool((is_lotr or is_sw) and FIG_RE.search(ft))
         if is_lotr:
             rrp = c["rrp"] if c else None
             disc = (1 - it["price"] / rrp) if rrp and it["price"] else None
@@ -272,13 +295,15 @@ def evaluate(items, catalogue):
                          "rrp": rrp, "retired": bool(c and c["retired"]), "discount": disc, "figure": is_fig,
                          "lot": bool(c and c["lot"]),
                          "known_rrp": c["known_rrp"] if c else None,
-                         "known_nums": c["known_nums"] if c else []})
+                         "known_nums": c["known_nums"] if c else [], "by_name": by_name})
             stats["matched" if c else "unidentified"] += 1
+            stats["by_name"] += by_name
             continue
         if not c:
             stats["unidentified"] += 1
             continue
         stats["matched"] += 1
+        stats["by_name"] += by_name
         if is_fig:  # loose Star Wars figure: the set's official price says nothing about it, so no discount test
             sw_figs.append({**it, "set_no": num, "set_name": c["name"], "theme": c["theme"],
                             "rrp": c["rrp"], "retired": c["retired"], "discount": None})
@@ -291,7 +316,7 @@ def evaluate(items, catalogue):
         if discount >= (MIN_DISCOUNT_NEW if is_new else MIN_DISCOUNT_USED):
             deals.append({**it, "set_no": num, "set_name": c["name"], "theme": c["theme"],
                           "rrp": c["rrp"], "retired": c["retired"], "discount": discount, "lot": c["lot"],
-                          "approx": c.get("approx", False)})
+                          "approx": c.get("approx", False), "by_name": by_name})
     deals.sort(key=lambda d: d["discount"], reverse=True)
     lotr.sort(key=lambda d: (d["discount"] is None, -(d["discount"] or 0)))
     suspicious = [d for d in deals if d["discount"] >= TOO_GOOD]
@@ -359,7 +384,7 @@ def lotr_blocks(lotr):
         flags = (" 🏷️" if d0["retired"] else "") + (" 📦 lot" if d0.get("lot") else "")
         entries = " · ".join(
             link(x, price(x)) + (f" {fmt_pct(x['discount'])}" if x["discount"] is not None else "")
-            + f" {cond_short(x['condition'])}" for x in g)
+            + f" {cond_short(x['condition'])}" + (" 🔎" if x.get("by_name") else "") for x in g)
         blocks.append(f"\n<b>{esc(set_label(d0))}</b> · {ref}{flags}\n   {entries}")
     if unid:
         unid.sort(key=lambda x: x["price"] or 0)
@@ -390,7 +415,8 @@ def build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings,
         f" · {len(sw_figs)} Star Wars figures" if sw_figs else "")
     blocks = []
     for i, d in enumerate(deals[:MAX_ITEMS], 1):
-        flags = (" 🏷️ retired" if d["retired"] else "") + (" 📦 lot" if d.get("lot") else "")
+        flags = (" 🏷️ retired" if d["retired"] else "") + (" 📦 lot" if d.get("lot") else "") + (
+            " 🔎 matched by name" if d.get("by_name") else "")
         blocks.append(
             f"\n{i}. <b>{esc(d['set_no'])} {esc(d['set_name'])}</b>\n"
             f"{d['price']:.0f}€ vs {rrp_str(d)} ({fmt_pct(d['discount'])}) · "
@@ -418,7 +444,8 @@ def build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings,
             blocks.append(f"\n… and {len(suspicious) - MAX_SUSPICIOUS} more")
     n_figs = sum(1 for d in lotr if d["figure"])
     n_unid = sum(1 for d in lotr if d["set_no"] == "?" and not d["figure"])
-    foot = (f"\n\n<i>Vinted: {stats['scanned']} new listings · {stats['matched']} matched · "
+    foot = (f"\n\n<i>Vinted: {stats['scanned']} new listings · {stats['matched']} matched"
+            f"{' (' + str(stats['by_name']) + ' by name 🔎)' if stats.get('by_name') else ''} · "
             f"{stats['unidentified']} unidentified · {esc(fmt_excluded(stats['excluded']))} · "
             f"{len(deals) + len(suspicious)} at ≥{MIN_DISCOUNT_NEW * 100:.0f}% off\n"
             f"LotR: {len(lotr)} new ({plural(len(lotr) - n_figs - n_unid, 'set')}, {plural(n_figs, 'figure')}, {n_unid} unidentified)"

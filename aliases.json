@@ -1,0 +1,21 @@
+{
+  "_comment": "Extra names per set number, used only when a title has no set number. Every word of an alias must appear in the title (case, accents and articles ignored). Add names in any language; keep them specific.",
+  "10316": ["Rivendell", "Rivendel", "Fondcombe", "Gran Burrone", "Bruchtal"],
+  "10354": ["La Comarca", "La Comte", "La Contea", "Auenland"],
+  "10333": ["Barad-dur"],
+  "11377": ["Minas Tirith"],
+  "11373": ["Sauron Helmet", "Casco de Sauron", "Casque de Sauron", "Elmo di Sauron", "Helm von Sauron"],
+  "10367": ["Balrog Book Nook"],
+  "40693": ["Fell Beast", "Bestia Alata", "Bete Ailee"],
+  "40761": ["Smeagol Deagol"],
+  "40893": ["Grond"],
+  "10237": ["Tower of Orthanc", "Torre de Orthanc", "Tour d'Orthanc", "Torre di Orthanc", "Turm von Orthanc"],
+  "79006": ["Council of Elrond", "Concilio de Elrond", "Conseil d'Elrond", "Consiglio di Elrond"],
+  "9469": ["Gandalf Arrives", "Llegada de Gandalf", "Arrivee de Gandalf", "Arrivo di Gandalf"],
+  "9473": ["Mines of Moria", "Minas de Moria", "Mines de la Moria", "Miniere di Moria"],
+  "9474": ["Helm's Deep", "Abismo de Helm", "Gouffre de Helm", "Fosso di Helm", "Helms Klamm"],
+  "9472": ["Weathertop", "Cima de los Vientos", "Mont Venteux", "Colle Vento", "Wetterspitze"],
+  "79008": ["Pirate Ship Ambush", "Barco Pirata Emboscada", "Embuscade Bateau Pirate"],
+  "9470": ["Shelob Attacks", "Ella-Laraña", "Arachne Attaque"],
+  "79007": ["Black Gate", "Puerta Negra", "Porte Noire", "Cancello Nero"]
+}
