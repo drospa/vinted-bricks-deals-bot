@@ -1,6 +1,8 @@
 name: build-catalogue
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "17 4 1 * *"   # monthly refresh of prices and retired status
 
 permissions:
   contents: write
@@ -14,6 +16,8 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install requests
+      - name: Catalogue tests
+        run: python -m unittest tests.test_catalogue
       - run: python build_catalogue.py
         env:
           BRICKSET_API_KEY: ${{ secrets.BRICKSET_API_KEY }}
@@ -23,4 +27,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add sets.csv
           git diff --cached --quiet || git commit -m "Update sets catalogue"
+          git pull --rebase origin "${GITHUB_REF_NAME}"   # the daily job may have pushed state.json meanwhile
           git push
