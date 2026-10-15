@@ -545,21 +545,26 @@ def save_state(state):
 
 
 # ---------------- main ----------------
-SLOTS = {"am": (9, 30), "pm": (14, 0)}  # Madrid local times of the two daily runs
+# Madrid local start times of the daily runs, in order. A run belongs to the latest slot already started.
+SLOTS = [("am", (9, 30)), ("pm", (14, 0)), ("eve", (19, 0))]
 
 
-def schedule_slot(state):
+def schedule_slot(state, now=None):
     """Scheduled runs only. GitHub cron is UTC-only, so several UTC crons fire and this guard keeps
-    exactly one run per Madrid-time slot (09:30 / 14:00), whatever the daylight-saving offset.
+    exactly one run per Madrid-time slot (09:30 / 14:00 / 19:00), whatever the daylight-saving offset.
     Returns the slot id to run, or None to skip."""
     from zoneinfo import ZoneInfo
-    now = datetime.now(ZoneInfo("Europe/Madrid"))
-    name = "am" if now.hour < 12 else "pm"
-    slot = f"{now:%Y-%m-%d}-{name}"
-    if (now.hour, now.minute) < SLOTS[name] or state.get("last_slot") == slot:
-        print(f"Skipping: Madrid time {now:%H:%M}, slot {slot} not due or already done")
+    now = now or datetime.now(ZoneInfo("Europe/Madrid"))
+    started = [name for name, start in SLOTS if (now.hour, now.minute) >= start]
+    if not started:
+        print(f"Skipping: Madrid time {now:%H:%M}, before the first slot")
+        return None
+    slot = f"{now:%Y-%m-%d}-{started[-1]}"
+    if state.get("last_slot") == slot:
+        print(f"Skipping: Madrid time {now:%H:%M}, slot {slot} already done")
         return None
     return slot
+
 
 def today_str():
     try:
