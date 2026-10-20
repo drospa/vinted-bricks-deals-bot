@@ -54,11 +54,17 @@ class TestMatch(unittest.TestCase):
                "LEGO 72032 Super Mario - Standard Kart (Caixa vazia)"]
         hits, _ = dd.evaluate_wanted([it(i, t, 75) for i, t in enumerate(bad)], WANTED)
         self.assertEqual([h["title"] for h in hits], [])
-        good = ["Lego 21367 La fusée de Tintin sans personnnages", "Lego Cohete Lunar Tintín 21367",
+        good = ["Lego Cohete Lunar Tintín 21367",
                 "LEGO Star Wars 75397 – Jabba’s Sail Barge – 3942 pieces", "Lego Mario Toad 72032",
                 "Lego le seigneur des anneaux 10316 fondcombe avec 15 figurines neuf"]
         hits, _ = dd.evaluate_wanted([it(i, t, 150) for i, t in enumerate(good)], WANTED)
-        self.assertEqual(len(hits), 4)  # 10316 is not on the wanted list
+        self.assertEqual(len(hits), 3)  # 10316 is not on the wanted list
+
+    def test_without_figures_dropped(self):
+        titles = ["Lego 21367 La fusée de Tintin sans personnnages", "Lego 75397 sin minifiguras",
+                  "LEGO 10365 without minifigures", "Lego 75453 senza minifigure"]
+        hits, excl = dd.evaluate_wanted([it(i, t, 150) for i, t in enumerate(titles)], WANTED)
+        self.assertEqual((hits, excl["no figures"]), ([], 4))
 
     def test_queries(self):
         qs = wl.search_queries(WANTED)

@@ -362,6 +362,11 @@ def evaluate(items, catalogue):
     return deals, suspicious, lotr, sw_figs, stats
 
 
+# Wanted list only: the set sold without its figures is not wanted (tolerates "personnnages"-style typos)
+NO_FIGS = re.compile(r"\b(sans|sin|without|senza|ohne|sem|no)\s+(las?\s+|les?\s+|the\s+|os\s+|sus\s+)?"
+                     r"(mini[ -]?fig\w*|figurin\w*|figuras?|figures?|personn+ages?)", re.I)
+
+
 def evaluate_wanted(items, entries):
     """Every listing of a wanted set, no discount filter. Same quality exclusions as the main scan
     (knock-offs, accessories, incomplete, loose figures), so the block lists the set itself."""
@@ -381,6 +386,9 @@ def evaluate_wanted(items, entries):
             continue
         if INCOMPLETE.search(t):
             excluded["incomplete"] += 1
+            continue
+        if NO_FIGS.search(t):
+            excluded["no figures"] += 1
             continue
         is_fig = bool(FIG_EXCL.search(ft) or FIG_RE.search(ft))
         complete_set = bool(COMPLETE.search(t) and not re.search(r"\blot\b", t, re.I)
