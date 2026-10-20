@@ -42,6 +42,30 @@ class TestMatch(unittest.TestCase):
         self.assertAlmostEqual(hits[0]["discount"], 1 - 280 / 349.99)
         self.assertEqual(excl, Counter({"keywords": 1, "figure": 1, "accessory": 1}))
 
+    def test_real_false_positives_20_10(self):
+        """Titles from the 20/10/2026 dry run that are not the set."""
+        bad = ["Support mural pour LEGO Pirates des Caraïbes Black Pearl 10365",
+               "Lego 10365 Captain Jack Sparrow's Pirate Ship pirati caraibi solo istruzioni",
+               "Notice SEUL lego idea Moon Rocket set 21367",
+               "Lego 21367 - personnages Tintin - lot complet",
+               "Cadre LEGO Tintin fusée 50x70 – On a marché sur la lune",
+               "Lepin Ninjago city workshop 71837",
+               "Lego Star Wars 75397 figura de la princesa Leia esclava nueva",
+               "LEGO 72032 Super Mario - Standard Kart (Caixa vazia)"]
+        hits, _ = dd.evaluate_wanted([it(i, t, 75) for i, t in enumerate(bad)], WANTED)
+        self.assertEqual([h["title"] for h in hits], [])
+        good = ["Lego Cohete Lunar Tintín 21367",
+                "LEGO Star Wars 75397 – Jabba’s Sail Barge – 3942 pieces", "Lego Mario Toad 72032",
+                "Lego le seigneur des anneaux 10316 fondcombe avec 15 figurines neuf"]
+        hits, _ = dd.evaluate_wanted([it(i, t, 150) for i, t in enumerate(good)], WANTED)
+        self.assertEqual(len(hits), 3)  # 10316 is not on the wanted list
+
+    def test_without_figures_dropped(self):
+        titles = ["Lego 21367 La fusée de Tintin sans personnnages", "Lego 75397 sin minifiguras",
+                  "LEGO 10365 without minifigures", "Lego 75453 senza minifigure"]
+        hits, excl = dd.evaluate_wanted([it(i, t, 150) for i, t in enumerate(titles)], WANTED)
+        self.assertEqual((hits, excl["no figures"]), ([], 4))
+
     def test_queries(self):
         qs = wl.search_queries(WANTED)
         self.assertIn("lego 10365", qs)
