@@ -10,7 +10,9 @@ import daily_deals as dd  # noqa: E402
 import wanted as wl  # noqa: E402
 
 CAT = dd.load_catalogue(os.path.join(ROOT, "sets.csv"))
-WANTED = wl.load(os.path.join(ROOT, "wanted.json"))
+# A frozen copy: the live wanted.json changes whenever /want or /unwant is sent to the bot,
+# and the tests must not depend on what is being watched today.
+WANTED = wl.load(os.path.join(os.path.dirname(__file__), "fixtures", "wanted.json"))
 
 
 def it(i, title, price=100, cond="Muy bueno"):
@@ -18,9 +20,16 @@ def it(i, title, price=100, cond="Muy bueno"):
 
 
 class TestMatch(unittest.TestCase):
-    def test_initial_list(self):
+    def test_fixture_list(self):
         self.assertEqual({w["number"] for w in WANTED},
                          {"21367", "71837", "71860", "10365", "75397", "72032", "75453"})
+
+    def test_live_list_is_valid(self):
+        live = wl.load(os.path.join(ROOT, "wanted.json"))
+        for w in live:
+            self.assertRegex(w["number"], r"^\d{4,6}$")
+            self.assertTrue(w["name"])
+        self.assertEqual(len(live), len({w["number"] for w in live}))
 
     def test_number_and_keyword(self):
         self.assertEqual(wl.match("Lego 10365 barco Jack Sparrow nuevo", WANTED)["number"], "10365")
