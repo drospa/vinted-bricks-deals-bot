@@ -43,8 +43,9 @@ EXCLUDE = re.compile(
     r"|lote|lot de|bundle"
     r"|caja vac\w+|empty box|bo[iî]te vide|leere? (box|schachtel|verpackung)"
     r"|solo (la )?caja|only (the )?box|box only|seule bo[iî]te"
-    r"|(solo|only|nur|seulement|uniquement) (las? )?(instrucciones|instructions|manual|notice|anleitung)"
-    r"|(instrucciones|instructions|manual|notice|anleitung) only"
+    r"|(solo|only|nur|seulement|uniquement) (las? |le )?(instrucciones|instructions|manual|notice|anleitung|istruzioni)"
+    r"|(instrucciones|instructions|manual|notice|anleitung|istruzioni) (only|seul\w*|solo|solamente|uniquement)"
+    r"|caixa vazia|s[oó] (a )?caixa"
     r"|pi[eè]ces d[ée]tach[ée]es|piezas sueltas|pour pi[eè]ces|for parts|spare parts|repuestos?)\b",
     re.I,
 )
@@ -57,7 +58,7 @@ NUM_RE = re.compile(
 # Extra exclusions (all themes): knock-offs, BrickHeadz LOTR, numbered instruction booklets
 EXTRA_EXCLUDE = re.compile(
     r"\b(type lego|tipo lego|estilo lego|style lego|no ?lego|not lego|r[ée]plique|r[ée]plica|replica"
-    r"|compatibles?|compat[ií]vel|compatibili?e?|kompatibel|botanicals?|brick ?-?heads?|brickz?headz|(?:4063[0-2]){1,3}"  # BrickHeadz LOTR (40630-40632)
+    r"|lepin|mould ?king|xingbao|compatibles?|compat[ií]vel|compatibili?e?|kompatibel|botanicals?|brick ?-?heads?|brickz?headz|(?:4063[0-2]){1,3}"  # BrickHeadz LOTR (40630-40632)
     r"|(istruzioni|instrucciones|instructions|anleitung|notice|manual)\s*(n[°º.]?\s*)?\d+)\b", re.I)
 # Loose figures: excluded for every theme EXCEPT Star Wars and Lord of the Rings
 _FROM_SET = r"(from|out of|del|du|dal|aus dem)\s+(the\s+|el\s+|le\s+|il\s+)?(set|lot)"
@@ -85,6 +86,7 @@ ACCESSORY = re.compile(
     r"|(led|light|lighting|lumi[eè]re)\s+kit|iluminaci[oó]n\s+led|led\s+(lighting|light|lights|luces|iluminaci\w+)"
     r"|eclairage\s+led|led\s+beleuchtung|beleuchtungs\w*|illuminazione\s+led"
     r"|(vitrina|urna|vitrine|display\s+(case|box)|caja\s+expositora|acr[ií]lico|acrylic)\s+(para|for|pour|per|f[üu]r)"
+    r"|support\s+mural|wall\s+mount|soporte\s+(de\s+)?pared|wandhalterung|cadre|cuadro|poster|p[oó]ster|affiche"
     r"|alternative?\s+build|alternate\s+build|alt\s+build|b[ -]model|modelo\s+alternativo)\b", re.I)
 # Incomplete sets in the languages Vinted Spain shows (ES/EN/FR/DE are in EXCLUDE already)
 INCOMPLETE = re.compile(
@@ -380,8 +382,10 @@ def evaluate_wanted(items, entries):
         if INCOMPLETE.search(t):
             excluded["incomplete"] += 1
             continue
-        complete_set = bool(COMPLETE.search(t) and (not rrp or (it["price"] or 0) >= FIG_SET_MIN_SHARE * rrp))
-        if FIG_EXCL.search(ft) and not complete_set:
+        is_fig = bool(FIG_EXCL.search(ft) or FIG_RE.search(ft))
+        complete_set = bool(COMPLETE.search(t) and not re.search(r"\blot\b", t, re.I)
+                            and (not rrp or (it["price"] or 0) >= FIG_SET_MIN_SHARE * rrp))
+        if is_fig and not complete_set:
             excluded["figure"] += 1
             continue
         disc = (1 - it["price"] / rrp) if rrp and it["price"] else None
