@@ -17,6 +17,7 @@ from datetime import datetime
 import requests
 from curl_cffi import requests as cr
 
+import wanted as wl
 from name_match import NameIndex, load_aliases
 
 # ---------------- configuration ----------------
@@ -28,6 +29,7 @@ TOO_GOOD = 0.75           # at or above this: listed separately as suspicious
 MAX_SUSPICIOUS = 3        # suspicious listings shown at the bottom
 LOTR_QUERIES = ["lego señor de los anillos", "lego lord of the rings", "lego lotr"]
 LOTR_PAGES = 3           # pages fetched per extra LOTR search
+WANTED_PAGES = 1         # pages fetched per wanted-list search (newest first; 3 runs a day)
 MAX_ITEMS = 10           # max deals listed in the message
 MAX_PAGES = 15           # safety cap on pages fetched per run
 PAUSE = (2.0, 5.0)       # random pause between pages (seconds)
@@ -210,6 +212,7 @@ def load_catalogue(path=CATALOGUE):
             cat[row["number"]] = {
                 "name": row["name"], "theme": row["theme"], "rrp": rrp,
                 "subtheme": row.get("subtheme") or "",
+                "year": int(row["year"]) if (row.get("year") or "").isdigit() else None,
                 "retired": row["retired"] == "yes",
                 "approx": (row.get("rrp_approx") or "") == "yes",
                 "promo": (row.get("promo") or "") == "yes",
@@ -357,6 +360,55 @@ def evaluate(items, catalogue):
     return deals, suspicious, lotr, sw_figs, stats
 
 
+def evaluate_wanted(items, entries):
+    """Every listing of a wanted set, no discount filter. Same quality exclusions as the main scan
+    (knock-offs, accessories, incomplete, loose figures), so the block lists the set itself."""
+    hits, excluded = [], Counter()
+    for it in items:
+        w = wl.match(it["title"], entries)
+        if not w:
+            continue
+        t = it["title"]
+        ft = WITH_FIG.sub(" ", NEG_FIG.sub(" ", t))
+        rrp = w.get("rrp")
+        if EXCLUDE.search(t) or EXTRA_EXCLUDE.search(t):
+            excluded["keywords"] += 1
+            continue
+        if ACCESSORY.search(t):
+            excluded["accessory"] += 1
+            continue
+        if INCOMPLETE.search(t):
+            excluded["incomplete"] += 1
+            continue
+        complete_set = bool(COMPLETE.search(t) and (not rrp or (it["price"] or 0) >= FIG_SET_MIN_SHARE * rrp))
+        if FIG_EXCL.search(ft) and not complete_set:
+            excluded["figure"] += 1
+            continue
+        disc = (1 - it["price"] / rrp) if rrp and it["price"] else None
+        hits.append({**it, "set_no": w["number"], "set_name": w["name"], "rrp": rrp, "discount": disc})
+    hits.sort(key=lambda d: (d["set_no"], d["price"] or 0))
+    return hits, excluded
+
+
+def wanted_blocks(hits):
+    """Wanted list: every new listing, grouped by set, cheapest first."""
+    if not hits:
+        return []
+    esc = html.escape
+    blocks = ["\n\n🎯 <b>Wanted list</b> (every new listing, no discount filter)"]
+    groups = {}
+    for d in hits:
+        groups.setdefault(d["set_no"], []).append(d)
+    for no, g in groups.items():
+        ref = f"RRP {g[0]['rrp']:.0f}€" if g[0]["rrp"] else "no RRP"
+        entries = "\n".join(
+            f"   • <a href=\"{esc(x['url'], quote=True)}\">{x['price']:.0f}€</a>"
+            + (f" {fmt_pct(x['discount'])}" if x["discount"] is not None else "")
+            + f" {cond_short(x['condition'])} · {esc(short_title(x['title']))}" for x in g)
+        blocks.append(f"\n<b>{esc(no)} {esc(g[0]['set_name'])}</b> · {ref}\n{entries}")
+    return blocks
+
+
 # ---------------- message / telegram ----------------
 def fmt_pct(discount):
     """Price change vs official price, one format everywhere: '-62%', '+7%'. ASCII minus only."""
@@ -440,11 +492,13 @@ def fmt_excluded(c):
     return f"{sum(c.values())} excluded (" + ", ".join(f"{k} {v}" for k, v in c.most_common()) + ")"
 
 
-def build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings, today):
+def build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings, today,
+                   wanted_hits=(), wanted_info=None):
     esc = html.escape
     head = f"🧱 <b>Lego deals {today}</b>: {len(deals)} found" + (
         f" · {len(lotr)} new Lord of the Rings" if lotr else "") + (
-        f" · {len(sw_figs)} Star Wars figures" if sw_figs else "")
+        f" · {len(sw_figs)} Star Wars figures" if sw_figs else "") + (
+        f" · 🎯 {len(wanted_hits)} wanted" if wanted_hits else "")
     blocks = []
     for i, d in enumerate(deals[:MAX_ITEMS], 1):
         flags = (" 🏷️ retired" if d["retired"] else "") + (" 📦 lot" if d.get("lot") else "") + (
@@ -474,6 +528,7 @@ def build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings,
                 f"({fmt_pct(d['discount'])}) · <a href=\"{esc(d['url'], quote=True)}\">link</a>")
         if len(suspicious) > MAX_SUSPICIOUS:
             blocks.append(f"\n… and {len(suspicious) - MAX_SUSPICIOUS} more")
+    blocks += wanted_blocks(list(wanted_hits))
     n_figs = sum(1 for d in lotr if d["figure"])
     n_unid = sum(1 for d in lotr if d["set_no"] == "?" and not d["figure"])
     foot = (f"\n\n<i>Vinted: {stats['scanned']} new listings · {stats['matched']} matched"
@@ -482,6 +537,10 @@ def build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings,
             f"{len(deals) + len(suspicious)} at ≥{MIN_DISCOUNT_NEW * 100:.0f}% off\n"
             f"LotR: {len(lotr)} new ({plural(len(lotr) - n_figs - n_unid, 'set')}, {plural(n_figs, 'figure')}, {n_unid} unidentified)"
             f" · {lotr_info['already']} already reported, still listed"
+            + (f"\nWanted: {plural(wanted_info['watched'], 'set')} watched · {len(wanted_hits)} new"
+               f" · {esc(fmt_excluded(wanted_info['excluded']))}" if wanted_info else "")
+            + (("\n" + esc(wanted_info["replies"])) if wanted_info and wanted_info.get("replies") else "")
+            +
             f"\nPrices exclude shipping and buyer fee. ~ = RRP estimated from US/UK price.</i>")
     for w in warnings:
         foot += f"\n⚠️ {esc(w)}"
@@ -588,6 +647,23 @@ def main():
         slot = schedule_slot(state)
         if slot is None:
             return
+    # Wanted list: apply /want, /unwant, /wanted sent to the bot since the last run
+    wanted = wl.load()
+    wanted_changed, replies, tg_offset = False, [], state.get("tg_offset")
+    cmd_warning = None
+    if os.environ.get("TELEGRAM_TOKEN") and os.environ.get("TELEGRAM_CHAT_ID"):
+        try:
+            texts, tg_offset = wl.fetch_commands(os.environ["TELEGRAM_TOKEN"], os.environ["TELEGRAM_CHAT_ID"],
+                                                 tg_offset, requests.get)
+            for t in texts:
+                before = list(wanted)
+                wanted, reply = wl.apply_command(wanted, t, catalogue)
+                if reply:
+                    replies.append(reply)
+                    wanted_changed |= wanted != before
+        except Exception as e:  # e.g. 409 when a webhook is set: the digest still goes out
+            cmd_warning = f"Wanted-list commands not read: {e}"
+    print(f"wanted: {len(wanted)} sets | commands: {replies}")
     last_id = int(state.get("last_id", 0))
     alerted_order = list(dict.fromkeys(state.get("alerted", [])))  # oldest first
     alerted = set(alerted_order)
@@ -625,6 +701,8 @@ def main():
                         "older new listings may be missed (run more often)")
     if not last_id:
         warnings.append("First run: no previous watermark, scanned the latest pages only")
+    if cmd_warning:
+        warnings.append(cmd_warning)
 
     # Targeted LOTR searches: these sets are rare, so the generic "lego" scan would miss most of them
     extra = {}
@@ -642,6 +720,22 @@ def main():
             time.sleep(random.uniform(*PAUSE))
     print(f"LOTR search listings: {len(extra)}")
 
+    # Targeted wanted-list searches (one per set number / keyword set)
+    wanted_found = {}
+    for q in wl.search_queries(wanted):
+        for page in range(1, WANTED_PAGES + 1):
+            try:
+                items = fetch_page(page, q)
+            except FetchError as e:
+                warnings.append(f"Wanted search '{q}' page {page}: {e}")
+                break
+            if not items:
+                break
+            for it in items:
+                wanted_found[it["id"]] = it
+            time.sleep(random.uniform(*PAUSE))
+    print(f"wanted search listings: {len(wanted_found)}")
+
     new_items = [it for it in by_id.values() if it["id"] > last_id and it["id"] not in alerted]
     deals, suspicious, lotr, sw_figs, stats = evaluate(new_items, catalogue)
     seen = {d["id"] for d in lotr}
@@ -649,6 +743,15 @@ def main():
     _, _, lotr_extra, _, lotr_stats = evaluate(fresh, catalogue)
     lotr += lotr_extra
     lotr.sort(key=lambda d: (d["discount"] is None, -(d["discount"] or 0)))
+    # Wanted list: any not-yet-reported listing from any of the scans; it is shown only in that block
+    pool = {**by_id, **extra, **wanted_found}
+    wanted_hits, wanted_excl = evaluate_wanted([it for i, it in pool.items() if i not in alerted], wanted)
+    wanted_ids = {d["id"] for d in wanted_hits}
+    deals = [d for d in deals if d["id"] not in wanted_ids]
+    suspicious = [d for d in suspicious if d["id"] not in wanted_ids]
+    sw_figs = [d for d in sw_figs if d["id"] not in wanted_ids]
+    lotr = [d for d in lotr if d["id"] not in wanted_ids]
+    wanted_info = {"watched": len(wanted), "excluded": wanted_excl, "replies": "\n".join(replies)}
     check_stats(stats, "main scan")
     check_stats(lotr_stats, "LotR searches")
     # Count only search results that are actually LotR listings (the searches also return other Lego)
@@ -656,7 +759,8 @@ def main():
     lotr_info = {"active": len(extra), "already": len(evaluate(old, catalogue)[2])}
     print(f"LotR: {len(lotr)} new, {lotr_info['already']} already reported | main stats {stats} | "
           f"LotR search stats {lotr_stats}")
-    for m in build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings, today_str()):
+    for m in build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings, today_str(),
+                            wanted_hits, wanted_info):
         out(m)
 
     if not dry:
@@ -664,7 +768,11 @@ def main():
             state["last_id"] = max(by_id)
         if slot and not error:
             state["last_slot"] = slot
-        sent = [d["id"] for d in deals + suspicious + lotr + sw_figs]
+        sent = [d["id"] for d in deals + suspicious + lotr + sw_figs + wanted_hits]
+        if tg_offset is not None:
+            state["tg_offset"] = tg_offset
+        if wanted_changed:
+            wl.save(wanted)
         # Ordered list, oldest first, so the cap evicts the oldest IDs (a set lost the order)
         state["alerted"] = list(dict.fromkeys(alerted_order + sent))[-ALERTED_CAP:]
         save_state(state)
