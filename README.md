@@ -7,9 +7,9 @@ new listing is appended to the digest in a 🎯 *Wanted list* block, with no dis
 accessories, incomplete sets and loose figures are excluded, as in the main scan. Each listing is reported once.
 
 Manage the list from the bot's Telegram chat (applied at the next run; the reply appears in that digest):
-- `/want 21257 160 Tintin` add or update (price and name optional if the set is in `sets.csv`)
-- `/unwant 21257` remove
+- `/want 21367 160 Tintin` add or update (price and name optional if the set is in `sets.csv`)
+- `/unwant 21367` remove
 - `/wanted` show the list
 
-Or locally: `python wanted.py add 21257 --rrp 160 --name "Tintin" --keyword tintin`,
-`python wanted.py remove 21257`, `python wanted.py list`. Or edit `wanted.json` on GitHub.
+Or locally: `python wanted.py add 21367 --rrp 160 --name "Tintin" --keyword tintin`,
+`python wanted.py remove 21367`, `python wanted.py list`. Or edit `wanted.json` on GitHub.

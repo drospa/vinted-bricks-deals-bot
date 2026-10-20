@@ -20,12 +20,12 @@ def it(i, title, price=100, cond="Muy bueno"):
 class TestMatch(unittest.TestCase):
     def test_initial_list(self):
         self.assertEqual({w["number"] for w in WANTED},
-                         {"21257", "71837", "71860", "10365", "75397", "72032", "75453"})
+                         {"21367", "71837", "71860", "10365", "75397", "72032", "75453"})
 
     def test_number_and_keyword(self):
         self.assertEqual(wl.match("Lego 10365 barco Jack Sparrow nuevo", WANTED)["number"], "10365")
         self.assertEqual(wl.match("LEGO 75397-1 Jabba", WANTED)["number"], "75397")
-        self.assertEqual(wl.match("Lego Tintin cohete", WANTED)["number"], "21257")
+        self.assertEqual(wl.match("Lego Tintin cohete", WANTED)["number"], "21367")
         self.assertIsNone(wl.match("Tintin comic El loto azul", WANTED))   # keyword needs 'lego'
         self.assertIsNone(wl.match("Lego 103650 random", WANTED))
         self.assertIsNone(wl.match("Lego 75192 Falcon", WANTED))
