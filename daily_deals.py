@@ -29,6 +29,11 @@ TOO_GOOD = 0.75           # at or above this: listed separately as suspicious
 MAX_SUSPICIOUS = 3        # suspicious listings shown at the bottom
 LOTR_QUERIES = ["lego señor de los anillos", "lego lord of the rings", "lego lotr"]
 LOTR_PAGES = 3           # pages fetched per extra LOTR search
+# Experiment: Lego Ideas listed in full (no discount filter), like LOTR. Set IDEAS_EXPERIMENT = False to revert
+IDEAS_EXPERIMENT = True
+IDEAS_THEME = "Ideas"
+IDEAS_QUERIES = ["lego ideas"]
+IDEAS_PAGES = 2           # pages fetched per Ideas search
 WANTED_PAGES = 1         # pages fetched per wanted-list search (newest first; 3 runs a day)
 MAX_ITEMS = 10           # max deals listed in the message
 MAX_PAGES = 15           # safety cap on pages fetched per run
@@ -280,7 +285,9 @@ def name_index(catalogue):
     return _name_index[key]
 
 
-def evaluate(items, catalogue):
+def evaluate(items, catalogue, ideas=None):
+    """ideas: optional list; when given, identified Ideas listings go there with no discount filter
+    instead of the deals path."""
     deals, lotr, sw_figs = [], [], []
     stats = new_stats(len(items))
     stats["by_name"] = 0
@@ -341,6 +348,14 @@ def evaluate(items, catalogue):
             continue
         stats["matched"] += 1
         stats["by_name"] += by_name
+        if ideas is not None and c["theme"] == IDEAS_THEME:  # all sets in the title are Ideas
+            rrp = c["rrp"]
+            disc = (1 - it["price"] / rrp) if rrp and it["price"] else None
+            ideas.append({**it, "set_no": num, "set_name": c["name"], "theme": c["theme"], "rrp": rrp,
+                          "approx": c.get("approx", False), "promo": c.get("promo", False),
+                          "retired": c["retired"], "discount": disc, "figure": False, "lot": c["lot"],
+                          "known_rrp": c["known_rrp"], "known_nums": c["known_nums"], "by_name": by_name})
+            continue
         if is_fig:  # loose Star Wars figure: the set's official price says nothing about it, so no discount test
             sw_figs.append({**it, "set_no": num, "set_name": c["name"], "theme": c["theme"],
                             "rrp": c["rrp"], "retired": c["retired"], "discount": None})
@@ -451,23 +466,19 @@ def set_label(d):
     return f"{d['set_no']} {name}"
 
 
-def lotr_blocks(lotr):
-    """Lord of the Rings, every listing, grouped: complete sets by set, then unidentified, then figures."""
+def grouped_set_blocks(sets, header):
+    """Identified listings grouped by set, best discount first; each set lists every listing by price."""
     esc = html.escape
     link = lambda d, text: f"<a href=\"{esc(d['url'], quote=True)}\">{esc(text)}</a>"
     price = lambda d: f"{d['price']:.0f}€" if d["price"] else "?€"
-    sets = [d for d in lotr if d["set_no"] != "?" and not d["figure"]]
-    unid = [d for d in lotr if d["set_no"] == "?" and not d["figure"]]
-    figs = [d for d in lotr if d["figure"]]
-    blocks = []
-    groups = {}
+    blocks, groups = [], {}
     for d in sets:
         groups.setdefault(d["set_no"], []).append(d)
     def best(g):
         ds = [x["discount"] for x in g if x["discount"] is not None]
         return (not ds, -(max(ds) if ds else 0), g[0]["set_no"])
     if groups:
-        blocks.append("\n\n🧙 <b>Lord of the Rings sets</b>")
+        blocks.append(header)
     for g in sorted(groups.values(), key=best):
         g.sort(key=lambda x: x["price"] or 0)
         d0 = g[0]
@@ -482,6 +493,23 @@ def lotr_blocks(lotr):
             link(x, price(x)) + (f" {fmt_pct(x['discount'])}" if x["discount"] is not None else "")
             + f" {cond_short(x['condition'])}" + (" 🔎" if x.get("by_name") else "") for x in g)
         blocks.append(f"\n<b>{esc(set_label(d0))}</b> · {ref}{flags}\n   {entries}")
+    return blocks
+
+
+def ideas_blocks(ideas):
+    """Lego Ideas experiment: every identified listing, no discount filter."""
+    return grouped_set_blocks(ideas, "\n\n💡 <b>Lego Ideas</b> (experiment, no discount filter)")
+
+
+def lotr_blocks(lotr):
+    """Lord of the Rings, every listing, grouped: complete sets by set, then unidentified, then figures."""
+    esc = html.escape
+    link = lambda d, text: f"<a href=\"{esc(d['url'], quote=True)}\">{esc(text)}</a>"
+    price = lambda d: f"{d['price']:.0f}€" if d["price"] else "?€"
+    sets = [d for d in lotr if d["set_no"] != "?" and not d["figure"]]
+    unid = [d for d in lotr if d["set_no"] == "?" and not d["figure"]]
+    figs = [d for d in lotr if d["figure"]]
+    blocks = grouped_set_blocks(sets, "\n\n🧙 <b>Lord of the Rings sets</b>")
     if unid:
         unid.sort(key=lambda x: x["price"] or 0)
         blocks.append(f"\n\n❓ <b>LotR, set not identified</b> ({len(unid)})")
@@ -505,11 +533,12 @@ def fmt_excluded(c):
 
 
 def build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings, today,
-                   wanted_hits=(), wanted_info=None):
+                   wanted_hits=(), wanted_info=None, ideas=()):
     esc = html.escape
     head = f"🧱 <b>Lego deals {today}</b>: {len(deals)} found" + (
         f" · {len(lotr)} new Lord of the Rings" if lotr else "") + (
         f" · {len(sw_figs)} Star Wars figures" if sw_figs else "") + (
+        f" · 💡 {len(ideas)} Ideas" if ideas else "") + (
         f" · 🎯 {len(wanted_hits)} wanted" if wanted_hits else "")
     blocks = []
     for i, d in enumerate(deals[:MAX_ITEMS], 1):
@@ -532,6 +561,7 @@ def build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings,
         if len(sw_figs) > MAX_SW_FIGURES:
             blocks.append(f"\n… and {len(sw_figs) - MAX_SW_FIGURES} more")
     blocks += lotr_blocks(lotr)
+    blocks += ideas_blocks(list(ideas))
     if suspicious:
         blocks.append("\n\n⚠️ <b>Too good to be true</b> (likely parts, minifigs or mis-titled):")
         for d in suspicious[:MAX_SUSPICIOUS]:
@@ -549,6 +579,7 @@ def build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings,
             f"{len(deals) + len(suspicious)} at ≥{MIN_DISCOUNT_NEW * 100:.0f}% off\n"
             f"LotR: {len(lotr)} new ({plural(len(lotr) - n_figs - n_unid, 'set')}, {plural(n_figs, 'figure')}, {n_unid} unidentified)"
             f" · {lotr_info['already']} already reported, still listed"
+            + (f"\nIdeas (experiment): {len(ideas)} new, no discount filter" if IDEAS_EXPERIMENT else "")
             + (f"\nWanted: {plural(wanted_info['watched'], 'set')} watched · {len(wanted_hits)} new"
                f" · {esc(fmt_excluded(wanted_info['excluded']))}" if wanted_info else "")
             + (("\n" + esc(wanted_info["replies"])) if wanted_info and wanted_info.get("replies") else "")
@@ -732,6 +763,22 @@ def main():
             time.sleep(random.uniform(*PAUSE))
     print(f"LOTR search listings: {len(extra)}")
 
+    # Targeted Ideas searches (experiment)
+    ideas_found = {}
+    for q in (IDEAS_QUERIES if IDEAS_EXPERIMENT else []):
+        for page in range(1, IDEAS_PAGES + 1):
+            try:
+                items = fetch_page(page, q)
+            except FetchError as e:
+                warnings.append(f"Ideas search '{q}' page {page}: {e}")
+                break
+            if not items:
+                break
+            for it in items:
+                ideas_found[it["id"]] = it
+            time.sleep(random.uniform(*PAUSE))
+    print(f"Ideas search listings: {len(ideas_found)}")
+
     # Targeted wanted-list searches (one per set number / keyword set)
     wanted_found = {}
     for q in wl.search_queries(wanted):
@@ -749,30 +796,41 @@ def main():
     print(f"wanted search listings: {len(wanted_found)}")
 
     new_items = [it for it in by_id.values() if it["id"] > last_id and it["id"] not in alerted]
-    deals, suspicious, lotr, sw_figs, stats = evaluate(new_items, catalogue)
+    ideas = [] if IDEAS_EXPERIMENT else None
+    deals, suspicious, lotr, sw_figs, stats = evaluate(new_items, catalogue, ideas=ideas)
     seen = {d["id"] for d in lotr}
     fresh = [it for it in extra.values() if it["id"] not in alerted and it["id"] not in seen]
     _, _, lotr_extra, _, lotr_stats = evaluate(fresh, catalogue)
     lotr += lotr_extra
     lotr.sort(key=lambda d: (d["discount"] is None, -(d["discount"] or 0)))
+    ideas_stats = None
+    if IDEAS_EXPERIMENT:
+        seen = {it["id"] for it in new_items} | {d["id"] for d in lotr}
+        fresh = [it for it in ideas_found.values() if it["id"] not in alerted and it["id"] not in seen]
+        ideas_stats = evaluate(fresh, catalogue, ideas=ideas)[4]
+        ideas = list({d["id"]: d for d in ideas}.values())
     # Wanted list: any not-yet-reported listing from any of the scans; it is shown only in that block
-    pool = {**by_id, **extra, **wanted_found}
+    pool = {**by_id, **extra, **ideas_found, **wanted_found}
     wanted_hits, wanted_excl = evaluate_wanted([it for i, it in pool.items() if i not in alerted], wanted)
     wanted_ids = {d["id"] for d in wanted_hits}
     deals = [d for d in deals if d["id"] not in wanted_ids]
     suspicious = [d for d in suspicious if d["id"] not in wanted_ids]
     sw_figs = [d for d in sw_figs if d["id"] not in wanted_ids]
     lotr = [d for d in lotr if d["id"] not in wanted_ids]
+    ideas = [d for d in (ideas or []) if d["id"] not in wanted_ids]
     wanted_info = {"watched": len(wanted), "excluded": wanted_excl, "replies": "\n".join(replies)}
     check_stats(stats, "main scan")
     check_stats(lotr_stats, "LotR searches")
+    if ideas_stats:
+        check_stats(ideas_stats, "Ideas searches")
+    print(f"Ideas: {len(ideas)} new | Ideas search stats {ideas_stats}")
     # Count only search results that are actually LotR listings (the searches also return other Lego)
     old = [it for i, it in extra.items() if i in alerted]
     lotr_info = {"active": len(extra), "already": len(evaluate(old, catalogue)[2])}
     print(f"LotR: {len(lotr)} new, {lotr_info['already']} already reported | main stats {stats} | "
           f"LotR search stats {lotr_stats}")
     for m in build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings, today_str(),
-                            wanted_hits, wanted_info):
+                            wanted_hits, wanted_info, ideas):
         out(m)
 
     if not dry:
@@ -780,7 +838,7 @@ def main():
             state["last_id"] = max(by_id)
         if slot and not error:
             state["last_slot"] = slot
-        sent = [d["id"] for d in deals + suspicious + lotr + sw_figs + wanted_hits]
+        sent = [d["id"] for d in deals + suspicious + lotr + sw_figs + ideas + wanted_hits]
         if tg_offset is not None:
             state["tg_offset"] = tg_offset
         if wanted_changed:
