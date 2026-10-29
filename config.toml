@@ -1,0 +1,68 @@
+# Lego deals bot configuration. Everything a user is expected to tune lives here.
+# Secrets (Telegram token and chat id, Brickset API key) are NOT here: they are GitHub Actions secrets.
+# After changing [catalogue] themes or price_regions, re-run the "build-catalogue" workflow.
+
+[vinted]
+domain = "https://www.vinted.es"          # vinted.fr, vinted.de, vinted.it, ... (see [vinted.conditions])
+query = "lego"                            # main search, newest first
+accept_language = "es-ES,es;q=0.9,en;q=0.8"
+max_pages = 15                            # safety cap on pages of the main search per run
+pause_seconds = [2.0, 5.0]                # random pause between page requests (be polite)
+impersonate = ["chrome", "chrome120", "chrome124"]   # curl_cffi browser fingerprints, tried in order
+
+# Condition labels as the chosen Vinted site shows them (lower case).
+# new_prefix: a condition starting with this is "new" (min_discount_new applies), anything else is "used".
+new_prefix = "nuevo"
+
+[vinted.conditions]                       # label on Vinted -> short label in the digest
+"nuevo con etiquetas" = "new, tags"
+"nuevo sin etiquetas" = "new"
+"muy bueno" = "very good"
+"bueno" = "good"
+"satisfactorio" = "fair"
+
+[deals]
+min_discount_new = 0.40                   # 0.40 = at least 40% below the official price (RRP)
+min_discount_used = 0.40
+suspicious_above = 0.75                   # at or above this discount: listed separately as "too good to be true"
+max_suspicious = 3                        # suspicious listings shown
+max_items = 10                            # deals shown in the message
+
+[catalogue]
+file = "sets.csv"
+# Brickset themes to follow (matched as substrings of Brickset theme names, case-insensitive)
+themes = ["star wars", "lord of the rings", "city", "icons", "ninjago", "super mario", "ideas", "bricklink"]
+price_regions = ["ES", "DE"]              # euro RRP: first region with a price wins
+exclude_subthemes = ["botanical"]         # sets whose subtheme contains any of these are ignored
+
+[filters]
+# Extra words or regular expressions: a listing whose title matches any of them is excluded.
+# Example: ["duplo", "polybag", "magnet"]
+extra_exclude = []
+
+[lotr]
+# Lord of the Rings: every listing is reported (no discount filter), plus dedicated searches
+queries = ["lego señor de los anillos", "lego lord of the rings", "lego lotr"]
+pages = 3                                 # pages fetched per search
+
+[star_wars]
+max_figures = 15                          # identified Star Wars loose figures shown per message
+
+[ideas]
+# Lego Ideas listed in full (no discount filter). Set enabled = false to treat Ideas like any other theme.
+enabled = true
+theme = "Ideas"
+queries = ["lego ideas"]
+pages = 2
+
+[wanted]
+pages = 1                                 # pages fetched per wanted-list search (newest first)
+
+[schedule]
+timezone = "Europe/Madrid"
+# Local start time of each daily run. A scheduled run belongs to the latest slot already started,
+# and each slot runs once per day. Keep the cron lines in .github/workflows/daily.yml in step.
+slots = [["am", "09:30"], ["pm", "14:00"], ["eve", "19:00"]]
+
+[state]
+alerted_cap = 5000                        # listing IDs remembered as already reported

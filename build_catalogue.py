@@ -14,11 +14,12 @@ from datetime import date
 
 import requests
 
+from legobot.config import CATALOGUE, PRICE_REGIONS, THEMES
+
 API = "https://brickset.com/api/v3.asmx"
 KEY = os.environ.get("BRICKSET_API_KEY", "")
-TERMS = ["star wars", "lord of the rings", "city", "icons", "ninjago",
-         "super mario", "ideas", "bricklink"]
-PRICE_REGIONS = ["ES", "DE"]  # euro prices: first region with a price wins (DE as proxy for Spain)
+TERMS = THEMES              # config.toml [catalogue] themes
+# PRICE_REGIONS (config.toml): euro prices, first region with a price wins (DE as proxy for Spain)
 # Fallback when no euro price exists (mostly sets from before ~2014), marked approximate.
 # The regional price is scaled by a factor calibrated in each build from sets that have both a
 # DE price and that region's price (median DE/region ratio). Currency conversion is not used
@@ -35,7 +36,7 @@ RETIRED_AFTER_YEARS = 3  # set with no LEGO.com data in any region and older tha
 PROMO_SETS = {"40893", "40693", "40761"}
 PROMO_TAG = re.compile(r"gift.with.purchase|\bgwp\b|promotional", re.I)
 PAGE_SIZE = 500
-OUT = "sets.csv"
+OUT = CATALOGUE
 FIELDS = ["number", "name", "theme", "subtheme", "year", "pieces",
           "rrp", "rrp_region", "rrp_approx", "promo",
           "first_available", "last_available", "retired"]

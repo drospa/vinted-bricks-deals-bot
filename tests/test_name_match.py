@@ -5,10 +5,10 @@ import unittest
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 sys.path.insert(0, ROOT)
-import daily_deals as dd  # noqa: E402
-from name_match import NameIndex, load_aliases  # noqa: E402
+from legobot import catalogue, filters  # noqa: E402
+from legobot.name_match import NameIndex, load_aliases  # noqa: E402
 
-CAT = dd.load_catalogue(os.path.join(ROOT, "sets.csv"))
+CAT = catalogue.load_catalogue(os.path.join(ROOT, "sets.csv"))
 IDX = NameIndex(CAT, load_aliases(os.path.join(ROOT, "aliases.json")))
 
 
@@ -28,7 +28,7 @@ class TestNameMatch(unittest.TestCase):
     def test_negated_figure_is_not_a_figure(self):
         item = {"id": 1, "title": "lego icons lotr casque de sauron neuf sans figurine", "price": 50.0,
                 "url": "u", "condition": "Muy bueno"}
-        lotr = dd.evaluate([item], CAT)[2]
+        lotr = filters.evaluate([item], CAT)[2]
         self.assertEqual((lotr[0]["set_no"], lotr[0]["figure"], lotr[0]["by_name"]), ("11373", False, True))
 
 
