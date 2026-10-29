@@ -22,7 +22,7 @@ on:
         default: dry-run
 
 permissions:
-  contents: write
+  contents: write   # pushes state to the data branch
 
 concurrency:
   group: daily-deals
@@ -36,21 +36,51 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install curl_cffi requests
-      - name: Format tests
+      - run: pip install -r requirements.txt
+      - name: Check out runtime data (data branch)
+        # state.json and wanted.json live on the `data` branch, so the code branch carries no personal
+        # data and no bot commits. A fork starts with an empty `data` branch, created here.
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin data >/dev/null; then
+            git fetch --depth=1 origin data
+            git worktree add --detach data FETCH_HEAD
+            if [ ! -f data/.migrated ]; then
+              # One-off migration for a repo that kept state.json / wanted.json on its code branch:
+              # copy the last committed version of each (first-parent history of this branch).
+              git fetch --depth=500 origin "${GITHUB_REF_NAME}"
+              for f in state.json wanted.json; do
+                c=$(git log --first-parent -1 --format=%H FETCH_HEAD -- "$f")
+                [ -n "$c" ] || continue
+                if git cat-file -e "$c:$f" 2>/dev/null; then src="$c"; else src="$c^1"; fi
+                git show "$src:$f" > "data/$f"
+                echo "migrated $f from $src"
+              done
+              date -u +%FT%TZ > data/.migrated
+            fi
+          else
+            git worktree add --orphan -b data data
+            echo "[]" > data/wanted.json
+            date -u +%FT%TZ > data/.migrated
+            echo "created an empty data branch"
+          fi
+      - name: Tests
         run: python -m unittest discover -s tests
+        env:
+          DATA_DIR: data
       - run: python -u daily_deals.py
         env:
           PYTHONUNBUFFERED: "1"
+          DATA_DIR: data
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           RUN_MODE: ${{ inputs.mode }}
-      - name: Save state
+      - name: Save state (data branch)
         if: success() && inputs.mode != 'dry-run'
+        working-directory: data
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add state.json wanted.json
+          git add -A
           git diff --cached --quiet || git commit -m "Update state"
-          git pull --rebase origin "${GITHUB_REF_NAME}"   # a catalogue refresh may have pushed meanwhile
-          git push
+          git push origin HEAD:refs/heads/data

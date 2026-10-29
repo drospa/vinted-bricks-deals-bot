@@ -1,2 +1,8 @@
 __pycache__/
 *.pyc
+
+# Runtime data: kept on the `data` branch, never on the code branch
+data/
+state.json
+wanted.json
+.env
