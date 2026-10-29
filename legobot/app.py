@@ -29,7 +29,7 @@ def main():
     catalogue = load_catalogue()
     state = load_state()
     slot = None
-    # The Madrid-time slot guard applies to GitHub cron runs and to the external scheduler ("scheduled")
+    # The local-time slot guard applies to GitHub cron runs and to the external scheduler ("scheduled")
     if os.environ.get("GITHUB_EVENT_NAME") == "schedule" or mode == "scheduled":
         slot = schedule_slot(state)
         if slot is None:

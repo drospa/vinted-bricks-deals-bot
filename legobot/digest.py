@@ -5,6 +5,12 @@ import re
 from .config import (COND_SHORT, IDEAS_EXPERIMENT, MAX_ITEMS, MAX_SUSPICIOUS, MAX_SW_FIGURES,
                      MIN_DISCOUNT_NEW)
 
+def eur(price):
+    """Listing price for the digest; '?€' when Vinted gave none (wanted and Star Wars figure blocks
+    have no discount test, so they can hold listings without a price)."""
+    return f"{price:.0f}€" if price else "?€"
+
+
 def wanted_blocks(hits):
     """Wanted list: every new listing, grouped by set, cheapest first."""
     if not hits:
@@ -17,7 +23,7 @@ def wanted_blocks(hits):
     for no, g in groups.items():
         ref = f"RRP {g[0]['rrp']:.0f}€" if g[0]["rrp"] else "no RRP"
         entries = "\n".join(
-            f"   • <a href=\"{esc(x['url'], quote=True)}\">{x['price']:.0f}€</a>"
+            f"   • <a href=\"{esc(x['url'], quote=True)}\">{eur(x['price'])}</a>"
             + (f" {fmt_pct(x['discount'])}" if x["discount"] is not None else "")
             + f" {cond_short(x['condition'])} · {esc(short_title(x['title']))}" for x in g)
         blocks.append(f"\n<b>{esc(no)} {esc(g[0]['set_name'])}</b> · {ref}\n{entries}")
@@ -139,7 +145,7 @@ def build_messages(deals, suspicious, lotr, sw_figs, stats, lotr_info, warnings,
         blocks.append("\n\n🧍 <b>Star Wars loose figures</b> (set number found in title; no discount filter, newest first):")
         for d in sw_figs[:MAX_SW_FIGURES]:
             blocks.append(
-                f"\n• <b>{esc(d['set_no'])} {esc(d['set_name'])}</b>: {d['price']:.0f}€ · {esc(d['condition'])} · "
+                f"\n• <b>{esc(d['set_no'])} {esc(d['set_name'])}</b>: {eur(d['price'])} · {esc(d['condition'])} · "
                 f"<a href=\"{esc(d['url'], quote=True)}\">link</a>")
         if len(sw_figs) > MAX_SW_FIGURES:
             blocks.append(f"\n… and {len(sw_figs) - MAX_SW_FIGURES} more")

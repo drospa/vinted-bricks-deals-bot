@@ -42,5 +42,17 @@ class TestFormat(unittest.TestCase):
         self.assertTrue(all(len(m) <= 4096 for m in msgs))
 
 
+    def test_listing_without_price(self):
+        # Star Wars figures and wanted-list hits skip the discount test, so they can arrive with no price
+        fig = {"id": 7, "title": "figura", "price": None, "url": "https://www.vinted.es/items/7", "condition": "Bueno",
+               "set_no": "75102", "set_name": "Poe's X-wing", "theme": "Star Wars", "rrp": 78, "retired": False,
+               "discount": None}
+        hit = {"id": 8, "title": "Lego 75102", "price": None, "url": "https://www.vinted.es/items/8",
+               "condition": "Bueno", "set_no": "75102", "set_name": "Poe's X-wing", "rrp": 78, "discount": None}
+        stats = {"scanned": 1, "excluded": Counter(), "matched": 1, "unidentified": 0}
+        text = "".join(digest.build_messages([], [], [], [fig], stats, {"active": 0, "already": 0}, [], "x",
+                                             [hit], {"watched": 1, "excluded": Counter(), "replies": ""}))
+        self.assertEqual(text.count("?€"), 2)
+
 if __name__ == "__main__":
     unittest.main()

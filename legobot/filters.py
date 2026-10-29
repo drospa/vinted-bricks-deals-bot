@@ -115,8 +115,8 @@ def evaluate(items, catalogue, ideas=None):
                 nums, by_name = [n], True
         if nums:
             kept = [n for n in nums if not any(s in catalogue[n]["subtheme"].lower() for s in EXCLUDE_SUBTHEMES)]
-            if not kept:  # only Botanical Collection sets in the title
-                stats["excluded"]["botanical"] += 1
+            if not kept:  # only sets of excluded subthemes (config: exclude_subthemes) in the title
+                stats["excluded"]["subtheme"] += 1
                 continue
             nums = kept
         num, c = combine(nums, catalogue) if nums else (None, None)
