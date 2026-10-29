@@ -1,0 +1,10 @@
+Vinted LEGO Deals Bot
+Copyright 2026 David Rosales (https://github.com/drospa)
+
+This product includes software developed by David Rosales.
+Original repository: https://github.com/drospa/Vinted-Lego-scrapper
+
+Set catalogue data (sets.csv) is retrieved from the Brickset API (https://brickset.com).
+
+LEGO is a trademark of the LEGO Group, which does not sponsor, authorise or endorse this project.
+This project is not affiliated with Vinted.
