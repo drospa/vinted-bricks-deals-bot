@@ -5,14 +5,14 @@ import unittest
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 sys.path.insert(0, ROOT)
-import daily_deals as dd  # noqa: E402
+from legobot import catalogue, filters  # noqa: E402
 
-CAT = dd.load_catalogue(os.path.join(ROOT, "sets.csv"))
+CAT = catalogue.load_catalogue(os.path.join(ROOT, "sets.csv"))
 
 
 def run(title, price, cond="Muy bueno"):
     item = {"id": 1, "title": title, "price": price, "url": "u", "condition": cond}
-    deals, susp, lotr, sw, stats = dd.evaluate([item], CAT)
+    deals, susp, lotr, sw, stats = filters.evaluate([item], CAT)
     return deals + susp, lotr, sw, stats
 
 

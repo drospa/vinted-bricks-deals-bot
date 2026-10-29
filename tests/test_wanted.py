@@ -6,10 +6,10 @@ from collections import Counter
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 sys.path.insert(0, ROOT)
-import daily_deals as dd  # noqa: E402
-import wanted as wl  # noqa: E402
+from legobot import catalogue, digest, filters  # noqa: E402
+from legobot import wanted as wl  # noqa: E402
 
-CAT = dd.load_catalogue(os.path.join(ROOT, "sets.csv"))
+CAT = catalogue.load_catalogue(os.path.join(ROOT, "sets.csv"))
 # A frozen copy: the live wanted.json changes whenever /want or /unwant is sent to the bot,
 # and the tests must not depend on what is being watched today.
 WANTED = wl.load(os.path.join(os.path.dirname(__file__), "fixtures", "wanted.json"))
@@ -25,7 +25,10 @@ class TestMatch(unittest.TestCase):
                          {"21367", "71837", "71860", "10365", "75397", "72032", "75453"})
 
     def test_live_list_is_valid(self):
-        live = wl.load(os.path.join(ROOT, "wanted.json"))
+        # The live list is on the data branch; the workflow checks it out into DATA_DIR before the tests
+        if not os.path.exists(wl.WANTED_FILE):
+            self.skipTest(f"{wl.WANTED_FILE} not present (data branch not checked out)")
+        live = wl.load(wl.WANTED_FILE)
         for w in live:
             self.assertRegex(w["number"], r"^\d{4,6}$")
             self.assertTrue(w["name"])
@@ -40,7 +43,7 @@ class TestMatch(unittest.TestCase):
         self.assertIsNone(wl.match("Lego 75192 Falcon", WANTED))
 
     def test_evaluate_filters(self):
-        hits, excl = dd.evaluate_wanted([
+        hits, excl = filters.evaluate_wanted([
             it(1, "Lego 10365 Jack Sparrow precintado", 280, "Nuevo con etiquetas"),
             it(2, "compatible 10365 barco pirata", 60),
             it(3, "Minifigura Jack Sparrow del set 10365", 15),
@@ -61,18 +64,18 @@ class TestMatch(unittest.TestCase):
                "Lepin Ninjago city workshop 71837",
                "Lego Star Wars 75397 figura de la princesa Leia esclava nueva",
                "LEGO 72032 Super Mario - Standard Kart (Caixa vazia)"]
-        hits, _ = dd.evaluate_wanted([it(i, t, 75) for i, t in enumerate(bad)], WANTED)
+        hits, _ = filters.evaluate_wanted([it(i, t, 75) for i, t in enumerate(bad)], WANTED)
         self.assertEqual([h["title"] for h in hits], [])
         good = ["Lego Cohete Lunar Tintín 21367",
                 "LEGO Star Wars 75397 – Jabba’s Sail Barge – 3942 pieces", "Lego Mario Toad 72032",
                 "Lego le seigneur des anneaux 10316 fondcombe avec 15 figurines neuf"]
-        hits, _ = dd.evaluate_wanted([it(i, t, 150) for i, t in enumerate(good)], WANTED)
+        hits, _ = filters.evaluate_wanted([it(i, t, 150) for i, t in enumerate(good)], WANTED)
         self.assertEqual(len(hits), 3)  # 10316 is not on the wanted list
 
     def test_without_figures_dropped(self):
         titles = ["Lego 21367 La fusée de Tintin sans personnnages", "Lego 75397 sin minifiguras",
                   "LEGO 10365 without minifigures", "Lego 75453 senza minifigure"]
-        hits, excl = dd.evaluate_wanted([it(i, t, 150) for i, t in enumerate(titles)], WANTED)
+        hits, excl = filters.evaluate_wanted([it(i, t, 150) for i, t in enumerate(titles)], WANTED)
         self.assertEqual((hits, excl["no figures"]), ([], 4))
 
     def test_queries(self):
@@ -118,10 +121,10 @@ class TestCommands(unittest.TestCase):
 
 class TestMessage(unittest.TestCase):
     def test_block_and_footer(self):
-        hits, excl = dd.evaluate_wanted([it(1, "Lego 72032 kart estandar", 12, "Nuevo sin etiquetas")], WANTED)
+        hits, excl = filters.evaluate_wanted([it(1, "Lego 72032 kart estandar", 12, "Nuevo sin etiquetas")], WANTED)
         stats = {"scanned": 0, "excluded": Counter(), "matched": 0, "unidentified": 0}
         info = {"watched": 7, "excluded": excl, "replies": "Added 75192 Millennium Falcon (849.99€)"}
-        text = "".join(dd.build_messages([], [], [], [], stats, {"active": 0, "already": 0}, [], "20/10/2026",
+        text = "".join(digest.build_messages([], [], [], [], stats, {"active": 0, "already": 0}, [], "20/10/2026",
                                          hits, info))
         self.assertIn("🎯 1 wanted", text)
         self.assertIn("Wanted list</b>", text)
@@ -132,7 +135,7 @@ class TestMessage(unittest.TestCase):
 
     def test_no_wanted_block_when_empty(self):
         stats = {"scanned": 0, "excluded": Counter(), "matched": 0, "unidentified": 0}
-        text = "".join(dd.build_messages([], [], [], [], stats, {"active": 0, "already": 0}, [], "20/10/2026"))
+        text = "".join(digest.build_messages([], [], [], [], stats, {"active": 0, "already": 0}, [], "20/10/2026"))
         self.assertNotIn("Wanted", text)
 
 
