@@ -1,4 +1,4 @@
-# Vinted LEGO Deals Bot
+# Vinted Bricks Deals Bot
 
 A Telegram bot that scans new LEGO listings on Vinted three times a day, compares each price with the
 official retail price, and sends a digest of the real bargains: no knock-offs, accessories, incomplete

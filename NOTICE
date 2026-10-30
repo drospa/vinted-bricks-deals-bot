@@ -1,8 +1,8 @@
-Vinted LEGO Deals Bot
+Vinted Bricks Deals Bot
 Copyright 2026 David Rosales (https://github.com/drospa)
 
 This product includes software developed by David Rosales.
-Original repository: https://github.com/drospa/Vinted-Lego-scrapper
+Original repository: https://github.com/drospa/vinted-bricks-deals-bot
 
 Set catalogue data (sets.csv) is retrieved from the Brickset API (https://brickset.com).
 
